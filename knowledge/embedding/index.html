@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Embedding：让AI理解&#39;意思&#39;的技术</title><meta name="description" content="文本嵌入——计算机如何理解人类语言的语义"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">计算机术语</span> <time class="tabular-nums">2026.09.19</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> Embedding：让AI理解&#39;意思&#39;的技术 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">文本嵌入——计算机如何理解人类语言的语义</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">Embedding</span><span class="tag">嵌入</span><span class="tag">语义理解</span><span class="tag">向量化</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="什么是-embedding">什么是 Embedding</h2>
+<p>Embedding（嵌入）是把文本、图片等数据转换成数字向量的过程。这个向量不是随机的数字，而是能表达内容”意思”的一串数字。</p>
+<p>语义相似的内容，向量也相似。这让计算机能够”理解”语言的含义，而不仅仅是匹配关键词。</p>
+<h2 id="embedding-的工作原理">Embedding 的工作原理</h2>
+<p>当你输入”竞业限制”这个词：</p>
+<ol>
+<li>Embedding 模型把这四个字转换成一串数字，比如 [0.23, 0.87, 0.15, …]</li>
+<li>这串数字代表了”竞业限制”这个概念的语义特征</li>
+<li>当你输入”离职后的从业禁止”，模型生成的向量会很接近</li>
+<li>当你输入”今天天气不错”，模型生成的向量会很不同</li>
+</ol>
+<h2 id="embedding-和关键词搜索的区别">Embedding 和关键词搜索的区别</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>关键词搜索</th><th>Embedding 语义搜索</th></tr></thead><tbody><tr><td>搜索”竞业限制”</td><td>只找包含”竞业限制”的文档</td><td>能找到”离职从业禁止”相关文档</td></tr><tr><td>理解能力</td><td>无</td><td>有</td></tr><tr><td>同义词处理</td><td>不识别</td><td>自动关联</td></tr><tr><td>反义词处理</td><td>不区分</td><td>能区分</td></tr></tbody></table>
+<h2 id="embedding-的应用场景">Embedding 的应用场景</h2>
+<ul>
+<li><strong>智能搜索</strong>：用户用自然语言提问，从知识库中检索相关文档</li>
+<li><strong>相似文档推荐</strong>：找到与当前合同条款相似的历史合同</li>
+<li><strong>聚类分析</strong>：把大量文档按主题自动分组</li>
+<li><strong>异常检测</strong>：识别与正常模式不同的文档</li>
+</ul>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>Embedding 是企业知识库和案例库实现智能检索的核心技术。法务部门可以用 Embedding 技术，实现”输入一个法条，自动找到相关判例和司法解释”的智能检索。但需要注意：Embedding 向量虽然不是明文，但可能通过反向工程还原出原始内容的语义信息。企业将敏感合同或制度文件向量化存储时，应评估向量数据库的访问权限控制，确保只有授权人员才能进行语义搜索。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>

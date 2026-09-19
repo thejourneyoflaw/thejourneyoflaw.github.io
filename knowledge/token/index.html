@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Token：模型眼里的最小单位</title><meta name="description" content="理解Tokenization——模型如何切分文本"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">AI概念</span> <time class="tabular-nums">2026.09.17</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> Token：模型眼里的最小单位 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">理解Tokenization——模型如何切分文本</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">token</span><span class="tag">分词</span><span class="tag">NLP</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="核心概念">核心概念</h2>
+<p><strong>Token</strong> 是大语言模型处理文本的最小单位。模型不直接读”字”或”词”，而是先把文本切分成一串 Token，再逐个处理。</p>
+<p>一个 Token 可能是：</p>
+<ul>
+<li>一个完整的词（如 “hello”）</li>
+<li>一个词的一部分（如 “un” + “believ” + “able”）</li>
+<li>一个字符（如中文的每个字通常是一个 Token）</li>
+<li>一个标点符号</li>
+</ul>
+<h2 id="为什么重要">为什么重要</h2>
+<ul>
+<li><strong>计费单位</strong>：API 按 Token 数量收费，Token 越多费用越高</li>
+<li><strong>上下文窗口</strong>：模型能处理的 Token 数量有上限（如 128K），超出的内容无法一次性输入</li>
+<li><strong>理解模型行为</strong>：很多”模型犯错”其实是 Token 切分导致的——比如数不准一段文字里有几个字、对生僻词和长数字串的处理不稳定</li>
+</ul>
+<h2 id="实际影响">实际影响</h2>
+<p>“ChatGPT” 被切分为 <code>[&quot;Chat&quot;, &quot;G&quot;, &quot;PT&quot;]</code> 三个 Token，而 “你好” 是 <code>[&quot;你&quot;, &quot;好&quot;]</code> 两个 Token。英文平均 1 个 Token ≈ 4 个字符，中文约 1 个 Token 对应 1-2 个字。</p>
+<p>对法务工作者的直观影响有两点：一是同样一份合同，中文版本消耗的 Token 往往多于英文版本，处理中文长文档的调用成本和窗口压力更大；二是金额、日期、编号等数字串常被切成多个 Token，模型在精确复述这类内容时容易出错——这正是 AI 输出中的关键数字必须人工核对的技术原因。</p>
+<h2 id="一句话记住">一句话记住</h2>
+<p>Token 是模型的”视觉单元”——模型看到的不是文字，是 Token。</p>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>从合规角度看，Token 是 AI 服务的计量与计费单位，法务在审核 AI 采购合同或服务协议时，应关注按 Token 计费的条款、用量上限和超额处理规则，避免成本失控。同时，输入模型的每一个 Token 都可能携带敏感信息，提示词一旦发送即构成对外传输数据——哪些内容允许输入 AI、哪些禁止，应在企业数据管理制度中划定红线。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>

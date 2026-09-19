@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MCP：AI世界的USB接口</title><meta name="description" content="Model Context Protocol——让AI模型连接万物的开放标准"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">计算机术语</span> <time class="tabular-nums">2026.09.18</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> MCP：AI世界的USB接口 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">Model Context Protocol——让AI模型连接万物的开放标准</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">MCP</span><span class="tag">模型上下文协议</span><span class="tag">工具调用</span><span class="tag">开放标准</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="什么是-mcp">什么是 MCP</h2>
+<p>MCP（Model Context Protocol，模型上下文协议）是由 Anthropic 提出的一个开放标准，用于规范 AI 模型与外部工具、数据源之间的连接方式。</p>
+<p>如果把 AI 模型比作电脑主机，MCP 就是 USB 接口——有了统一的标准，各种外设（工具、数据源）都能即插即用。</p>
+<h2 id="为什么需要-mcp">为什么需要 MCP</h2>
+<p>在 MCP 出现之前，每个 AI 应用要连接外部工具，都需要写专门的对接代码。如果你有 10 个 AI 应用要连接同一个数据库，就需要写 10 套对接代码。</p>
+<p>MCP 解决了这个问题：它定义了一套标准协议，AI 应用只需要实现一次 MCP 客户端，就能连接所有支持 MCP 的工具和数据源。</p>
+<h2 id="mcp-的架构">MCP 的架构</h2>
+<p>MCP 采用客户端-服务器架构：</p>
+<ul>
+<li><strong>MCP 客户端</strong>：AI 应用（如 Claude、Cursor、ZCode）内置的 MCP 客户端</li>
+<li><strong>MCP 服务器</strong>：连接具体工具或数据源的中间层，把工具能力翻译成 MCP 标准格式</li>
+</ul>
+<p>常见的 MCP 服务器包括：</p>
+<ul>
+<li>文件系统 MCP：让 AI 能读写本地文件</li>
+<li>数据库 MCP：让 AI 能查询数据库</li>
+<li>浏览器 MCP：让 AI 能操控网页</li>
+<li>API MCP：让 AI 能调用各种外部服务</li>
+</ul>
+<h2 id="mcp-对企业的意义">MCP 对企业的意义</h2>
+<ol>
+<li><strong>降低集成成本</strong>：一次实现 MCP 服务器，所有 AI 工具都能用</li>
+<li><strong>避免供应商锁定</strong>：切换 AI 模型或工具时，不需要重新写对接代码</li>
+<li><strong>统一安全管控</strong>：通过 MCP 服务器统一管理 AI 对外部系统的访问权限</li>
+</ol>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>从数据合规角度看，MCP 服务器是 AI 访问敏感数据的”咽喉”——所有数据访问都经过 MCP 服务器，因此可以在这一层实施统一的权限控制和审计日志。法务部门可以要求：所有涉及客户数据或商业秘密的 MCP 服务器必须开启访问日志，并定期审查 AI 的数据访问行为是否符合数据保护政策。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>

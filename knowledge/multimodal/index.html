@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>多模态模型：AI的眼睛、耳朵和嘴巴</title><meta name="description" content="理解Multimodal AI——当AI能同时看图、听声、读文字"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">AI概念</span> <time class="tabular-nums">2026.09.19</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> 多模态模型：AI的眼睛、耳朵和嘴巴 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">理解Multimodal AI——当AI能同时看图、听声、读文字</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">多模态</span><span class="tag">Multimodal</span><span class="tag">GPT-4V</span><span class="tag">视觉理解</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="什么是多模态模型">什么是多模态模型</h2>
+<p>多模态模型（Multimodal Model）是一种能同时处理多种类型数据的 AI 模型——包括文本、图片、音频、视频等。传统 AI 只能处理单一类型的数据（比如只处理文字），多模态模型则能像人一样，同时”看”图片、“听”声音、“读”文字，并综合理解。</p>
+<h2 id="为什么多模态很重要">为什么多模态很重要</h2>
+<p>人类获取信息的方式是多通道的：眼睛看、耳朵听、大脑综合判断。多模态模型让 AI 也能这样做。</p>
+<p>举例：</p>
+<ul>
+<li>你拍一张合同照片问 AI”这份合同有什么风险”——AI 能直接”看”图片中的文字并分析</li>
+<li>你上传一段会议录音问”这次讨论了哪些法律问题”——AI 能”听”录音并总结</li>
+<li>你给 AI 一张产品图片问”这个设计有没有侵权风险”——AI 能”看”图片并判断</li>
+</ul>
+<h2 id="多模态的技术原理">多模态的技术原理</h2>
+<p>核心思路是把不同类型的数据转换成统一的”语言”（向量），让模型能一起理解：</p>
+<ul>
+<li><strong>文本</strong>：用 Token 嵌入成向量</li>
+<li><strong>图片</strong>：用视觉编码器（如 Vision Transformer）切成小块，每块转换成向量</li>
+<li><strong>音频</strong>：用音频编码器转换成向量序列</li>
+</ul>
+<p>模型在同一个”空间”中处理这些向量，就能同时理解图片、文字和声音的关联。</p>
+<h2 id="实际应用场景">实际应用场景</h2>
+<ul>
+<li><strong>合同扫描件审阅</strong>：直接拍照上传合同，AI 自动识别文字并分析条款</li>
+<li><strong>证据材料分析</strong>：上传现场照片、监控视频截图，AI 辅助分析证据链</li>
+<li><strong>会议纪要生成</strong>：上传会议录音，AI 自动生成结构化纪要</li>
+<li><strong>图纸审查</strong>：上传工程图纸，AI 检查是否符合规范</li>
+</ul>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>多模态模型为法务工作带来效率飞跃：合同扫描件、证据照片、现场视频等非结构化材料都能被 AI 直接理解和分析。但需要注意：AI 对图片和音频的理解可能存在偏差，特别是低质量扫描件或嘈杂录音可能导致识别错误。法务部门在使用多模态 AI 时，应要求 AI 输出必须经过人工复核，特别是涉及关键条款和金额的内容，不能完全依赖 AI 的自动识别结果。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>

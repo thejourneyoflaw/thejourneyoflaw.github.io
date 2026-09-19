@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RAG：让大模型学会查资料</title><meta name="description" content="检索增强生成——解决大模型胡说八道的关键技术"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">AI概念</span> <time class="tabular-nums">2026.09.18</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> RAG：让大模型学会查资料 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">检索增强生成——解决大模型胡说八道的关键技术</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">RAG</span><span class="tag">检索增强生成</span><span class="tag">向量数据库</span><span class="tag">大模型</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="什么是-rag">什么是 RAG</h2>
+<p>RAG（Retrieval-Augmented Generation，检索增强生成）是一种让大语言模型在回答问题时，先从外部知识库中检索相关资料，再基于检索结果生成回答的技术。</p>
+<p>简单说：大模型不再只靠”记忆”回答问题，而是可以”查资料”再作答。</p>
+<h2 id="为什么需要-rag">为什么需要 RAG</h2>
+<p>大语言模型有两个致命弱点：</p>
+<ol>
+<li><strong>知识有截止日期</strong>：模型训练数据有时间边界，无法了解训练之后发生的事</li>
+<li><strong>会胡说八道</strong>：当模型不知道答案时，它不会说”我不知道”，而是编造一个看似合理但错误的答案（这叫”幻觉”，Hallucination）</li>
+</ol>
+<p>RAG 通过”先查后答”的方式，让模型基于真实资料回答问题，大幅降低幻觉率。</p>
+<h2 id="rag-的工作流程">RAG 的工作流程</h2>
+<p>整个流程分三步：</p>
+<p><strong>第一步：建立知识库</strong>
+把企业的文档（合同、法规、内部制度等）切成小段落，用 Embedding 模型转换成向量（一串数字），存入向量数据库（Vector Database）。</p>
+<p><strong>第二步：检索相关资料</strong>
+用户提问时，把问题也转换成向量，去向量数据库中找到最相似的几个段落。</p>
+<p><strong>第三步：生成回答</strong>
+把检索到的段落和用户问题一起交给大模型，模型基于这些资料生成回答。</p>
+<h2 id="实际应用场景">实际应用场景</h2>
+<ul>
+<li><strong>企业知识问答</strong>：员工问”我们公司的竞业限制补偿标准是什么”，RAG 从内部制度文件中检索相关内容回答</li>
+<li><strong>法律研究</strong>：律师问”建设工程价款优先受偿权的行使期限”，RAG 从法规库和判例库中检索相关条文和判决</li>
+<li><strong>客户服务</strong>：客户问”退货政策是什么”，RAG 从产品文档和售后政策中检索回答</li>
+</ul>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>从合规角度看，RAG 技术可以帮助法务部门快速检索法规变化和内部制度，提高合规审查效率。但需要注意：RAG 检索到的资料质量直接决定回答质量，如果知识库中的法规已经过期或文件本身有错误，模型会基于错误资料给出错误回答——因此定期更新和审核知识库是法务部门需要关注的合规要点。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>

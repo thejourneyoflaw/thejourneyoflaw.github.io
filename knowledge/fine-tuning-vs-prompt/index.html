@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>微调 vs 提示工程：改造AI的两条路</title><meta name="description" content="企业想让AI更懂自己的业务，该选微调还是提示工程？"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.C8Go2t3C.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="text-[14px] sm:text-base font-bold tracking-wide shrink-0">
+知识网站
+</a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <a href="/admin/" class="nav-link text-xs opacity-50">
+管理
+</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <span class="chip chip-outline">AI概念</span> <time class="tabular-nums">2026.09.18</time> <a href="/knowledge/" class="hover:underline underline-offset-2">AI 课堂</a> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> 微调 vs 提示工程：改造AI的两条路 </h1> <p class="mt-4 text-base sm:text-lg c-muted leading-relaxed">企业想让AI更懂自己的业务，该选微调还是提示工程？</p> <div class="mt-4 flex flex-wrap gap-1.5"> <span class="tag">微调</span><span class="tag">提示工程</span><span class="tag">Fine-tuning</span><span class="tag">Prompt Engineering</span> </div> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="两种改造-ai-的方式">两种改造 AI 的方式</h2>
+<p>企业想让通用大模型适应自己的业务场景，主要有两条路：</p>
+<ol>
+<li><strong>提示工程（Prompt Engineering）</strong>：通过精心设计的提示词，引导模型按你需要的方式回答</li>
+<li><strong>微调（Fine-tuning）</strong>：用你的数据对模型进行二次训练，让模型”学会”你的业务</li>
+</ol>
+<h2 id="提示工程快捷但有限">提示工程：快捷但有限</h2>
+<p>提示工程不需要改动模型本身，只需要写好提示词（Prompt）。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>零门槛，不需要任何技术背景</li>
+<li>立即生效，写完就能用</li>
+<li>成本为零</li>
+</ul>
+<p><strong>局限：</strong></p>
+<ul>
+<li>每次都要重新输入提示词</li>
+<li>模型的”能力上限”没有改变</li>
+<li>复杂任务效果不稳定</li>
+</ul>
+<p><strong>适合场景：</strong> 日常使用、简单重复的任务、快速验证想法</p>
+<h2 id="微调深度但复杂">微调：深度但复杂</h2>
+<p>微调需要用你自己的数据对模型进行额外训练，让模型”内化”你的业务知识。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>模型真正”学会”了你的业务</li>
+<li>不需要每次都写长提示词</li>
+<li>复杂任务效果更稳定</li>
+</ul>
+<p><strong>局限：</strong></p>
+<ul>
+<li>需要准备高质量的训练数据</li>
+<li>需要技术团队支持</li>
+<li>成本较高（算力 + 时间）</li>
+<li>模型更新后可能需要重新微调</li>
+</ul>
+<p><strong>适合场景：</strong> 高频使用、需要专业判断的任务、对准确性要求极高的场景</p>
+<h2 id="企业如何选择">企业如何选择</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>考量因素</th><th>选提示工程</th><th>选微调</th></tr></thead><tbody><tr><td>预算</td><td>有限</td><td>充足</td></tr><tr><td>技术团队</td><td>没有</td><td>有</td></tr><tr><td>使用频率</td><td>偶尔用</td><td>天天用</td></tr><tr><td>准确性要求</td><td>一般</td><td>极高</td></tr><tr><td>上线速度</td><td>要快</td><td>可以等</td></tr></tbody></table>
+<p><strong>务实建议：</strong> 先用提示工程验证效果，确认有价值后再考虑微调。大多数企业场景，提示工程 + RAG 已经够用。</p>
+<h2 id="法律视角联想">法律视角联想</h2>
+<p>从合规角度看，微调涉及将企业数据（可能包含客户信息、商业秘密）上传到模型训练环境，需要评估数据安全风险。提示工程虽然不上传数据，但如果使用云端 API，提示词中可能包含敏感信息。法务部门应制定 AI 使用规范，明确哪些数据可以输入 AI、哪些禁止输入，并区分提示工程和微调场景下的数据保护要求。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/knowledge/" class="c-muted hover:text-current transition-colors">← 返回 AI 课堂</a> </footer>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 知识网站</p> <p class="text-xs tracking-widest">英语日报 · AI 观察</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer> <script type="module">const t=document.getElementById("theme-toggle");t&&t.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",e?"dark":"light")}catch{}});</script> </body> </html>
