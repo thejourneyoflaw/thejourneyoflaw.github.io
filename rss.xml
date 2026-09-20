@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>法途前行 The Journey of Law</title>
+    <link>https://thejourneyoflaw.github.io/</link>
+    <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 20 Sep 2026 00:30:00 GMT</lastBuildDate>
+    <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美联储缩表与流动性缓冲的精读</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-09-20/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-20/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜金融与资本市场｜核心术语 absorb｜来源 Business press commentary</description>
+      <pubDate>Sun, 20 Sep 2026 00:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>纽约时报诉微软：AI 抓取是最大规模盗用</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-09-20/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-20/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 微调与提示工程｜纽约时报诉讼文件披露高管内部言论，合理使用抗辩受冲击</description>
+      <pubDate>Sun, 20 Sep 2026 00:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>高管沟通：别用「透明」掩盖真相</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-09-19/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-19/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 obfuscate｜来源 Business press commentary</description>
+      <pubDate>Sat, 19 Sep 2026 00:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Anthropic估值两万亿，IPO推迟至十一月</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-09-19/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-19/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 MCP 协议｜Anthropic推迟IPO， ScientistTwo自主科研框架发布</description>
+      <pubDate>Sat, 19 Sep 2026 00:30:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
