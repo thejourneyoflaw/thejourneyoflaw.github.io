@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI加速挖掘软件漏洞，CVE数量近翻倍</title><meta name="description" content="AI正以前所未有速度发现软件漏洞，安全合规面临大考"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="AI加速挖掘软件漏洞，CVE数量近翻倍"><meta property="og:description" content="AI正以前所未有速度发现软件漏洞，安全合规面临大考"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-09-21/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-09-21/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.CXKni19k.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.09.21</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> AI加速挖掘软件漏洞，CVE数量近翻倍 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">上下文窗口是模型单次推理的记忆容量上限</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">AI加速发现软件漏洞，今年CVE数量已近翻倍</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">npm前负责人主张软件包注册表向企业收费</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">希伯来语绕过模型安全机制的说法被实测证伪</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">构建LLM驱动的智能代码审计与合规风控引擎</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念上下文窗口">今日概念：上下文窗口</h3>
+<p>如果把大模型比作一位法务专员，上下文窗口就是他走进会议室时能带进去的档案厚度。计算机科学里，它指模型在单次推理过程中能”记住”的输入与输出 token 总量上限。早期模型只有 4K 窗口，相当于只能看一页摘要；如今主流模型已扩展至百万 token 级别，能把整本招股说明书塞进去。</p>
+<p>上下文窗口解决的核心问题是”信息连续性”。做合同审查时，如果第 50 页的违约责任条款引用了第 3 页的定义，模型必须同时看到两处才能判断逻辑一致性。窗口太小，信息被截断，模型就会像失忆的审查者，只能断章取义。窗口足够大，模型才能建立全局映射。</p>
+<p>为什么金融和法律从业者必须懂这个概念？因为它直接决定了 AI 能否胜任复杂工作。投行做尽调，动辄数千页财务报表与法律文件；律所做诉讼，案卷材料常达数万页。上下文窗口的扩大，使得将这些材料整体喂给模型成为可能。但窗口大不等于记忆力好，模型在超长文本中会出现”中间遗忘”现象，就像审查员翻到第 200 页时忘了第 20 页的关键定义。理解这个边界，才能合理设计工作流，知道何时该让 AI 全量阅读，何时该先用检索系统筛选再交给模型。</p>
+<h3 id="热点一ai加速发现软件漏洞今年cve数量近翻倍">热点一：AI加速发现软件漏洞，今年CVE数量近翻倍</h3>
+<p>AI 正在以前所未有的速度挖掘软件安全漏洞。据 WIRED 报道，截至 9 月 16 日，今年已记录超过 66,000 个 CVE（通用漏洞披露），几乎是去年同期的两倍。微软本月修复了 974 个漏洞，Oracle 在 7 月发布 1,448 个修复补丁。值得关注的是，Mozilla 使用 Anthropic 的 Mythos 模型，仅在一个冲刺周期内就发现了 271 个 Firefox 漏洞。</p>
+<p>这背后的技术逻辑是：大模型在海量代码语料上训练后，具备了模式识别能力，能快速发现代码库中潜在的不安全写法。传统安全审计依赖人工规则或模糊测试，覆盖面有限；AI 则能对源代码做语义级理解，发现逻辑层面的深层缺陷。对企业和开发者而言，这意味着安全合规压力陡增——漏洞发现速度远超修复速度，安全团队必须引入 AI 工具进入防御端，否则将永远处于被动挨打的局面。</p>
+<h3 id="热点二npm前负责人主张软件包注册表向企业收费并向开源维护者分账">热点二：npm前负责人主张软件包注册表向企业收费并向开源维护者分账</h3>
+<p>曾运营 npm 五年的开发者 seldo 发布长文，主张 npm、PyPI、Docker Hub 等软件包注册表应参照 Docker 模式，对达到规模的企业收取供应订阅费，并按依赖树权重将固定比例版税自动分账给开源维护者。</p>
+<p>这一主张触及了开源生态长期以来的核心矛盾：开源代码构成了现代软件供应链的基石，但维护者几乎无法从中获得经济回报。其提出的技术方案是按依赖树自动计算版税权重——企业付费后，系统自动追溯其依赖树中涉及的维护者并分配收益。对行业而言，如果这种模式落地，将彻底改变企业使用开源软件的成本结构与合规要求。企业法务和采购团队需要重新审视开源依赖清单，评估潜在的订阅费用敞口，并在合同中明确费用分担机制。</p>
+<h3 id="热点三希伯来语绕过模型安全机制的说法被实测证伪">热点三：希伯来语绕过模型安全机制的说法被实测证伪</h3>
+<p>针对网络流传”用希伯来语申诉可绕过大模型安全层”的说法，开发者 karminski 用 HuggingFace 公开语料构建了三语测试集，对 Fable-5.1 和 DeepSeek-V4.1-Flash 进行实测。结果显示，Fable-5.1 对有害内容的拒绝率在英语、中文和希伯来语之间无显著差异（95.0%、94.4%、95.1%），DeepSeek-V4.1-Flash 的拒绝率则达到 99.3% 至 100%。</p>
+<p>这项测试的技术价值在于方法论：它没有停留在”试一下就下结论”的阶段，而是构建了跨语言的对齐测试集，用数据消除了”小语种=安全后门”的迷思。对开发者和企业而言，这意味着模型厂商的多语言安全对齐已趋于成熟。但从合规角度看，企业部署 AI 时仍不能掉以轻心，因为测试集覆盖的场景有限，特定领域（如金融犯罪或特定司法管辖区的违规内容）的边界测试仍需企业自行补齐。</p>
+<h3 id="热点四google开源agent编排系统ax面向大规模智能体执行">热点四：Google开源agent编排系统AX，面向大规模智能体执行</h3>
+<p>Google 推出开源的声明式 agent 执行控制平面 AX，提供 Task、Workspace、Gateway、Model 四个核心原语，用于沙箱化 agent 任务、配置网络策略和模型密钥。这套系统本质上是给大规模 AI 智能体提供了一个安全运行的操作底座。</p>
+<p>技术上看，AX 解决的是”多智能体协作时的安全隔离”问题。当企业部署多个 agent 同时执行任务时，每个 agent 可能需要不同的网络权限和模型访问级别。Workspace 原语实现了执行环境的沙箱隔离，Gateway 控制网络出口策略，Model 管理密钥与配额。这对企业级落地至关重要：它提供了一个标准化的安全边界，让法务和合规团队能清晰界定每个 agent 的权限范围，而不是面对一个无法审计的黑盒。基础设施层的标准化，是智能体从实验走向生产的必要条件。</p>
+<h3 id="热点五编码智能体在真实客户模拟中仅通过239">热点五：编码智能体在真实客户模拟中仅通过23.9%</h3>
+<p>Sierra 与普林斯顿大学推出 τ²-bench 基准测试，将智能体构建模拟成真实客户交付任务。智能体需基于公司记录、客户需求、生产 API、现有代码和预算限制，交付可部署的客服智能体。结果显示，最强的编码智能体设置在真实客户模拟中仅通过 23.9%。</p>
+<p>这个数据点极其重要：它在实验室能力与企业生产之间划出了一道清晰的鸿沟。在受控环境中表现优异的模型，一旦面对真实的业务约束——模糊的客户需求、混乱的历史代码、有限的 API 额度和预算——成功率骤降。对行业而言，这意味着现阶段 AI 编码能力的宣传存在严重泡沫。企业在评估 AI 工具时，不能依赖厂商提供的基准分数，必须构建贴合自身业务场景的评测体系。这个基准测试也为技术采购提供了新的评估维度：关注模型在约束条件下的表现，而非无约束环境下的峰值。</p>
+<hr/>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<p><strong>创意名称：智能代码审计与合规风控引擎</strong></p>
+<p><strong>这个创意是什么</strong>：构建一个以大模型为推理核心的代码审计引擎，将软件供应链的法律合规审查与安全漏洞检测融为一体，为金融与法律专业人士提供穿透式的技术资产尽调工具。</p>
+<p><strong>为什么现在可行</strong>：今天的热点提供了三个技术前提。第一，AI 挖掘 CVE 的能力已获实证（热点一），模型具备代码级语义理解能力；第二，上下文窗口已扩展至百万 token 级别，足以将完整的业务合同、API 文档与源代码库同时放入模型上下文中进行交叉验证；第三，Google AX 提供了沙箱化执行原语（热点四），使得审计引擎可以在隔离环境中安全运行被审查代码，观察其实际行为。同时，τ²-bench 评测结果（热点五）警示我们：智能体在真实复杂场景中的可靠性仍不足，因此这个创意必须定位为”人机协作”而非”全自动”。</p>
+<p><strong>专业场景怎么用</strong>：在金融并购尽调中，目标公司的技术资产价值评估往往依赖人工读代码和查阅开源依赖清单。这个引擎可以自动扫描目标公司的代码仓库，生成包含安全漏洞清单、开源许可证合规风险、依赖树版税敞口的三维报告。在法律合规场景中，当企业采购 SaaS 服务时，法务团队可以要求供应商提交代码库，引擎将合同中的数据保护条款（如”不得向第三方传输用户数据”）与代码中的实际 API 调用行为做交叉验证，发现合同与代码的不一致。在知识产权诉讼中，律师可使用引擎对被告代码做自动化的特征比对，寻找侵权模式的证据链。</p>
+<p><strong>落地要点</strong>：</p>
+<p>第一，将开源依赖树映射为可追溯的法律与风险图谱。技术团队负责解析项目的完整依赖树，法务团队定义各类开源许可证的风险等级，金融团队评估潜在的分账成本。三方协同构建一个知识图谱，实现供应链穿透式尽调。这直接呼应了 npm 分账主张（热点二），企业需要提前摸清自身的开源依赖敞口。</p>
+<p>第二，利用长上下文窗口将完整业务合同与代码库同喂给模型，做跨模态一致性校验。具体操作是将合同中的技术承诺条款（SLA、数据隔离、加密标准）提取为结构化断言，再让模型在代码库中逐条寻找实现证据。这项工作需要既懂法律语义又懂代码架构的复合型人才来设计提示策略。</p>
+<p>第三，建立对抗性测试集与人工复核闭环，防范模型幻觉引发的合规盲区。借鉴热点三中 karminski 的测试方法论，团队应构建针对自身业务场景的边界测试集。鉴于编码智能体在真实场景中仅 23.9% 的通过率（热点五），所有 AI 生成的审计结论必须经过人工复核才能作为正式尽调报告的依据。引擎输出的价值在于”缩减人工审查范围”而非”替代人工判断”。</p>
+<p><strong>价值与局限</strong>：这个创意对法律和金融专业人士的核心价值在于：将不可见的技术资产转化为可量化、可追溯的法律与财务指标。在并购、融资、IPO 等高 stakes 场景中，它能发现传统尽调无法触及的深层风险。但局限同样明显：模型存在幻觉风险，在超长上下文中可能出现中间遗忘；对于高度混淆或动态生成的代码，静态分析能力有限；最关键的是，AI 的审计结论目前尚无法直接作为法庭证据或监管报送材料，它只能作为内部风控参考。在涉及刑事合规或证券欺诈的场景中，过度依赖 AI 结论反而可能产生”合理信赖”的抗辩困境。</p>
+<hr/>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于 X 平台、Hacker News 及 IT 之家等公开技术讨论整理。关于 CVE 数量、智能体评测通过率等数据均引用自原发布者披露的信息，编辑未做独立验证。关于 npm 分账模式与 Google AX 架构的技术判断，基于原文本的编辑解读，具体企业落地需结合实际开源许可证条款与合规环境评估。τ²-bench 评测结果反映的是特定测试场景下的表现，不代表模型在所有生产环境中的真实水平。相关技术方案不构成法律或投资建议。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">智能代码审计与合规风控引擎</h2> <ol class="idea-list"> <li>将开源依赖树映射为可追溯的法律与风险图谱，实现供应链穿透式尽调</li><li>利用长上下文窗口将完整业务合同与代码库同喂给模型，做跨模态一致性校验</li><li>建立对抗性测试集与人工复核闭环，防范模型幻觉引发的合规盲区</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://x.com/mark_k/status/2101769845192692046" target="_blank" rel="noopener noreferrer">AI 加速发现软件漏洞，WIRED 称今年 CVE 数量近翻倍</a> <span>｜@mark_k</span> <span>｜2026-09-21</span> </li><li> <span class="src-no">[2]</span> <a href="https://seldo.com/posts/nobody-pays-for-open-source-we-can-force-them-to" target="_blank" rel="noopener noreferrer">npm前负责人长文主张软件包注册表向企业收费并向开源维护者分账</a> <span>｜Hacker News 热门（buzzing.cc 中文翻译）</span> <span>｜2026-09-21</span> </li><li> <span class="src-no">[3]</span> <a href="https://x.com/karminski3/status/2101826076762857867" target="_blank" rel="noopener noreferrer">希伯来语能否绕过大模型安全机制？karminski 实测 Fable-5.1 与 DeepSeek-V4.1-Flash</a> <span>｜X：karminski (@karminski3)</span> <span>｜2026-09-21</span> </li><li> <span class="src-no">[4]</span> <a href="https://agentexecutor.io/" target="_blank" rel="noopener noreferrer">Google 开源 agent 编排系统 AX，面向大规模智能体执行</a> <span>｜Hacker News：AI 热帖</span> <span>｜2026-09-21</span> </li><li> <span class="src-no">[5]</span> <a href="https://x.com/rohanpaul_ai/status/2101760224713687437" target="_blank" rel="noopener noreferrer">τ²-bench 评测：最强编码智能体设置在真实客户模拟中仅通过 23.9%</a> <span>｜X：Rohan Paul (@rohanpaul_ai)</span> <span>｜2026-09-21</span> </li> </ol> <p class="sources-note">本期资讯基于X平台及Hacker News等公开技术讨论整理。关于CVE数量及智能体评测通过率的引用均来自原发布者披露数据，编辑未做独立验证。相关技术判断基于当前模型发展阶段的观察，具体企业落地的合规标准需结合实际法律环境评估。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>
