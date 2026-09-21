@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI模型越狱：对齐失效与安全围栏</title><meta name="description" content="每日英语打卡：AI 与计算机技术，核心术语 jailbreak"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="AI模型越狱：对齐失效与安全围栏"><meta property="og:description" content="每日英语打卡：AI 与计算机技术，核心术语 jailbreak"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/daily-english/2026-09-22/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/daily-english/2026-09-22/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.CXKni19k.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link" aria-current="page"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.09.22 · 周二</time> <span class="break-words">来源：Anthropic Tech Blog Commentary</span> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> AI模型越狱：对齐失效与安全围栏 </h1> <p class="serif mt-3 text-base sm:text-lg leading-snug c-muted break-words"> Adversarial Robustness and Safety Guardrails </p> <p class="mt-4 text-base c-muted">
+今日术语
+<span class="serif c-primary text-xl sm:text-2xl font-semibold ml-1">jailbreak</span> </p> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="1-原文精读">1. 原文精读</h2>
+<p><strong>英文原文：</strong></p>
+<p>As frontier AI models become increasingly capable, ensuring their robustness against adversarial manipulation has emerged as a critical engineering challenge. Malicious actors frequently attempt to circumvent built-in safety guardrails through sophisticated prompt engineering, seeking to elicit restricted information or trigger unauthorized behaviors. One prevalent attack vector involves embedding encoded instructions within seemingly innocuous text payloads, effectively manipulating the model’s underlying token attention mechanisms. When these adversarial inputs succeed, they compromise the alignment between the model’s intended objectives and its actual outputs. Consequently, AI developers are compelled to implement multi-layered defense strategies, integrating automated content filters with behavioral constraints to preclude unintended deployments. The efficacy of these mitigations, however, remains an open empirical question, as novel attack vectors continuously evolve to exploit emerging vulnerabilities in the model architecture.</p>
+<p><strong>生词速览：</strong></p>
+<ul>
+<li>circumvent 规避，绕过</li>
+<li>elicit 引出，诱出</li>
+<li>innocuous 无害的，无恶意的</li>
+<li>preclude 阻止，排除</li>
+<li>empirical 经验主义的，实证的</li>
+</ul>
+<hr/>
+<h2 id="2-非常见词汇解析">2. 非常见词汇解析</h2>
+<p><strong>circumvent</strong> <em>（v. /ˌsɜːrkəmˈvent/）</em></p>
+<ul>
+<li>释义：在本文语境中指”规避、绕过”AI系统内置的安全防护机制。</li>
+<li>词源/记忆线索：前缀 circum-（环绕，如 circumference 圆周）+ venire（来，行走），字面意”绕道而行”，引申为绕开规则或障碍。</li>
+<li>搭配：circumvent restrictions / circumvent a regulation / circumvent security protocols</li>
+<li>例句：The fund managers structured the offshore SPV to circumvent domestic capital controls, drawing scrutiny from the SEC.</li>
+</ul>
+<p><strong>elicit</strong> <em>（v. /ɪˈlɪsɪt/）</em></p>
+<ul>
+<li>释义：本文中指通过特定手段”诱出、探出”模型被限制输出的信息。</li>
+<li>词源/记忆线索：e-（向外）+ licere（引诱、拉扯），同源词如 lace（蕾丝，原指绳索）。记忆线索：把信息从内部”拉出来”。</li>
+<li>搭配：elicit a response / elicit sensitive data / elicit feedback</li>
+<li>例句：During cross-examination, the counsel managed to elicit a critical admission from the key witness regarding the insider trading timeline.</li>
+</ul>
+<p><strong>innocuous</strong> <em>（adj. /ɪˈnɒkjuəs/）</em></p>
+<ul>
+<li>释义：本文中形容伪装过的文本载荷”看似无害的、没有危险的”。</li>
+<li>词源/记忆线索：in-（无）+ nocuus（有害的），与 innocent（无辜的）同源，均指”不造成伤害”。</li>
+<li>搭配：innocuous text / an innocuous remark / seemingly innocuous</li>
+<li>例句：The seemingly innocuous clause buried deep in the M&amp;A agreement ultimately shifted the entire tax liability to the acquiring company.</li>
+</ul>
+<p><strong>preclude</strong> <em>（v. /prɪˈkluːd/）</em></p>
+<ul>
+<li>释义：本文中指”阻止、排除”未经授权的部署行为发生。</li>
+<li>词源/记忆线索：pre-（提前）+ claudere（关闭，如 close），字面意”提前关上门”，引申为防患于未然。</li>
+<li>搭配：preclude the possibility of / preclude unauthorized access / preclude liability</li>
+<li>例句：The strict non-disclosure agreement was drafted to preclude any former employee from poaching clients within a two-year period.</li>
+</ul>
+<hr/>
+<h2 id="3-难句与语法解读">3. 难句与语法解读</h2>
+<blockquote>
+<p>One prevalent attack vector involves embedding encoded instructions within seemingly innocuous text payloads, effectively manipulating the model’s underlying token attention mechanisms.</p>
+</blockquote>
+<ul>
+<li><strong>主干：</strong>[One prevalent attack vector involves embedding encoded instructions]</li>
+<li><strong>修饰层：</strong>(within seemingly innocuous text payloads) 介词短语作状语，标明动作发生的位置/载体；(effectively manipulating the model’s underlying token attention mechanisms) 现在分词短语作伴随状语，补充说明嵌入指令后产生的实际效果。</li>
+<li>**时态语态：**一般现在时。技术分析类文体大量使用一般现在时，用于描述客观机制与普遍规律，赋予论述以事实陈述的客观性与恒常感。</li>
+<li>**译文：**一种盛行的攻击向量是将编码指令嵌入看似无害的文本载荷中，从而有效地操纵模型底层的 token 注意力机制。</li>
+</ul>
+<blockquote>
+<p>When these adversarial inputs succeed, they compromise the alignment between the model’s intended objectives and its actual outputs.</p>
+</blockquote>
+<ul>
+<li><strong>主干：</strong>[they compromise the alignment]</li>
+<li><strong>修饰层：</strong>(When these adversarial inputs succeed) 时间状语从句，引导词 When；(between the model’s intended objectives and its actual outputs) 介词短语作后置定语，修饰名词 alignment，说明对齐发生在哪两者之间。</li>
+<li>**时态语态：**条件状语从句使用一般现在时 succeed，主句使用一般现在时 compromise。在技术说明文中，用一般现在时讨论”条件-结果”关系，表达一种在任何时间点均可能成立的逻辑必然性。</li>
+<li>**译文：**当这些对抗性输入得手时，它们会破坏模型的预期目标与实际输出之间的一致性。</li>
+</ul>
+<blockquote>
+<p>The efficacy of these mitigations, however, remains an open empirical question, as novel attack vectors continuously evolve to exploit emerging vulnerabilities in the model architecture.</p>
+</blockquote>
+<ul>
+<li><strong>主干：</strong>[The efficacy of these mitigations remains an open empirical question]</li>
+<li><strong>修饰层：</strong>(however) 插入语，表转折；(as novel attack vectors continuously evolve) 原因/时间状语从句，引导词 as；(to exploit emerging vulnerabilities) 动词不定式短语作目的状语；(in the model architecture) 介词短语作后置定语，修饰 vulnerabilities。</li>
+<li>**时态语态：**主句动词 remains 为一般现在时，从句动词 evolve 亦为一般现在时，并用副词 continuously 强调动作的持续性。该语态客观陈述攻防博弈的持续状态。</li>
+<li>**译文：**然而，这些缓解措施的有效性仍是一个悬而未决的实证问题，因为新型攻击向量在不断演变，以利用模型架构中涌现的漏洞。</li>
+</ul>
+<hr/>
+<h2 id="4-表达积累与汉译英">4. 表达积累与汉译英</h2>
+<p><strong>值得记住的表达：</strong></p>
+<ul>
+<li><strong>emerge as a critical challenge</strong>：成为一项严峻挑战。常用于报告开头，引出行业痛点或监管重点。</li>
+<li><strong>compromise the alignment between X and Y</strong>：破坏X与Y之间的一致性。金融合规中可指破坏行为准则与实际操作的一致性。</li>
+<li><strong>remains an open empirical question</strong>：仍是一个悬而未决的实证问题。用于审慎地表达某项制度或技术的实际效果尚待数据检验，避免武断下结论。</li>
+</ul>
+<p><strong>中文待译句子：</strong></p>
+<p>监管机构要求金融机构实施多重防御策略，以规避针对算法交易系统的对抗性操纵风险。</p>
+<p><strong>✅ 参考译文：</strong></p>
+<p>Regulators require financial institutions to implement multi-layered defense strategies to circumvent the risk of adversarial manipulation targeting algorithmic trading systems.</p>
+<p>**解析：**将”规避风险”译为 circumvent the risk，精准传达”绕开/防范”之意；“多重防御策略”对应原文的 multi-layered defense strategies，贴合系统工程语境。</p>
+<hr/>
+<h2 id="5-今日避坑">5. 今日避坑</h2>
+<p><strong>jailbreak</strong> 在 AI 安全语境下，专指通过特定的 prompt 输入”越狱”，即绕过模型的安全对齐限制。切勿将其机械理解为手机等硬件的”系统越狱”（hardware rooting/unlocking），在翻译与合规讨论中，它是一种针对大语言模型的提示词攻击行为。</p>
+<hr/>
+<h2 id="6-参考译文与篇章导读">6. 参考译文与篇章导读</h2>
+<p><strong>中文翻译：</strong></p>
+<p>随着前沿 AI 模型的能力日益增强，确保其对抗对抗性操纵的稳健性已成为一项关键的工程挑战。恶意行为者频繁试图通过复杂的提示词工程来规避内置的安全防护栏，试图诱出受限信息或触发未授权行为。一种盛行的攻击向量是将编码指令嵌入看似无害的文本载荷中，从而有效地操纵模型底层的 token 注意力机制。当这些对抗性输入得手时，它们会破坏模型的预期目标与实际输出之间的一致性。因此，AI 开发者被迫实施多重防御策略，将自动化内容过滤器与行为约束相结合，以杜绝未经授权的部署。然而，这些缓解措施的有效性仍是一个悬而未决的实证问题，因为新型攻击向量在不断演变，以利用模型架构中涌现的漏洞。</p>
+<p><strong>🔍 篇章导读：</strong></p>
+<p>本段文字聚焦前沿 AI 模型对抗性攻击的工程防御挑战。文章先点明背景（模型能力增强带来安全风险），接着揭露恶意行为者的攻击手段（通过 prompt engineering 绕过安全围栏，即”越狱”），并深入剖析了一种具体的攻击机制（编码指令嵌入）。随后指出此类攻击的危害（破坏对齐），最终落脚于行业当前的应对策略（多重防御）及审慎立场（效果有待实证）。作者语气客观审慎，既展现了工程防御的决心，也保留了对技术演进的警惕。这段文字描述的技术趋势是：AI 安全防御正从单一规则过滤，转向结合模型内部机制（如 token attention）的多层攻防博弈。</p> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.prose');
+      if (!prose) return;
+
+      // 段落首个 <strong> 的文本，作为结构标签（英文原文：/ 中文翻译：/ 🔍 ……）
+      function labelOf(el) {
+        if (!el || el.tagName !== 'P') return '';
+        var first = el.firstElementChild;
+        if (first && first.tagName === 'STRONG') return (first.textContent || '').trim();
+        return '';
+      }
+
+      function textOf(el) {
+        return (el.textContent || '').trim();
+      }
+
+      var children = Array.prototype.slice.call(prose.children);
+      var inVocab = false; // 是否处于「非常见词汇解析」章节
+      var state = ''; // '' | 'en' | 'note'：标签段落之后、无标签续段的归属
+      var dictCard = null; // 当前词典卡容器
+
+      for (var i = 0; i < children.length; i++) {
+        var el = children[i];
+        var tag = el.tagName;
+
+        if (tag === 'H1' || tag === 'H2') {
+          inVocab = /词汇/.test(textOf(el));
+          state = '';
+          dictCard = null;
+          continue;
+        }
+
+        if (tag === 'P') {
+          var label = labelOf(el);
+
+          if (label.indexOf('英文原文') !== -1) {
+            el.classList.add('passage-en');
+            state = 'en';
+            dictCard = null;
+            continue;
+          }
+          if (label.indexOf('中文翻译') !== -1) {
+            // 译文卡：与原文同样的卡片观感，但加区分标记，方便先自测再对答案
+            el.classList.add('translation-label');
+            state = 'zh';
+            dictCard = null;
+            continue;
+          }
+          if (label.indexOf('🔍') !== -1 || textOf(el).indexOf('🔍') === 0) {
+            el.classList.add('note-grammar');
+            state = 'note';
+            dictCard = null;
+            continue;
+          }
+          if (label) {
+            // 其它标签段（生词速览 / 难句序号 / 表达标签……）：终止续段归属
+            state = '';
+            dictCard = null;
+            // 词汇章节：以粗体开头的段落是词条，与其后跟随的列表合并为词典卡
+            if (inVocab) {
+              el.classList.add('dict-term');
+              dictCard = document.createElement('div');
+              dictCard.className = 'dict-card';
+              el.parentNode.insertBefore(dictCard, el);
+              dictCard.appendChild(el);
+            }
+            continue;
+          }
+          // 无标签续段：并入英文原文卡 / 译文卡 / 导读便签
+          if (state === 'en') {
+            el.classList.add('passage-en');
+            continue;
+          }
+          if (state === 'zh') {
+            el.classList.add('passage-zh');
+            continue;
+          }
+          if (state === 'note') {
+            el.classList.add('note-grammar');
+            continue;
+          }
+          dictCard = null;
+          continue;
+        }
+
+        if (dictCard && (tag === 'UL' || tag === 'OL')) {
+          dictCard.appendChild(el); // 词条的释义列表并入词典卡
+          continue;
+        }
+
+        // 其它元素（列表、引用块、表格等）打断续段归属
+        state = '';
+        dictCard = null;
+      }
+
+      // 把连续的同类段落分别合并进卡片容器：passage-card（原文）、note-card（导读）
+      function mergeRuns(cls, boxCls) {
+        var run = [];
+        function flush() {
+          if (!run.length) return;
+          var box = document.createElement('div');
+          box.className = boxCls;
+          if (cls === 'passage-en') box.setAttribute('lang', 'en');
+          run[0].parentNode.insertBefore(box, run[0]);
+          for (var j = 0; j < run.length; j++) box.appendChild(run[j]);
+          run = [];
+        }
+        var all = Array.prototype.slice.call(prose.children);
+        for (var k = 0; k < all.length; k++) {
+          if (all[k].classList && all[k].classList.contains(cls)) run.push(all[k]);
+          else flush();
+        }
+        flush();
+      }
+      mergeRuns('passage-en', 'passage-card');
+      mergeRuns('passage-zh', 'translation-card');
+      mergeRuns('note-grammar', 'note-card');
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>

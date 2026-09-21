@@ -6,15 +6,31 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Sep 2026 00:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI模型越狱：对齐失效与安全围栏</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-09-22/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-22/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜AI 与计算机技术｜核心术语 jailbreak｜来源 Anthropic Tech Blog Commentary</description>
+      <pubDate>Mon, 21 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI自动化训练，模型攻克百道数学难题</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-09-22/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-22/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 向量数据库｜OpenAI训练流程自动化，内部模型解决百道数学难题</description>
+      <pubDate>Mon, 21 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>反腐败合规：高管的个人责任边界</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-09-21/</link>
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-21/</guid>
       <category>英语精读</category>
       <description>英语精读｜合规与反腐败｜核心术语 culpable｜来源 Law firm client alert commentary</description>
-      <pubDate>Mon, 21 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Sun, 20 Sep 2026 23:30:00 GMT</pubDate>
     </item>
     <item>
       <title>AI加速挖掘软件漏洞，CVE数量近翻倍</title>
@@ -22,7 +38,7 @@
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-21/</guid>
       <category>AI 观察</category>
       <description>AI 观察｜今日概念 上下文窗口｜AI正以前所未有速度发现软件漏洞，安全合规面临大考</description>
-      <pubDate>Mon, 21 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Sun, 20 Sep 2026 23:30:00 GMT</pubDate>
     </item>
     <item>
       <title>美联储缩表与流动性缓冲的精读</title>
@@ -30,7 +46,7 @@
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-20/</guid>
       <category>英语精读</category>
       <description>英语精读｜金融与资本市场｜核心术语 absorb｜来源 Business press commentary</description>
-      <pubDate>Sun, 20 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Sat, 19 Sep 2026 23:30:00 GMT</pubDate>
     </item>
     <item>
       <title>纽约时报诉微软：AI 抓取是最大规模盗用</title>
@@ -38,7 +54,7 @@
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-20/</guid>
       <category>AI 观察</category>
       <description>AI 观察｜今日概念 微调与提示工程｜纽约时报诉讼文件披露高管内部言论，合理使用抗辩受冲击</description>
-      <pubDate>Sun, 20 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Sat, 19 Sep 2026 23:30:00 GMT</pubDate>
     </item>
     <item>
       <title>高管沟通：别用「透明」掩盖真相</title>
@@ -46,7 +62,7 @@
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-19/</guid>
       <category>英语精读</category>
       <description>英语精读｜商务与职场沟通｜核心术语 obfuscate｜来源 Business press commentary</description>
-      <pubDate>Sat, 19 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Fri, 18 Sep 2026 23:30:00 GMT</pubDate>
     </item>
     <item>
       <title>Anthropic估值两万亿，IPO推迟至十一月</title>
@@ -54,7 +70,7 @@
       <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-19/</guid>
       <category>AI 观察</category>
       <description>AI 观察｜今日概念 MCP 协议｜Anthropic推迟IPO， ScientistTwo自主科研框架发布</description>
-      <pubDate>Sat, 19 Sep 2026 00:30:00 GMT</pubDate>
+      <pubDate>Fri, 18 Sep 2026 23:30:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OpenAI自动化训练，模型攻克百道数学难题</title><meta name="description" content="OpenAI训练流程自动化，内部模型解决百道数学难题"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="OpenAI自动化训练，模型攻克百道数学难题"><meta property="og:description" content="OpenAI训练流程自动化，内部模型解决百道数学难题"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-09-22/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-09-22/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.CXKni19k.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.09.22</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> OpenAI自动化训练，模型攻克百道数学难题 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">向量数据库：按语义而非关键词检索的AI记忆中枢</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">OpenAI训练流程基本自动化，模型攻克百道数学难题</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">Chollet警告：委托代码而非理解，团队丧失技术掌控力</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">小米MiMo-V2.6开源登顶，强化学习路线优势凸显</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">向量检索加智能体，构建法金双视角尽调知识库</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念向量数据库">今日概念：向量数据库</h3>
+<p>传统数据库靠精确匹配查数据，比如用SQL找”合同金额等于一千万”的记录，少一个零都查不出来。但人和人之间的沟通不是靠精确匹配，而是靠”意思”。向量数据库就是为AI打造的、按”意思”来检索的记忆中枢。</p>
+<p>它的工作原理是：先用一种叫”嵌入模型”的算法，把文字、图片或音频转换成一串很长的数字（也就是向量）。你可以把它想象成空间里的坐标，意思相近的内容，在空间里的位置就离得近。当你要找”违约责任条款”时，向量数据库不会只找包含这五个字的文档，而是会把所有讨论”不履行合同后果”的内容都找出来，哪怕它用的词是”赔偿”或”救济”。</p>
+<p>这对法律和金融专业人士意味着什么？你不用再靠人肉记忆或精确关键词去翻那几万页的招股书或尽调底稿。把海量文档灌进向量数据库，它就能按语义相似度帮你定位到真正相关的内容。它是所有RAG（检索增强生成）系统的底座，决定了AI回答专业问题时能不能找到对的参考资料。</p>
+<h3 id="热点一openai训练流程自动化模型攻克百道数学难题">热点一：OpenAI训练流程自动化，模型攻克百道数学难题</h3>
+<p>据The Information报道，OpenAI一名员工称其内部已基本实现新实验模型训练流程的自动化。这意味着从提出假设、配置参数到启动训练的闭环，正逐渐摆脱人工干预。据报道，该新训练的模型解决了100个长期未解的数学难题，连其内部研究人员都感到意外。</p>
+<p>这条热点的核心技术点是”自动化实验闭环”。当模型训练本身变成由AI驱动的流水线，试错成本将大幅降低，迭代速度会呈指数级加快。对行业而言，这意味着模型能力的供给端正在被彻底工业化。对于关注投研风控的专业人士来说，这预示着未来判断一家AI公司的壁垒，不再只是看它有多少算力，而要看它的自动化训练管线效率有多高。</p>
+<h3 id="热点二chollet警告委托编码别委托理解">热点二：Chollet警告：委托编码别委托理解</h3>
+<p>Francois Chollet提出”委托编码，绝不委托理解”。他警告，如果代码曾是团队理解系统的真相来源，那么在全面拥抱AI生成代码后，团队就失去了建立理解的途径。此番表态针对一则吐槽：某大公司团队从初级到高级工程师的规格、代码、测试、报告全由AI生成，无人阅读思考，每天工作十几个小时只为按回车键。</p>
+<p>技术上的关键点在于：大语言模型擅长生成符合语法、看起来正确的代码，但缺乏对系统全局架构的深层把握。当”代码产出”与”人类理解”脱钩，系统就变成了黑盒。这对开发者与企业意味着巨大的技术债务风险。对懂合规的专业人士而言，这也是一个治理信号：当企业核心业务逻辑由AI生成且无人能解释时，面对监管审计将面临严峻的可追溯性挑战。</p>
+<h3 id="热点三小米mimo-v26发布开源权重与训练代码全开放">热点三：小米MiMo-V2.6发布，开源权重与训练代码全开放</h3>
+<p>小米发布MiMo-V2.6系列，包含Pro和Flash两个全模态模型。官方称通过规模化强化学习训练，Pro在多数Agent基准上与顶尖闭源模型表现相当，在Artificial Analysis指数上得分46，为开源模型中最高。最关键的是，模型权重、技术报告、RL环境和训练代码均已开放。</p>
+<p>这条热点的核心技术是”规模化强化学习（RL）“。与主要靠”读万卷书”的预训练不同，RL让模型在”做题”中不断试错获得反馈。小米开源的不仅是模型，更是一套完整的RL训练框架。这对开发者意味着可以基于这套环境微调出垂直领域的专业模型。对于金融与法律行业，这意味着可用低成本在本地私有化部署顶级开源模型，在确保数据不出域的前提下完成专业微调。</p>
+<h3 id="热点四questions-gambit检索步骤提升研究智能体能力">热点四：Question’s Gambit：检索步骤提升研究智能体能力</h3>
+<p>论文提出Question’s Gambit方法，在智能体开始搜索前运行一次：将复杂问题拆解为线索、转为互补搜索、汇总并重排结果，让智能体以已排序的上下文启动循环。这解决了深度研究智能体常见的”东一榔头西一棒”的检索碎片化问题。</p>
+<p>技术关键点在于”检索前置处理”。传统智能体是边搜边想，容易迷失方向；Question’s Gambit是先想清楚再搜。这对企业级应用意味着AI智能体处理复杂研究任务的准确率大幅提升。在需要高精度的尽调或法律检索场景中，这种”先拆解问题再多路检索”的架构，能显著降低幻觉，确保信息召回的完整性。</p>
+<h3 id="热点五联合国大会聚焦ai治理多国签署前沿模型管控呼吁">热点五：联合国大会聚焦AI治理，多国签署前沿模型管控呼吁</h3>
+<p>Gary Marcus在联合国大会数字合作活动发表演讲，称近期风险不是灭绝或超级智能，而是深度伪造虚假信息、不可靠AI系统窃取凭证和大规模网络攻击。他主张提升可靠性、网络安全与真实执法，批评AI公司发布比前代更难监控的新模型。同期多国签署了前沿模型管控呼吁。</p>
+<p>这条动态的技术背景是：随着模型能力提升，其黑盒特性与自主行动能力增强，传统的安全工程手段开始失效。Marcus的发言代表了政策层面对”不可靠AI系统”的担忧。这对行业意味着，全球范围内的前沿模型监管正在从讨论走向立法。对法律与合规专业人士而言，这直接指向未来的合规义务：企业部署AI系统时，必须建立可执行的安全测试、凭证保护与网络防御机制。</p>
+<hr/>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<p><strong>创意是什么</strong>：构建一个”法金双视角智能尽调知识库”。这是一个以向量数据库为底座，结合Question’s Gambit式检索智能体的私有化系统。它能将海量的法律文件（合同、诉讼文书、合规指引）与金融文件（财报、招股书、尽调底稿）统一转化为向量存入本地库，供专业人士用自然语言进行跨领域深度提问。</p>
+<p><strong>为什么现在可行</strong>：这个创意的技术条件在今日走向成熟。首先是底层模型能力：像小米MiMo-V2.6这样的开源模型展现了顶级能力且全开放权重，意味着你可以把它私有化部署在本地，彻底解决金融与法律敏感数据出域的合规难题。其次是检索架构的突破：Question’s Gambit提出的”先拆解问题、再多路搜索、最后重排”的机制，正好契合了尽调工作需要多维度交叉验证的需求。最后是自动化趋势：OpenAI内部训练流程的自动化预示着，未来微调垂直模型的人力成本将大幅降低，构建专属模型的门槛正在消失。</p>
+<p><strong>专业场景怎么用</strong>：在并购尽调场景中，律师和投行分析师通常各自为政。律师看合同里的违约条款与知识产权归属，分析师看财报里的营收确认与现金流。在这个系统里，你可以直接问：“这家目标公司的客户集中度风险，在其前五大客户的合同续签条款中有没有体现？“AI会先将这个问题拆解为”财报中的客户集中度数据”与”合同库中的续约与终止条款”两条互补搜索线，从向量库中召回相关段落，重排后生成带引用的综述。在诉讼风控场景中，你可以把历史判例和被告企业的资金流水流水同时入库，让AI交叉比对资金异动时间点与诉讼时效的对应关系。</p>
+<p><strong>落地要点</strong>：</p>
+<p>第一，将海量非结构化文档灌入向量库，按语义相似度构建跨领域知识索引。这一步的核心是数据清洗与切块。法律合同的长上下文结构要求我们在切块时保留条款的完整性，不能把”违约责任”和”不可抗力”切到不同的向量里。由法务与金融分析师共同制定切块规则，IT团队执行。</p>
+<p>第二，部署Question Gambit式检索智能体，拆解复杂尽调问题为多维度搜索。不要让大模型直接面对海量数据，而是先用一个轻量模型做”问题拆解”，把”这家公司有没有隐匿负债”拆成”对外担保查询”、“关联交易非经常性损益”、“表外融资工具”等子查询，再分别去向量库召回。这能大幅提高召回率。</p>
+<p>第三，设立人工审查与置信度阈值，高价值法律判断不交由AI自动决策。系统必须输出置信度分数，当分数低于阈值时强制转入人工复核。在涉及法律定性（如是否构成重大违约）或重大投资决策时，AI仅作为信息召回与汇总的助手，最终判断必须由专业人士签字确认。</p>
+<p><strong>价值与局限</strong>：这个创意的真实价值在于打破法律与金融的信息孤岛，实现跨领域知识的语义级联。它不是替代分析师或律师，而是把人从机械的文档翻阅中解放出来，聚焦于商业判断与风险定价。局限在于，它严重依赖输入数据的质量，且无法处理需要外部实时验证的事实（如企业征信查询，需外接API）。此外，AI生成的综述仍可能存在逻辑跳跃，在涉及复杂交易结构设计时，不能盲目采信其推理，必须回到原文档逐字核对。</p>
+<hr/>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于X平台、NVIDIA技术博客及Gary Marcus个人博客等公开材料整理。在编写过程中，对各项技术动态的行业影响分析与专业场景延伸属于编辑判断。关于OpenAI内部训练流程及模型解决数学难题的表述，均来自单一信源及员工转述，具体自动化程度与模型实际能力边界尚需官方技术报告确认。相关AI治理与监管趋势的判断基于联合国活动发言，具体各国落地政策仍存在不确定性。创意应用部分为基于当前技术可行性的构想，落地需结合企业实际数据资产情况。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">法金双视角智能尽调知识库</h2> <ol class="idea-list"> <li>将海量非结构化文档灌入向量库，按语义相似度构建跨领域知识索引</li><li>部署Question Gambit式检索智能体，拆解复杂尽调问题为多维度搜索</li><li>设立人工审查与置信度阈值，高价值法律判断不交由AI自动决策</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://aihot.news/items/cmubv1i15041nro99rr4p4r8k" target="_blank" rel="noopener noreferrer">OpenAI 内部已基本自动化新实验模型训练流程</a> <span>｜X：Kim (@kimmonismus)</span> <span>｜2026-09-22</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/cmubuntin03nsro99kowttmi0" target="_blank" rel="noopener noreferrer">Chollet：委托编码，别委托理解</a> <span>｜X：Francois Chollet (@fchollet)</span> <span>｜2026-09-22</span> </li><li> <span class="src-no">[3]</span> <a href="https://aihot.news/items/cmubrq8ua04vmrociqhel90o2" target="_blank" rel="noopener noreferrer">小米发布 MiMo-V2.6 Pro 与 Flash 全模态模型，开源权重与训练代码</a> <span>｜X：马东锡 NLP (@dongxi_nlp)</span> <span>｜2026-09-22</span> </li><li> <span class="src-no">[4]</span> <a href="https://aihot.news/items/cmubv1i0s041mro99r894mq2b" target="_blank" rel="noopener noreferrer">Question&#39;s Gambit：首个检索步骤提升深度研究智能体</a> <span>｜X：Elvis Saravia (@omarsar0, DAIR.AI)</span> <span>｜2026-09-22</span> </li><li> <span class="src-no">[5]</span> <a href="https://garymarcus.substack.com/p/big-news-at-the-un" target="_blank" rel="noopener noreferrer">Gary Marcus 在联合国大会数字合作活动发表 AI 治理演讲，多国同期签署前沿模型管控呼吁</a> <span>｜Gary Marcus：The Road to AI We Can Trust</span> <span>｜2026-09-22</span> </li> </ol>  </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>
