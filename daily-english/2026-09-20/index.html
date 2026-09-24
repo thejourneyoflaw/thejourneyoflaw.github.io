@@ -966,6 +966,9 @@ Regulators require systemically important banks to demonstrate that their intern
         window.speakRef = speakOnce(text, tts.rate, {
           start: function () {
             clearTokGuard(tok);
+            clearSilenceWatch();
+            // 只清掉「没有声音」的排查提示，别把「朗读中…」也抹掉
+            if (/没有声音/.test(ttsStatus.textContent)) ttsStatus.textContent = '';
             if (gen === tts.gen && tts.state === 'playing') highlightRange(s);
           },
           end: function () {
@@ -1005,6 +1008,39 @@ Regulators require systemically important banks to demonstrate that their intern
         }, delay == null ? 60 : delay);
       }
 
+      var silenceTimer = null;
+
+      /** 手势之后一直没有语音在走 → 提示排查（静音键 / 媒体音量 / 系统 TTS 引擎） */
+      function watchSilence() {
+        if (silenceTimer) clearTimeout(silenceTimer);
+        silenceTimer = setTimeout(function () {
+          silenceTimer = null;
+          var ss = window.speechSynthesis;
+          if (tts.state !== 'playing' || ss.speaking || ss.pending) return;
+          ttsStatus.textContent =
+            '没有声音？请检查手机静音键与媒体音量；安卓还需在系统设置里启用「文字转语音」引擎';
+        }, 2600);
+      }
+
+      function clearSilenceWatch() {
+        if (silenceTimer) { clearTimeout(silenceTimer); silenceTimer = null; }
+      }
+
+      /**
+       * 由用户手势直接触发的朗读：必须在本调用栈里同步 speak。
+       * 手机浏览器（iOS Safari、安卓 Chrome）只认「点击同一栈内」启动的语音，
+       * 用 setTimeout 延后哪怕 60ms 都会被当成非用户触发而静默不发声——
+       * 这就是手机上点「朗读本文」没声音的原因。cancel 只在确实有语音在排队时做，
+       * 避免同 tick 内 cancel+speak 的不可靠。
+       */
+      function speakNow() {
+        if (soonTimer) { clearTimeout(soonTimer); soonTimer = null; }
+        var ss = window.speechSynthesis;
+        if (ss.speaking || ss.pending) { try { ss.cancel(); } catch (e) { /* 忽略 */ } }
+        speakCurrent();
+        watchSilence();
+      }
+
       function finishTts() {
         tts.state = 'idle';
         bumpTtsGen();
@@ -1032,9 +1068,8 @@ Regulators require systemically important banks to demonstrate that their intern
         ttsErrIdx = -1;
         ttsErrCount = 0;
         bumpTtsGen();
-        try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
         renderBar();
-        speakSoon();
+        speakNow(); // 手势内同步发出，否则手机端静默（有旧语音时 speakNow 会先 cancel）
       }
 
       function pauseTts() {
@@ -1052,7 +1087,7 @@ Regulators require systemically important banks to demonstrate that their intern
         ttsErrCount = 0;
         bumpTtsGen();
         renderBar();
-        speakSoon(); // 从当前句开头继续
+        speakNow(); // 从当前句开头继续（手势内同步发出）
       }
 
       function stopTts() {
@@ -1131,8 +1166,7 @@ Regulators require systemically important banks to demonstrate that their intern
           tts.rate = v;
           if (tts.state === 'playing') {
             bumpTtsGen();
-            try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
-            speakSoon(); // 以新语速重读当前句
+            speakNow(); // 以新语速重读当前句（手势内同步发出）
           }
         });
       }
