@@ -1,0 +1,102 @@
+「点词查义」本地静态中英词典 — 数据来源与许可说明
+==================================================================
+
+一、数据来源
+  数据集：ECDICT — Free English to Chinese Dictionary Database
+  项目主页：https://github.com/skywind3000/ECDICT
+  数据文件：ecdict.csv（仓库根目录，UTF-8 CSV，13 列，约 77 万词条）
+  下载地址：https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv
+  镜像：https://ghproxy.net/https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv
+
+二、许可与署名
+  ECDICT 采用 MIT License 发布：
+    MIT License
+    Copyright (c) 2025 Linwei
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+  本目录下的 *.json 为上述数据的衍生物（重新筛选、精简释义、归一化音标），
+  同样按 MIT License 分发，署名归 ECDICT / Linwei。
+  词典释义仅供参考，不构成任何法律、投资或专业建议。
+
+三、生成信息
+  生成日期：2026-09-24
+  生成脚本：scripts/build-dict.mjs（零第三方依赖，可重跑）
+  词条总数：91514
+  文件总数：27（a-z 各一个，另有 _.json 作为非 a-z 首字符的兜底，本词典为空对象）
+  总体积：6.64 MB（原始 JSON，未经 gzip；硬上限 8 MB）
+
+四、筛选口径
+  源数据 770,611 条原始词条，最终收录规则（详见 scripts/build-dict.mjs 注释）：
+   1) 词形：仅 ^[A-Za-z]+(-[A-Za-z]+)*$，不含空格/撇号/数字，长度 ≥ 2，
+      大小写限全小写、首字母大写、全大写三种形态（iPhone、mRNA 这类混合大小写丢弃）；
+   2) 常用度门槛：命中四六级/考研/雅思/托福/GRE/中考/高考标签、牛津 3000 核心词、
+      柯林斯星级 ≥ 1、BNC 词频或当代语料库词频任一非零；
+   3) 变形词：源数据 exchange 字段含 0:<lemma> 且 lemma 已收录者一并收录；
+   4) 连字符复合词（decision-making / short-term）按第 2 条门槛收录；
+   5) 首字母大写词条（European / Monday）按第 2 条门槛收录，键转小写；
+      普通人名地名没有词频数据，会被这一关自动挡掉；
+   6) 全大写缩写（MCP / AML / API / SQL / DNA / OCR …）短且量少，整体收录，键转小写；
+   7) 领域补录清单：ECDICT 词频字段不覆盖连字符复合词与现代缩写，
+      故对 AI / 法律 / 金融 / 商务 / 科技 主题的高频词做了一份显式白名单绕过词频门槛
+      （仅当源数据确有该词条时生效，不凭空生成释义）。
+  释义：丢弃 [网络] 机器翻译行（整条只剩 [网络] 时保留内容并去前缀）；
+        多义项以「；」分隔；去掉变形词的冗余注解（如「（investor的复数形式）」）；上限 60 字；
+  音标：修正 ECDICT 的编码乱码（西里尔 ә→ə、\→ɜ、^→ɡ、:→ː 等）后保留，
+        无法修复者省略 p 字段（26,000 余条无音标，多为变形词，源数据本身就没有）。
+
+五、前端使用提示
+  1) 点击词先做小写化；命中 "xxx's" 这类所有格时请先剥离 's 再查；
+  2) 单词长度 < 2 时不必查询；
+  3) 按首字母懒加载 public/dict/<首字母>.json 即可，无需一次性加载全部；
+     非 a-z 首字符的查询请落到 _.json（本词典为空对象 {}）。
+
+六、已知局限
+  · 专有名词与品牌名（OpenAI、Nvidia、GitHub、ChatGPT …）不在词典内；
+  · ECDICT 未收录的部分新词/术语（saas、hqla、lstm、multi-layered …）查不到；
+  · 缩写释义可能来自其他领域，如 AML 在源数据里指「先进数学库」而非反洗钱，
+    这是源数据的局限，前端如遇歧义建议同时展示英文原词；
+  · 释义仅供参考，不构成法律、投资或专业建议。
+
+七、各文件统计
+  文件             词条数  大小
+  a.json        5419  401 KB
+  b.json        5607  392 KB
+  c.json        8782  652 KB
+  d.json        5614  410 KB
+  e.json        3784  285 KB
+  f.json        3831  283 KB
+  g.json        3121  221 KB
+  h.json        3598  252 KB
+  i.json        3595  285 KB
+  j.json         939  66 KB
+  k.json         974  64 KB
+  l.json        3018  215 KB
+  m.json        5193  375 KB
+  n.json        1951  138 KB
+  o.json        2205  168 KB
+  p.json        6970  550 KB
+  q.json         429  32 KB
+  r.json        5190  394 KB
+  s.json       10134  768 KB
+  t.json        4507  339 KB
+  u.json        2252  186 KB
+  v.json        1391  106 KB
+  w.json        2441  177 KB
+  x.json          61  4 KB
+  y.json         293  20 KB
+  z.json         215  15 KB
+  _.json           0  0 KB

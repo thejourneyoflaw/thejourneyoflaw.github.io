@@ -10,7 +10,7 @@
           /* 忽略存储不可用的情况 */
         }
       })();
-    </script><link rel="stylesheet" href="/_astro/index.Dg3JSrD6.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link" aria-current="page"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+    </script><link rel="stylesheet" href="/_astro/index.DX52A2op.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link" aria-current="page"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
 打赏
 </button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.09.22 · 周二</time> <span class="break-words">来源：Anthropic Tech Blog Commentary</span> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> AI模型越狱：对齐失效与安全围栏 </h1> <p class="serif mt-3 text-base sm:text-lg leading-snug c-muted break-words"> Adversarial Robustness and Safety Guardrails </p> <p class="mt-4 text-base c-muted">
 今日术语
@@ -227,8 +227,8 @@
   </script> <script>
     /* ============================================================
        每日英语详情页客户端增强：
-       功能A：点词 / 长按查词（仅第 1 节英文原文段落）
-       功能B：整篇朗读（逐句朗读 + 当前句高亮）
+       功能A：点词 / 长按查词（正文内所有含英文字母的文本节点）
+       功能B：整篇朗读（仅第 1 节英文原文，逐句 + 当前句高亮）
        依赖上方脚本先生成 .passage-card 结构，务必保持先后顺序。
        ============================================================ */
     (function () {
@@ -238,28 +238,34 @@
       if (!prose) return;
 
       /* ---------------- 语音：选择英文 voice ---------------- */
+      // 用户机器（Edge）没有本地英文语音，只有大量「Online (Natural)」在线英文，
+      // 因此不能只挑 localService。统一优先级：
+      // 本地 en-GB > 在线 en-GB > 本地其它 en > 在线其它 en > 任意英文 > 默认。
       var hasTts = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
       var cachedVoice = null;
+
+      function voiceScore(v) {
+        var lang = (v.lang || '').replace(/_/g, '-');
+        if (!/^en(-|$)/i.test(lang)) return -1; // 非英文不参与
+        var gb = /^en-GB/i.test(lang);
+        var local = !!v.localService;
+        var score = gb ? (local ? 400 : 300) : (local ? 200 : 100);
+        if (/^en-US/i.test(lang)) score += 10;         // 同级内偏好美式
+        if (/natural/i.test(v.name || '')) score += 5; // 同级内偏好自然音色
+        return score;
+      }
 
       function pickVoice() {
         if (!hasTts) return null;
         var voices = window.speechSynthesis.getVoices() || [];
         if (!voices.length) return cachedVoice; // 尚未加载完成时沿用旧值
-        var en = [];
+        var best = null;
+        var bestScore = 0;
         for (var i = 0; i < voices.length; i++) {
-          if (/^en([-_]|$)/i.test(voices[i].lang || '')) en.push(voices[i]);
+          var s = voiceScore(voices[i]);
+          if (s > bestScore) { bestScore = s; best = voices[i]; }
         }
-        if (!en.length) return null;
-        var pick = null;
-        for (var j = 0; j < en.length; j++) {
-          if (/^en[-_]US/i.test(en[j].lang)) { pick = en[j]; break; }
-        }
-        if (!pick) {
-          for (var k = 0; k < en.length; k++) {
-            if (/^en[-_]GB/i.test(en[k].lang)) { pick = en[k]; break; }
-          }
-        }
-        cachedVoice = pick || en[0];
+        cachedVoice = best; // 无英文语音时为 null → 交给浏览器默认音色
         return cachedVoice;
       }
 
@@ -270,18 +276,24 @@
         } catch (e) { /* 忽略 */ }
       }
 
-      function speakOnce(text, rate, onstart, onend) {
+      // handlers: { start, end, error(err) }。onerror 与 onend 分离，
+      // 调用方才能区分「被 cancel 打断（interrupted）」与「正常读完」。
+      function speakOnce(text, rate, handlers) {
+        if (!hasTts || !text) return null;
+        var h = handlers || {};
         var u = new window.SpeechSynthesisUtterance(text);
         var v = pickVoice();
         if (v) u.voice = v;
-        u.lang = (v && v.lang) || 'en-US';
+        u.lang = (v && v.lang) || 'en-GB';
         u.rate = rate || 1;
-        if (onstart) u.onstart = onstart;
-        if (onend) {
-          u.onend = onend;
-          u.onerror = onend; // cancel() 触发的 error 由调用方用代次号忽略
+        u.onstart = function () { if (h.start) h.start(); };
+        u.onend = function () { if (h.end) h.end(); };
+        u.onerror = function (e) { if (h.error) h.error((e && e.error) || 'unknown'); };
+        try {
+          window.speechSynthesis.speak(u);
+        } catch (e) {
+          if (h.error) h.error('speak-failed');
         }
-        window.speechSynthesis.speak(u);
         return u;
       }
 
@@ -289,11 +301,11 @@
          功能A：点词 / 长按查词
          ============================================================ */
 
-      // 把目标段落的文本节点拆成单词 span；分隔符（空白/标点）并入前一个词的
-      // span，保证后续整句朗读高亮在视觉上连续；段内已有的 strong/em 等行内
+      // 正文内所有英文词被包成 .dw；分隔符（空白/标点）并入前一个词的
+      // span，保证整句朗读高亮在视觉上连续；段内已有的 strong/em 等行内
       // 元素原样保留（只在其中的文本节点内继续拆词）。
       var allSpans = [];   // 全部词 span，按阅读顺序
-      var sentences = [];  // [{start, end}]：句 → 词 span 区间（含端点）
+      var sentences = [];  // [{start, end}]：句 → 词 span 区间（仅第 1 节英文原文）
 
       function isSentenceBoundary(prevWord, sepText, nextWord) {
         // 上一个词之后的分隔文本以句末标点（可带引号/括号）收尾，且下一个词以大写/引号/数字开头
@@ -307,7 +319,12 @@
         return true;
       }
 
-      function wrapParagraph(p) {
+      // 需要包词的块级元素（只取最内层，避免把整段容器重复处理）
+      var BLOCK_SEL = 'p, li, blockquote, h1, h2, h3, h4, h5, h6, dt, dd, td, th, figcaption';
+      // 这些容器内的文本不包词：代码块、朗读控件、词条发音按钮
+      var NO_WRAP_SEL = 'pre, code, .tts-bar, .dict-speak-btn, script, style';
+
+      function wrapParagraph(p, isTts) {
         // 「英文原文：」这类只有粗体标签的段落：不包词、不朗读
         var first = p.firstElementChild;
         if (first && first.tagName === 'STRONG') {
@@ -319,7 +336,15 @@
         var pStart = allSpans.length;
         var textNodes = [];
         var walker = document.createTreeWalker(p, window.NodeFilter.SHOW_TEXT, null, false);
-        while (walker.nextNode()) textNodes.push(walker.currentNode);
+        while (walker.nextNode()) {
+          var tn = walker.currentNode;
+          var par = tn.parentNode;
+          if (par && par.closest && par.closest(NO_WRAP_SEL)) continue; // 代码/控件内文本保持原样
+          // 词汇卡词条行里的斜体音标（如 （n. /prəˈpensəti/））不是英文单词，不包词，
+          // 否则会被拆成 pr / pens / ti 之类无意义的查询目标
+          if (par && par.closest && par.closest('em, i') && par.closest('.dict-card > p:first-child')) continue;
+          textNodes.push(tn);
+        }
 
         var prevWord = '';   // 上一个词
         var lastSep = '';    // 上一个词之后累积的分隔文本
@@ -327,7 +352,8 @@
         var sentHasWord = false;
 
         function closeSentence() {
-          if (sentHasWord && allSpans.length > sentStart) {
+          // 只有第 1 节英文原文参与整篇朗读；其余段落只包词（点词查义）不切句
+          if (isTts && sentHasWord && allSpans.length > sentStart) {
             sentences.push({ start: sentStart, end: allSpans.length - 1 });
           }
           sentStart = allSpans.length;
@@ -374,10 +400,51 @@
         closeSentence();
       }
 
-      var passageParas = prose.querySelectorAll('.passage-card p.passage-en');
-      for (var wi = 0; wi < passageParas.length; wi++) wrapParagraph(passageParas[wi]);
+      // 遍历正文里所有含 [A-Za-z] 的最内层块级元素：
+      // 覆盖第 1 节原文、生词速览、第 2 节词汇卡、第 3 节例句、第 4 节表达与参考译文、第 6 节夹带英文。
+      // 纯中文段落不动；头部/导航/页脚在 .prose 之外，天然排除；pre/code 与控件由 NO_WRAP_SEL 排除。
+      (function wrapAllEnglish() {
+        var blocks = prose.querySelectorAll(BLOCK_SEL);
+        for (var k = 0; k < blocks.length; k++) {
+          var el = blocks[k];
+          if (el.closest(NO_WRAP_SEL)) continue;
+          if (el.querySelector(BLOCK_SEL)) continue;              // 只取最内层块
+          if (!/[A-Za-z]/.test(el.textContent || '')) continue;   // 纯中文段落不动
+          wrapParagraph(el, el.classList.contains('passage-en'));
+        }
+      })();
+
+      function sentenceText(s) {
+        var out = '';
+        for (var i = s.start; i <= s.end; i++) out += allSpans[i].textContent;
+        return out.replace(/\s+/g, ' ').trim();
+      }
+
+      // 句切分后处理：丢弃空/纯空白片段；词 span 数 < 2 的碎片并入前一句
+      // （整篇仅一句时除外），避免出现「单词句」被单独反复朗读。
+      (function mergeTinySentences() {
+        if (sentences.length <= 1) return;
+        var merged = [];
+        for (var i = 0; i < sentences.length; i++) {
+          var s = sentences[i];
+          if (s.end < s.start) continue;          // 空片段
+          if (!sentenceText(s)) continue;         // 纯空白
+          if (s.end - s.start + 1 < 2 && merged.length) {
+            merged[merged.length - 1].end = s.end; // 并入前一句
+            continue;
+          }
+          merged.push({ start: s.start, end: s.end });
+        }
+        sentences = merged;
+      })();
 
       /* ---------------- 查词卡 ---------------- */
+      var SPEAKER_SVG =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>' +
+        '<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>' +
+        '<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+
       var card = document.createElement('div');
       card.className = 'dw-card';
       card.id = 'dw-card';
@@ -395,11 +462,7 @@
       cardSpeakBtn.className = 'dw-speak-btn';
       cardSpeakBtn.title = '朗读单词';
       cardSpeakBtn.setAttribute('aria-label', '朗读单词');
-      cardSpeakBtn.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-        '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>' +
-        '<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>' +
-        '<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+      cardSpeakBtn.innerHTML = SPEAKER_SVG;
 
       var cardHead = document.createElement('div');
       cardHead.className = 'dw-head';
@@ -476,13 +539,110 @@
         });
       }
 
-      // 词典链路（实测于 2026-09）：api.dictionaryapi.dev 在本机网络持续超时
-      // （Cloudflare 522 / 连接超时）、dict.youdao.com 服务端拦截跨域请求
-      // （403 Invalid CORS request），均不可用；最终采用 Datamuse（WordNet 词
-      // 库，支持 CORS，本机实测约 1s 返回）作为释义来源。失败时优雅降级。
+      /* ---------------- 中文释义：本地词典分片（public/dict/<首字母>.json） ---------------- */
+      // 由构建侧并行任务生成：{ "culpable": { "p": "ˈkʌlpəbl", "t": "a. 应受责备的，有罪的" } }
+      // 前端按首字母懒加载并缓存（内存 Map + 小分片 sessionStorage），失败静默降级为只显示英文。
+      var DICT_BASE = '/dict/';           // 站点部署在域名根目录（astro.config 未设 base）
+      var DICT_SHARD_MAX = 120000;        // 超过此字节数的分片不进 sessionStorage，避免配额超限
+      var dictShardMem = {};              // letter -> 分片对象 | null（null 表示不存在/加载失败）
+      var dictShardPending = {};          // letter -> Promise
+
+      function shardLetter(word) {
+        var c = (word || '').charAt(0).toLowerCase();
+        return /^[a-z]$/.test(c) ? c : '_';
+      }
+
+      function loadShard(letter) {
+        if (Object.prototype.hasOwnProperty.call(dictShardMem, letter)) {
+          return Promise.resolve(dictShardMem[letter]);
+        }
+        if (dictShardPending[letter]) return dictShardPending[letter];
+        var p = new Promise(function (resolve) {
+          var cacheKey = 'dw-dict:' + letter;
+          var stored = null;
+          try {
+            var raw = sessionStorage.getItem(cacheKey);
+            if (raw) stored = JSON.parse(raw);
+          } catch (e) { stored = null; }
+          if (stored && typeof stored === 'object') { resolve(stored); return; }
+          fetchJson(DICT_BASE + letter + '.json', 6000)
+            .then(function (j) {
+              var obj = (j && typeof j === 'object') ? j : {};
+              try {
+                var s = JSON.stringify(obj);
+                if (s.length <= DICT_SHARD_MAX) sessionStorage.setItem(cacheKey, s);
+              } catch (e) { /* 配额不足：静默跳过缓存 */ }
+              resolve(obj);
+            })
+            .catch(function () { resolve(null); }); // 分片缺失/网络失败：静默降级
+        }).then(function (v) {
+          dictShardMem[letter] = v;
+          dictShardPending[letter] = null;
+          return v;
+        });
+        dictShardPending[letter] = p;
+        return p;
+      }
+
+      function lookupZh(word) {
+        var letter = shardLetter(word);
+        return loadShard(letter).then(function (shard) {
+          if (!shard) return null;
+          var cands = lemmaCandidates(word);
+          for (var i = 0; i < cands.length; i++) {
+            var e = shard[cands[i]];
+            if (e && typeof e === 'object' && (e.t || e.p)) {
+              return { p: e.p || '', t: e.t || '' };
+            }
+          }
+          return null;
+        });
+      }
+
+      /* ---------------- 英文释义：Datamuse（WordNet 词库） ---------------- */
+      // 实测于 2026-09：api.dictionaryapi.dev 在本机网络持续超时（Cloudflare 522），
+      // dict.youdao.com 服务端拦截跨域（403 Invalid CORS request），均不可用；
+      // 最终采用 Datamuse（支持 CORS，本机实测约 1s 返回）作为英文释义来源。
+      function lookupEn(word) {
+        var candidates = lemmaCandidates(word);
+        var gotResponse = false;
+        return new Promise(function (resolve) {
+          var tryAt = function (idx) {
+            if (idx >= candidates.length) {
+              resolve(gotResponse ? { defs: [], src: '', responded: true } : null);
+              return;
+            }
+            var url = 'https://api.datamuse.com/words?sp=' + encodeURIComponent(candidates[idx]) + '&md=d';
+            fetchJson(url, 8000)
+              .then(function (list) {
+                gotResponse = true;
+                var hitWord = null;
+                if (list && list.length) {
+                  for (var i = 0; i < list.length; i++) {
+                    if ((list[i].word || '').toLowerCase() === candidates[idx]) { hitWord = list[i]; break; }
+                  }
+                }
+                if (!hitWord || !hitWord.defs || !hitWord.defs.length) { tryAt(idx + 1); return; }
+                var defs = [];
+                for (var j = 0; j < hitWord.defs.length && defs.length < 2; j++) {
+                  var d = hitWord.defs[j];
+                  var tab = d.indexOf('\t');
+                  var pos = tab > 0 ? d.slice(0, tab) : '';
+                  var text = (tab > 0 ? d.slice(tab + 1) : d).trim();
+                  if (text.length > 150) text = text.slice(0, 150) + '…';
+                  defs.push({ pos: pos, text: text });
+                }
+                resolve({ defs: defs, src: 'WordNet · Datamuse', responded: true });
+              })
+              .catch(function () { tryAt(idx + 1); }); // 网络失败：尝试下一个词形
+          };
+          tryAt(0);
+        });
+      }
+
       function lookupWord(word) {
         var seq = ++lookupSeq;
-        var cacheKey = 'dw-lookup:' + word;
+        var cacheKey = 'dw-lookup2:' + word;
         try {
           var hit = sessionStorage.getItem(cacheKey);
           if (hit) {
@@ -492,53 +652,14 @@
           }
         } catch (e) { /* 忽略缓存读取失败 */ }
 
-        // 只有当前卡片不是这个词时才显示「查询中」（重复点击同一词时不闪reset）
+        // 只有当前卡片不是这个词时才显示「查询中」（重复点击同一词时不闪）
         if (cardBody.getAttribute('data-for') !== word) setStatus('释义查询中…');
-        var candidates = lemmaCandidates(word);
-        var gotResponse = false; // 区分「网络失败」与「词典未收录」
-        var tryAt = function (idx) {
+        Promise.all([lookupZh(word), lookupEn(word)]).then(function (res) {
           if (seq !== lookupSeq) return;
-          if (idx >= candidates.length) {
-            // 全部失败：有响应但未收录 → 未收录提示；否则 → 网络失败提示
-            var data = gotResponse ? { defs: [], src: '' } : null;
-            try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e2) { /* 忽略 */ }
-            renderLookup(word, data);
-            return;
-          }
-          var url = 'https://api.datamuse.com/words?sp=' + encodeURIComponent(candidates[idx]) + '&md=d';
-          fetchJson(url, 8000)
-            .then(function (list) {
-              if (seq !== lookupSeq) return;
-              gotResponse = true;
-              var hitWord = null;
-              if (list && list.length) {
-                for (var i = 0; i < list.length; i++) {
-                  if ((list[i].word || '').toLowerCase() === candidates[idx]) { hitWord = list[i]; break; }
-                }
-              }
-              if (!hitWord || !hitWord.defs || !hitWord.defs.length) {
-                tryAt(idx + 1); // 该词形未收录，尝试下一个词形
-                return;
-              }
-              var defs = [];
-              for (var j = 0; j < hitWord.defs.length && defs.length < 2; j++) {
-                var d = hitWord.defs[j];
-                var tab = d.indexOf('\t');
-                var pos = tab > 0 ? d.slice(0, tab) : '';
-                var text = (tab > 0 ? d.slice(tab + 1) : d).trim();
-                if (text.length > 150) text = text.slice(0, 150) + '…';
-                defs.push({ pos: pos, text: text });
-              }
-              var result = { defs: defs, src: 'WordNet · Datamuse' };
-              try { sessionStorage.setItem(cacheKey, JSON.stringify(result)); } catch (e2) { /* 忽略 */ }
-              renderLookup(word, result);
-            })
-            .catch(function () {
-              if (seq !== lookupSeq) return;
-              tryAt(idx + 1); // 网络失败，尝试下一个词形（最终还是失败则降级）
-            });
-        };
-        tryAt(0);
+          var data = { zh: res[0], en: res[1] };
+          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) { /* 忽略 */ }
+          renderLookup(word, data);
+        });
       }
 
       function setStatus(text) {
@@ -552,27 +673,55 @@
       function renderLookup(word, data) {
         cardBody.innerHTML = '';
         cardSrc.hidden = true;
-        if (data && data.defs && data.defs.length) {
+        cardPhon.hidden = true;
+
+        var zh = data && data.zh;
+        var en = data && data.en;
+        var hasZh = !!(zh && zh.t);
+        var defs = (en && en.defs) || [];
+
+        if (zh && zh.p) {
+          cardPhon.textContent = '/' + String(zh.p).replace(/^\/+|\/+$/g, '') + '/';
+          cardPhon.hidden = false;
+        }
+
+        if (hasZh) {
+          // 中文释义为主：大字号
+          var zhEl = document.createElement('div');
+          zhEl.className = 'dw-zh';
+          zhEl.textContent = zh.t;
+          cardBody.appendChild(zhEl);
+        }
+
+        if (defs.length) {
+          // 英文释义降为次要：小字 / 次要色
           var ul = document.createElement('ul');
           ul.className = 'dw-defs';
-          for (var i = 0; i < data.defs.length; i++) {
+          for (var i = 0; i < defs.length; i++) {
             var li = document.createElement('li');
-            if (data.defs[i].pos) {
+            if (defs[i].pos) {
               var pos = document.createElement('i');
               pos.className = 'dw-pos';
-              pos.textContent = data.defs[i].pos + '.';
+              pos.textContent = defs[i].pos + '.';
               li.appendChild(pos);
             }
-            li.appendChild(document.createTextNode(data.defs[i].text));
+            li.appendChild(document.createTextNode(defs[i].text));
             ul.appendChild(li);
           }
           cardBody.appendChild(ul);
-          cardSrc.textContent = '释义来源：' + data.src;
+        }
+
+        if (!hasZh && !defs.length) {
+          if (en && en.responded) setStatus('词典未收录「' + word + '」的释义');
+          else setStatus('释义获取失败，请检查网络后重试');
+        }
+
+        var parts = [];
+        if (hasZh) parts.push('中文：本地词典');
+        if (defs.length) parts.push('英文：WordNet');
+        if (parts.length) {
+          cardSrc.textContent = '来源 ' + parts.join(' · ');
           cardSrc.hidden = false;
-        } else if (data) {
-          setStatus('词典未收录「' + word + '」的释义');
-        } else {
-          setStatus('释义获取失败，请检查网络后重试');
         }
         requestReposition(); // 释义填充后卡片高度变化，重新校验位置
       }
@@ -600,7 +749,7 @@
         currentCardWord = word;
         cardSpan = span;
         cardWord.textContent = word;
-        cardPhon.hidden = true; // 当前链路无音标数据源，有数据时再展示
+        cardPhon.hidden = true; // 音标来自中文词典分片，取到再显示
         renderLookupPending();
         // 先可见再测量定位（避免溢出视口）
         card.style.visibility = 'hidden';
@@ -644,21 +793,18 @@
           setStatus('释义查询中…');
           cardBody.setAttribute('data-for', currentCardWord);
           cardSrc.hidden = true;
+          cardPhon.hidden = true;
         }
       }
 
-      function closeCard() {
-        if (card.hidden) return;
-        card.hidden = true;
-        lookupSeq++; // 使未完成的请求失效
-      }
-
-      function speakWord(word) {
-        if (!hasTts || !word) return;
+      function speakWord(text) {
+        if (!hasTts || !text) return;
         // 整篇朗读进行中时，点词发音会抢占语音通道：先正式停止朗读
         if (tts.state !== 'idle') stopTts();
-        try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
-        window.speakRef = speakOnce(word, 0.95, null, null); // 挂在 window 上防 GC
+        else bumpTtsGen(); // 使整篇朗读的在途回调失效
+        var ss = window.speechSynthesis;
+        if (ss.speaking || ss.pending) { try { ss.cancel(); } catch (e) { /* 忽略 */ } }
+        window.speakRef = speakOnce(text, 0.95, null); // 挂在 window 上防 GC
       }
 
       cardSpeakBtn.addEventListener('click', function (e) {
@@ -744,6 +890,9 @@
          ============================================================ */
 
       var tts = { state: 'idle', idx: 0, rate: 1, gen: 0 };
+      var ttsTok = null;     // 句级令牌 { idx, gen, done, guard }：同一句不得并发 speak 两次
+      var ttsErrIdx = -1;    // 连续出错的句子下标
+      var ttsErrCount = 0;
       var hlSpans = [];
 
       var anchorH2 = null;
@@ -752,10 +901,15 @@
         if (/原文精读/.test(h2s[hi].textContent || '')) { anchorH2 = h2s[hi]; break; }
       }
 
-      function sentenceText(s) {
-        var out = '';
-        for (var i = s.start; i <= s.end; i++) out += allSpans[i].textContent;
-        return out.replace(/\s+/g, ' ').trim();
+      function clearTokGuard(tok) {
+        if (tok && tok.guard) { clearTimeout(tok.guard); tok.guard = null; }
+      }
+
+      // 作废在途 utterance 的所有回调（暂停/停止/重读/点词发音都会调用）
+      function bumpTtsGen() {
+        tts.gen++;
+        if (ttsTok) { ttsTok.done = true; clearTokGuard(ttsTok); }
+        ttsTok = null;
       }
 
       function clearHighlight() {
@@ -773,56 +927,120 @@
 
       function speakCurrent() {
         if (tts.state !== 'playing') return;
-        if (tts.idx >= sentences.length) { stopTts(); return; }
+        if (tts.idx >= sentences.length) { finishTts(); return; }
+        // 句级令牌：同一代内同一句已在朗读中 → 直接忽略重复调度（防重复 speak）
+        if (ttsTok && !ttsTok.done && ttsTok.idx === tts.idx && ttsTok.gen === tts.gen) return;
         var s = sentences[tts.idx];
-        var gen = ++tts.gen;
-        window.speakRef = speakOnce(sentenceText(s), tts.rate,
-          function () { if (gen === tts.gen) highlightRange(s); },
-          function () {
-            if (gen !== tts.gen || tts.state !== 'playing') return;
+        var text = sentenceText(s);
+        if (!text) { tts.idx++; speakSoon(); return; } // 空句跳过
+        var gen = tts.gen;
+        var tok = { idx: tts.idx, gen: gen, done: false, guard: null };
+        ttsTok = tok;
+        // onstart 兜底：部分环境（Edge 在线语音）onstart 可能不触发，超时后补高亮
+        tok.guard = setTimeout(function () {
+          tok.guard = null;
+          if (gen === tts.gen && tts.state === 'playing' && !tok.done) highlightRange(s);
+        }, 900);
+        window.speakRef = speakOnce(text, tts.rate, {
+          start: function () {
+            clearTokGuard(tok);
+            if (gen === tts.gen && tts.state === 'playing') highlightRange(s);
+          },
+          end: function () {
+            clearTokGuard(tok);
+            if (gen !== tts.gen) return;   // 已被暂停/停止/新语音取代
+            tok.done = true;
+            if (tts.state !== 'playing') return;
+            ttsErrIdx = -1;
+            ttsErrCount = 0;
             clearHighlight();
             tts.idx++;
             speakCurrent(); // onend 串起下一句
-          });
+          },
+          error: function (err) {
+            clearTokGuard(tok);
+            if (gen !== tts.gen) return;
+            tok.done = true;
+            // 被 cancel()/新语音打断：不当作正常结束，不推进、不重试
+            if (err === 'interrupted' || err === 'canceled') return;
+            if (tts.state !== 'playing') return;
+            // 真实引擎错误：同一句最多重试 1 次，连续 2 次即停止，绝不无限重试
+            if (ttsErrIdx === tts.idx) ttsErrCount++; else { ttsErrIdx = tts.idx; ttsErrCount = 1; }
+            if (ttsErrCount >= 2) { failTts('语音朗读出错，已停止（' + err + '）'); return; }
+            speakSoon();
+          }
+        });
       }
 
-      function speakSoon() {
-        // cancel() 之后同一 tick 内 speak 在部分浏览器不可靠，稍作延迟
-        setTimeout(speakCurrent, 60);
+      var soonTimer = null;
+      function speakSoon(delay) {
+        // cancel() 之后同一 tick 内 speak 在部分浏览器不可靠，稍作延迟；
+        // 同时合并重复调度，避免同一句被排入多次。
+        if (soonTimer) clearTimeout(soonTimer);
+        soonTimer = setTimeout(function () {
+          soonTimer = null;
+          speakCurrent();
+        }, delay == null ? 60 : delay);
+      }
+
+      function finishTts() {
+        tts.state = 'idle';
+        bumpTtsGen();
+        clearHighlight();
+        ttsStatus.textContent = '朗读完毕';
+        renderBar();
+      }
+
+      function failTts(msg) {
+        tts.state = 'idle';
+        bumpTtsGen();
+        try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
+        clearHighlight();
+        renderBar();
+        ttsStatus.textContent = msg;
       }
 
       function startTts() {
         if (!hasTts) { ttsStatus.textContent = '当前浏览器不支持语音朗读'; return; }
+        if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略
         if (!sentences.length) { ttsStatus.textContent = '未找到可朗读的英文段落'; return; }
         ttsStatus.textContent = '';
         tts.state = 'playing';
         tts.idx = 0;
+        ttsErrIdx = -1;
+        ttsErrCount = 0;
+        bumpTtsGen();
         try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
-        speakSoon();
         renderBar();
+        speakSoon();
       }
 
       function pauseTts() {
-        if (tts.state !== 'playing') return;
+        if (tts.state !== 'playing') return; // 幂等
         tts.state = 'paused';
-        tts.gen++; // 使在途 utterance 回调失效
+        bumpTtsGen(); // 使在途 utterance 回调失效
         try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
         renderBar(); // 保留当前句高亮，标记暂停位置
       }
 
       function resumeTts() {
-        if (tts.state !== 'paused') return;
+        if (tts.state !== 'paused') return; // 幂等
         tts.state = 'playing';
+        ttsErrIdx = -1;
+        ttsErrCount = 0;
+        bumpTtsGen();
         renderBar();
         speakSoon(); // 从当前句开头继续
       }
 
       function stopTts() {
+        var wasActive = tts.state !== 'idle';
         tts.state = 'idle';
-        tts.gen++;
+        bumpTtsGen(); // 幂等：重复调用无副作用
+        if (soonTimer) { clearTimeout(soonTimer); soonTimer = null; }
         try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
         clearHighlight();
-        ttsStatus.textContent = '';
+        if (wasActive) ttsStatus.textContent = '';
         renderBar();
       }
 
@@ -874,24 +1092,59 @@
         ttsStatus.textContent = tts.state === 'playing' ? '朗读中…' : (tts.state === 'paused' ? '已暂停' : ttsStatus.textContent);
       }
 
-      btnPlay.addEventListener('click', startTts);
-      btnPause.addEventListener('click', function () {
-        if (tts.state === 'playing') pauseTts();
-        else if (tts.state === 'paused') resumeTts();
-      });
-      btnStop.addEventListener('click', stopTts);
-      rateSel.addEventListener('change', function () {
-        var v = parseFloat(rateSel.value);
-        if (!isFinite(v) || v <= 0) return;
-        tts.rate = v;
-        if (tts.state === 'playing') {
-          tts.gen++;
-          try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
-          speakSoon(); // 以新语速重读当前句
-        }
-      });
+      // 事件只绑一次：容器委托 + 打标记，避免脚本重入/重复绑定时一次点击触发两次
+      if (!bar.getAttribute('data-bound')) {
+        bar.setAttribute('data-bound', '1');
+        bar.addEventListener('click', function (e) {
+          var b = e.target && e.target.closest ? e.target.closest('.tts-btn') : null;
+          if (!b) return;
+          e.stopPropagation();
+          if (b === btnPlay) startTts();
+          else if (b === btnPause) { if (tts.state === 'playing') pauseTts(); else if (tts.state === 'paused') resumeTts(); }
+          else if (b === btnStop) stopTts();
+        });
+        rateSel.addEventListener('change', function () {
+          var v = parseFloat(rateSel.value);
+          if (!isFinite(v) || v <= 0) return;
+          tts.rate = v;
+          if (tts.state === 'playing') {
+            bumpTtsGen();
+            try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
+            speakSoon(); // 以新语速重读当前句
+          }
+        });
+      }
 
       if (anchorH2) anchorH2.insertAdjacentElement('afterend', bar);
+
+      /* ---------------- 第 2 节词条的可见发音按钮 ---------------- */
+      // 每个 .dict-card 的词条段（首段）末尾加喇叭按钮，点击朗读该词条英文（短语整条读）
+      (function addDictSpeakButtons() {
+        var terms = prose.querySelectorAll('.dict-card > p:first-child');
+        for (var i = 0; i < terms.length; i++) {
+          var p = terms[i];
+          if (p.querySelector('.dict-speak-btn')) continue;
+          var strong = p.querySelector('strong');
+          var raw = (strong ? strong.textContent : p.textContent) || '';
+          raw = raw.replace(/[（(][^）)]*[）)]/g, ' ').trim(); // 去掉（n. /音标/）等注释
+          var m = raw.match(/[A-Za-z][A-Za-z'’\- ]*/);
+          var phrase = m ? m[0].replace(/\s+/g, ' ').replace(/[\s\-']+$/, '').trim() : '';
+          if (!phrase || !/[A-Za-z]/.test(phrase)) continue;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'dict-speak-btn';
+          btn.setAttribute('data-phrase', phrase);
+          btn.title = '朗读「' + phrase + '」';
+          btn.setAttribute('aria-label', '朗读词条 ' + phrase);
+          btn.innerHTML = SPEAKER_SVG;
+          btn.addEventListener('click', function (ev) {
+            ev.stopPropagation();
+            ev.preventDefault();
+            speakWord(this.getAttribute('data-phrase'));
+          });
+          p.appendChild(btn);
+        }
+      })();
 
       // 离开页面 / 切换文章时停止朗读
       function ttsCleanup() {
