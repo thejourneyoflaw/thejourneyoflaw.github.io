@@ -658,12 +658,24 @@ The board bears the fiduciary obligation to actively solicit dissent, rather tha
 
         // 只有当前卡片不是这个词时才显示「查询中」（重复点击同一词时不闪）
         if (cardBody.getAttribute('data-for') !== word) setStatus('释义查询中…');
-        Promise.all([lookupZh(word), lookupEn(word)]).then(function (res) {
+        // 中文来自本地词典（几十毫秒），英文要出外网（几百毫秒到几秒）。
+        // 两者分开渲染：中文先出来，英文到了再补一次，别让用户盯着「查询中」等外网。
+        var gotZh = null;
+        var gotEn = null;
+        var pending = 2;
+        var paint = function () {
           if (seq !== lookupSeq) return;
-          var data = { zh: res[0], en: res[1] };
-          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) { /* 忽略 */ }
-          renderLookup(word, data);
-        });
+          if (!gotZh && !gotEn) return; // 两边都还没结果，保持「查询中」
+          renderLookup(word, { zh: gotZh, en: gotEn });
+        };
+        var settle = function () {
+          pending--;
+          if (pending > 0 || seq !== lookupSeq) return;
+          if (!gotZh && !gotEn) { setStatus('释义获取失败，请检查网络后重试'); return; }
+          try { sessionStorage.setItem(cacheKey, JSON.stringify({ zh: gotZh, en: gotEn })); } catch (e) { /* 忽略 */ }
+        };
+        lookupZh(word).then(function (zh) { gotZh = zh; paint(); settle(); }, settle);
+        lookupEn(word).then(function (en) { gotEn = en; paint(); settle(); }, settle);
       }
 
       function setStatus(text) {
