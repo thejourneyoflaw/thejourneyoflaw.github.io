@@ -10,7 +10,7 @@
           /* 忽略存储不可用的情况 */
         }
       })();
-    </script><link rel="stylesheet" href="/_astro/index.CRfJYfRq.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link" aria-current="page"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+    </script><link rel="stylesheet" href="/_astro/index.BZIfYVaO.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link" aria-current="page"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
 打赏
 </button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.09.26 · 周六</time> <span class="break-words">来源：Engineering blog commentary</span> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> AI 智能体互操作：MCP 协议工程解析 </h1> <p class="serif mt-3 text-base sm:text-lg leading-snug c-muted break-words"> The Model Context Protocol and the Future of Agent Interoperability </p> <p class="mt-4 text-base c-muted">
 今日术语
@@ -248,6 +248,36 @@
       var hasTts = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
       var cachedVoice = null;
 
+      // 是否真正调用过 speechSynthesis.speak（无声诊断用；覆盖 speak 为空函数时也能反映「已调用」）
+      var speakCalled = false;
+
+      /* 微信 / QQ / 微博 / 支付宝等 App 内置浏览器：WebView 基本不支持 speechSynthesis，
+         点朗读必然静默，需要明确指引用户换系统浏览器。正常手机浏览器的 UA
+         （iOS Safari / Chrome / SamsungBrowser / EdgA / Firefox）不含这些标记，不会误判。 */
+      var inAppBrowser = (function () {
+        var ua = (navigator.userAgent || '').toLowerCase();
+        if (/micromessenger/.test(ua)) return '微信';
+        if (/qqbrowser/.test(ua) || /qq\//.test(ua)) return 'QQ';
+        if (/weibo/.test(ua)) return '微博';
+        if (/alipayclient/.test(ua)) return '支付宝';
+        if (/ucbrowser/.test(ua)) return 'UC';
+        return '';
+      })();
+
+      function inAppLabel() {
+        return inAppBrowser === 'UC' ? 'UC 浏览器' : inAppBrowser + '内置浏览器';
+      }
+
+      function inAppMsg() {
+        if (inAppBrowser === 'UC') return 'UC 浏览器可能不支持网页朗读，请用系统浏览器打开本页（如 Chrome / Safari）';
+        return inAppLabel() + '不支持网页朗读，请点右上角「…」选择「在浏览器打开」；若仍无声，请用系统浏览器打开本页';
+      }
+
+      // 英文语音判定（诊断统计与 voiceScore 共用同一标准）
+      function isEnglishVoice(v) {
+        return /^en(-|$)/i.test(((v && v.lang) || '').replace(/_/g, '-'));
+      }
+
       function voiceScore(v) {
         var lang = (v.lang || '').replace(/_/g, '-');
         if (!/^en(-|$)/i.test(lang)) return -1; // 非英文不参与
@@ -287,12 +317,15 @@
         var h = handlers || {};
         var u = new window.SpeechSynthesisUtterance(text);
         var v = pickVoice();
-        if (v) u.voice = v;
+        // 找不到英文语音时（手机常见）保持 u.voice 为空：只设 lang 让系统默认引擎去挑，
+        // 指定一个不存在的 voice 反而更容易彻底无声。
+        if (v && v.lang) u.voice = v;
         u.lang = (v && v.lang) || 'en-GB';
         u.rate = rate || 1;
         u.onstart = function () { if (h.start) h.start(); };
         u.onend = function () { if (h.end) h.end(); };
         u.onerror = function (e) { if (h.error) h.error((e && e.error) || 'unknown'); };
+        speakCalled = true;
         try {
           window.speechSynthesis.speak(u);
         } catch (e) {
@@ -300,6 +333,32 @@
         }
         return u;
       }
+
+      // 手势路径（点朗读 / 点词发音）speak 前先 resume()：部分环境引擎停在 paused 状态会无声。
+      function unlockTts() {
+        if (!hasTts) return;
+        try { window.speechSynthesis.resume(); } catch (e) { /* 忽略 */ }
+      }
+
+      // 页面首次用户交互时预热语音引擎（仅一次）：iOS 上必须先在手势内 speak 一次，
+      // 之后程序化触发的 speak 才会发声。用 volume=0 的极短文本，用户听不到杂音。
+      var ttsWarmed = false;
+      function warmUpTts() {
+        if (ttsWarmed) return;
+        ttsWarmed = true;
+        if (!hasTts) return;
+        try {
+          var ss = window.speechSynthesis;
+          ss.getVoices();
+          ss.cancel();
+          var u = new window.SpeechSynthesisUtterance(' ');
+          u.volume = 0;
+          u.lang = 'en-GB';
+          ss.speak(u);
+        } catch (e) { /* 忽略 */ }
+      }
+      window.addEventListener('pointerdown', warmUpTts, { once: true, passive: true });
+      window.addEventListener('touchstart', warmUpTts, { once: true, passive: true });
 
       /* ============================================================
          功能A：点词 / 长按查词
@@ -814,13 +873,21 @@
       }
 
       function speakWord(text) {
-        if (!hasTts || !text) return;
+        if (!hasTts || !text) {
+          if (text && inAppBrowser) showNotice(inAppMsg());
+          return;
+        }
         // 整篇朗读进行中时，点词发音会抢占语音通道：先正式停止朗读
         if (tts.state !== 'idle') stopTts();
         else bumpTtsGen(); // 使整篇朗读的在途回调失效
         var ss = window.speechSynthesis;
         if (ss.speaking || ss.pending) { try { ss.cancel(); } catch (e) { /* 忽略 */ } }
-        window.speakRef = speakOnce(text, 0.95, null); // 挂在 window 上防 GC
+        if (inAppBrowser) showNotice(inAppMsg());
+        unlockTts();
+        // 挂在 window 上防 GC；真正出声时清掉诊断提示条
+        window.speakRef = speakOnce(text, 0.95, {
+          start: function () { clearNotice(); }
+        });
       }
 
       cardSpeakBtn.addEventListener('click', function (e) {
@@ -918,7 +985,9 @@
       }
 
       function clearTokGuard(tok) {
-        if (tok && tok.guard) { clearTimeout(tok.guard); tok.guard = null; }
+        if (!tok) return;
+        if (tok.guard) { clearTimeout(tok.guard); tok.guard = null; }
+        if (tok.retry) { clearTimeout(tok.retry); tok.retry = null; }
       }
 
       // 作废在途 utterance 的所有回调（暂停/停止/重读/点词发音都会调用）
@@ -950,45 +1019,62 @@
         var text = sentenceText(s);
         if (!text) { tts.idx++; speakSoon(); return; } // 空句跳过
         var gen = tts.gen;
-        var tok = { idx: tts.idx, gen: gen, done: false, guard: null };
+        var tok = { idx: tts.idx, gen: gen, done: false, guard: null, retry: null, retried: false };
         ttsTok = tok;
         // onstart 兜底：部分环境（Edge 在线语音）onstart 可能不触发，超时后补高亮
         tok.guard = setTimeout(function () {
           tok.guard = null;
           if (gen === tts.gen && tts.state === 'playing' && !tok.done) highlightRange(s);
         }, 900);
-        window.speakRef = speakOnce(text, tts.rate, {
-          start: function () {
-            clearTokGuard(tok);
-            clearSilenceWatch();
-            // 只清掉「没有声音」的排查提示，别把「朗读中…」也抹掉
-            if (/没有声音/.test(ttsStatus.textContent)) ttsStatus.textContent = '';
-            if (gen === tts.gen && tts.state === 'playing') highlightRange(s);
-          },
-          end: function () {
-            clearTokGuard(tok);
-            if (gen !== tts.gen) return;   // 已被暂停/停止/新语音取代
-            tok.done = true;
-            if (tts.state !== 'playing') return;
-            ttsErrIdx = -1;
-            ttsErrCount = 0;
-            clearHighlight();
-            tts.idx++;
-            speakCurrent(); // onend 串起下一句
-          },
-          error: function (err) {
-            clearTokGuard(tok);
-            if (gen !== tts.gen) return;
-            tok.done = true;
-            // 被 cancel()/新语音打断：不当作正常结束，不推进、不重试
-            if (err === 'interrupted' || err === 'canceled') return;
-            if (tts.state !== 'playing') return;
-            // 真实引擎错误：同一句最多重试 1 次，连续 2 次即停止，绝不无限重试
-            if (ttsErrIdx === tts.idx) ttsErrCount++; else { ttsErrIdx = tts.idx; ttsErrCount = 1; }
-            if (ttsErrCount >= 2) { failTts('语音朗读出错，已停止（' + err + '）'); return; }
-            speakSoon();
-          }
-        });
+
+        function emit() {
+          window.speakRef = speakOnce(text, tts.rate, {
+            start: function () {
+              clearTokGuard(tok); // 同时清掉 1.2s 静默重试计时器
+              clearSilenceWatch();
+              clearNotice();
+              if (tts.state === 'playing') ttsStatus.textContent = '朗读中…';
+              if (gen === tts.gen && tts.state === 'playing') highlightRange(s);
+            },
+            end: function () {
+              clearTokGuard(tok);
+              if (gen !== tts.gen) return;   // 已被暂停/停止/新语音取代
+              tok.done = true;
+              if (tts.state !== 'playing') return;
+              ttsErrIdx = -1;
+              ttsErrCount = 0;
+              clearHighlight();
+              tts.idx++;
+              speakCurrent(); // onend 串起下一句
+            },
+            error: function (err) {
+              clearTokGuard(tok);
+              if (gen !== tts.gen) return;
+              tok.done = true;
+              // 被 cancel()/新语音打断：不当作正常结束，不推进、不重试
+              if (err === 'interrupted' || err === 'canceled') return;
+              if (tts.state !== 'playing') return;
+              // 真实引擎错误：同一句最多重试 1 次，连续 2 次即停止，绝不无限重试
+              if (ttsErrIdx === tts.idx) ttsErrCount++; else { ttsErrIdx = tts.idx; ttsErrCount = 1; }
+              if (ttsErrCount >= 2) { failTts('语音朗读出错，已停止（' + err + '）'); return; }
+              speakSoon();
+            }
+          });
+          // 静默探测：speak 后 1.2s 内既无 start 事件、speaking 也为 false → 引擎卡住，
+          // 同一句只再重试 1 次（tok.retried），不破坏句级令牌/幂等；重试仍无声交由
+          // watchSilence 显示带诊断事实的提示。
+          if (tok.retried || tok.retry) return;
+          tok.retry = setTimeout(function () {
+            tok.retry = null;
+            if (tok.done || tok.retried || gen !== tts.gen || tts.state !== 'playing') return;
+            var ss = window.speechSynthesis;
+            if (ss.speaking || ss.pending) return;
+            tok.retried = true;
+            unlockTts();
+            emit();
+          }, 1200);
+        }
+        emit();
       }
 
       var soonTimer = null;
@@ -1002,17 +1088,61 @@
         }, delay == null ? 60 : delay);
       }
 
+      /* 显眼的诊断提示条（控制条下方，sticky 便于滚动到其它章节时也可见）。
+         showNotice 同时写入 ttsStatus，但主渠道是这个提示条；真正发声时 clearNotice。 */
+      var noticeText = '';
+      function showNotice(text) {
+        noticeText = text;
+        notice.textContent = text;
+        notice.hidden = false;
+        ttsStatus.textContent = text;
+      }
+      function clearNotice() {
+        if (!noticeText && notice.hidden) return; // 无提示时不动 ttsStatus（保留「朗读中…」等状态）
+        noticeText = '';
+        notice.hidden = true;
+        notice.textContent = '';
+        ttsStatus.textContent = '';
+      }
+
       var silenceTimer = null;
 
-      /** 手势之后一直没有语音在走 → 提示排查（静音键 / 媒体音量 / 系统 TTS 引擎） */
+      /* 诊断事实：是否支持 speechSynthesis / 语音总数与英文语音数 / pickVoice 选中的音色 /
+         是否已调用 speak / 是否 App 内置浏览器。综合成一句可行动的中文。 */
+      function ttsDiagText() {
+        if (!hasTts) {
+          return (speakCalled ? '已调用朗读' : '尚未调用朗读') +
+            ' / 当前浏览器不支持网页语音合成（speechSynthesis 缺失）' +
+            ' / 请换用系统浏览器（Chrome / Safari）打开本页';
+        }
+        var voices = [];
+        try { voices = window.speechSynthesis.getVoices() || []; } catch (e) { voices = []; }
+        var enCount = 0;
+        for (var i = 0; i < voices.length; i++) if (isEnglishVoice(voices[i])) enCount++;
+        var v = pickVoice();
+        var tail;
+        if (inAppBrowser) {
+          tail = inAppLabel() + '不支持朗读，请用系统浏览器打开本页';
+        } else if (enCount === 0) {
+          tail = '手机未安装英文语音，请安装：安卓「设置→辅助功能→文字转语音」，iOS「设置→辅助功能→朗读内容→声音」';
+        } else {
+          tail = '请检查手机静音键与媒体音量';
+        }
+        return (speakCalled ? '已调用朗读' : '尚未调用朗读') +
+          ' / 可用语音 ' + voices.length + ' 个（英文 ' + enCount + ' 个）' +
+          ' / ' + (v ? '已选用「' + (v.name || v.lang) + '」' : '未找到英文语音，改用系统默认音色') +
+          ' / ' + tail;
+      }
+
+      /** 手势之后 2.6s 仍无语音在走 → 显示带诊断事实的排查提示 */
       function watchSilence() {
         if (silenceTimer) clearTimeout(silenceTimer);
         silenceTimer = setTimeout(function () {
           silenceTimer = null;
+          if (tts.state !== 'playing') return;
           var ss = window.speechSynthesis;
-          if (tts.state !== 'playing' || ss.speaking || ss.pending) return;
-          ttsStatus.textContent =
-            '没有声音？请检查手机静音键与媒体音量；安卓还需在系统设置里启用「文字转语音」引擎';
+          if (ss.speaking || ss.pending) return;
+          showNotice('语音没有出声：' + ttsDiagText());
         }, 2600);
       }
 
@@ -1031,6 +1161,7 @@
         if (soonTimer) { clearTimeout(soonTimer); soonTimer = null; }
         var ss = window.speechSynthesis;
         if (ss.speaking || ss.pending) { try { ss.cancel(); } catch (e) { /* 忽略 */ } }
+        unlockTts(); // 手势内先 resume()，避免引擎停在 paused 状态导致无声
         speakCurrent();
         watchSilence();
       }
@@ -1053,7 +1184,11 @@
       }
 
       function startTts() {
-        if (!hasTts) { ttsStatus.textContent = '当前浏览器不支持语音朗读'; return; }
+        if (!hasTts) {
+          showNotice('当前浏览器不支持语音朗读' +
+            (inAppBrowser ? '：' + inAppLabel() + '不支持网页朗读，请用系统浏览器打开本页' : '，请换用系统浏览器打开'));
+          return;
+        }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略
         if (!sentences.length) { ttsStatus.textContent = '未找到可朗读的英文段落'; return; }
         ttsStatus.textContent = '';
@@ -1063,6 +1198,7 @@
         ttsErrCount = 0;
         bumpTtsGen();
         renderBar();
+        if (inAppBrowser) showNotice(inAppMsg()); // 内置浏览器基本必静默：尽早点明
         speakNow(); // 手势内同步发出，否则手机端静默（有旧语音时 speakNow 会先 cancel）
       }
 
@@ -1091,6 +1227,7 @@
         if (soonTimer) { clearTimeout(soonTimer); soonTimer = null; }
         try { window.speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
         clearHighlight();
+        clearNotice(); // 用户主动停止 → 收起诊断提示条
         if (wasActive) ttsStatus.textContent = '';
         renderBar();
       }
@@ -1129,6 +1266,13 @@
       var ttsStatus = document.createElement('span');
       ttsStatus.className = 'tts-status';
 
+      // 诊断提示条：控制条下方；移动端醒目，暗色自适应（样式见 global.css .tts-notice）
+      var notice = document.createElement('div');
+      notice.className = 'tts-notice';
+      notice.hidden = true;
+      notice.setAttribute('role', 'status');
+      notice.setAttribute('aria-live', 'polite');
+
       bar.appendChild(btnPlay);
       bar.appendChild(btnPause);
       bar.appendChild(btnStop);
@@ -1165,7 +1309,13 @@
         });
       }
 
-      if (anchorH2) anchorH2.insertAdjacentElement('afterend', bar);
+      if (anchorH2) {
+        anchorH2.insertAdjacentElement('afterend', bar);
+        bar.insertAdjacentElement('afterend', notice);
+      } else {
+        // 没有「原文精读」锚点时控制条本就无处安放；提示条仍保留，保证点词发音有提示位
+        prose.insertBefore(notice, prose.firstChild);
+      }
 
       /* ---------------- 第 2 节词条的可见发音按钮 ---------------- */
       // 每个 .dict-card 的词条段（首段）末尾加喇叭按钮，点击朗读该词条英文（短语整条读）
