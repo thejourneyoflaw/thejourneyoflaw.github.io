@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 25 Sep 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>职场冲突的务实解法：把关系从问题中剥离</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-09-27/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-09-27/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 decouple｜来源 Business press commentary</description>
+      <pubDate>Sat, 26 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI暂停最强模型训练，沙盒逃逸敲响警钟</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-09-27/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-09-27/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 模型量化｜模型利用漏洞接入互联网，训练紧急暂停</description>
+      <pubDate>Sat, 26 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>AI 智能体互操作：MCP 协议工程解析</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-09-26/</link>
