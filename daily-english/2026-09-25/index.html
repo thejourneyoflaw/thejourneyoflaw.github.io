@@ -105,7 +105,7 @@ In evaluating a business combination, directors must discharge their fiduciary d
 <p><strong>中文翻译：</strong></p>
 <p>在SPAC业务合并的语境下，法院日益严格地审查发起人和董事对公众股东所负的信义义务。与传统并购中目标股东通常获得经谈判确定的溢价不同，SPAC股东往往面临一种非此即彼的选择：要么按比例赎回其股份以获取信托账户中的份额，要么投票赞成拟议的合并并在合并后实体中保留股权。这种结构性动态促使原告主张，发起人存在内在利益冲突——其动机是迅速完成交易以解锁其发起人激励，而非实现股东价值最大化。因此，特拉华州衡平法院已释放信号，愿意重新审视”完全公平标准”对这些交易的适用性。法院的裁判逻辑取决于这样一个前提：发起人与信义义务人的双重角色，加上信托协议施加的时间限制，可能会削弱商业判断规则所提供的保护。从业人员应注意，这种不断演变的判例法理可能会从根本上改变SPAC交易文件中的风险分配，从而要求就发起人的经济利益进行更充分的披露，并采取强有力的程序保障措施以减轻潜在的诉讼风险敞口。</p>
 <p><strong>🔍 篇章导读：</strong></p>
-<p>这段文字是一篇典型的律所客户提示评论，核心议题是SPAC（特殊目的收购公司）业务合并中的信义义务诉讼风险。文章采用”现象-冲突-司法应对-实务建议”的递进结构：首先对比SPAC与传统并购在股东对价上的差异，揭示其固有的利益冲突结构；随后引出特拉华州衡平法院的司法转向，即可能用更严苛的”完全公平标准”取代通常的”商业判断规则”；最后落脚于实务建议，强调交易文件中的风险分配与披露要求。作者立场客观审慎，语气带有预警色彩。读者应抓住的主线是：SPAC特有的时间限制与发起人激励结构如何动摇了传统公司法保护股东的底层逻辑。对法律人而言，这篇文章反映了后SPAC热潮时代的监管与诉讼焦点转移，提示在起草并购文件时必须前置性地强化程序保障以应对司法审查。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">当前浏览器不支持逐句跟读，已为你准备标准朗读（英式）：</p> <audio controls preload="none" src="/audio/daily-english/2026-09-25.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
+<p>这段文字是一篇典型的律所客户提示评论，核心议题是SPAC（特殊目的收购公司）业务合并中的信义义务诉讼风险。文章采用”现象-冲突-司法应对-实务建议”的递进结构：首先对比SPAC与传统并购在股东对价上的差异，揭示其固有的利益冲突结构；随后引出特拉华州衡平法院的司法转向，即可能用更严苛的”完全公平标准”取代通常的”商业判断规则”；最后落脚于实务建议，强调交易文件中的风险分配与披露要求。作者立场客观审慎，语气带有预警色彩。读者应抓住的主线是：SPAC特有的时间限制与发起人激励结构如何动摇了传统公司法保护股东的底层逻辑。对法律人而言，这篇文章反映了后SPAC热潮时代的监管与诉讼焦点转移，提示在起草并购文件时必须前置性地强化程序保障以应对司法审查。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">🔊 标准朗读（英式）</p> <audio controls preload="none" src="/audio/daily-english/2026-09-25.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
 ← 返回 <span class="tabular-nums">2026年9月</span> </a> </div> </footer> <script>
     (function () {
       var prose = document.querySelector('.prose');
@@ -1225,8 +1225,12 @@ In evaluating a business combination, directors must discharge their fiduciary d
 
       function startTts() {
         if (!hasTts) {
-          // 无网页语音合成时点控制条：指一下播放器在哪即可（播放器本身是常驻的）
-          showNotice('当前浏览器不支持网页朗读，用下方播放器听标准朗读（英式）', 4000);
+          // 不弹任何「不支持」提示：直接把兜底播放器滚到眼前让用户按播放
+          var fb = document.getElementById('audio-fallback');
+          if (fb) {
+            if (fb.hidden) fb.hidden = false;
+            try { fb.scrollIntoView({ block: 'center' }); } catch (e) { /* 忽略 */ }
+          }
           return;
         }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略

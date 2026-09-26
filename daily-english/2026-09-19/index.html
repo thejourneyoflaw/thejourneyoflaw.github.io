@@ -106,7 +106,7 @@ When facing securities litigation, corporate executives should not use voluminou
 <p>近年来，企业领导者越来越依赖关于”透明度”的漂亮话。然而，这种对开放性的新承诺往往只是一个幌子。高管们并没有真正阐明复杂的结构性问题，而是经常诉诸于掩盖责任的乏味声明。当一家公司面临令人失望的季度业绩时，随后的财报电话会议很少会对战略失误进行坦诚的评估。相反，投资者会遭受一连串经过粉饰的行话轰炸——比如”宏观经济逆风”或”为可持续增长重新定位”等措辞——这些话术轻而易举地将责任外推。</p>
 <p>这种沟通策略不仅仅是回避；它具有主动的误导性。通过用缺乏实质性细节的大量披露文件淹没利益相关者，管理层制造了严格合规的假象，同时掩盖了糟糕的决策。这种做法在法律和财务上的后果是深远的。监管机构已开始审查这些选择性披露，特别是当乐观的预测与随后的运营实际情况出现严重背离时。对于在这种环境中摸索的专业人士来说，戳穿企业表面文章的能力已不再是可选项。这要求对未言明之处具备敏锐的洞察力，并对语言如何被武器化以转移审查进行严谨分析。</p>
 <p><strong>🔍 篇章导读：</strong></p>
-<p>本段文字剖析了现代企业沟通中”伪透明”的现象。文章先指出高管常以”开放”为幌子，实则用陈词滥调推卸责任；随后揭露管理层如何利用海量但无实质的披露文件制造合规假象，掩盖决策失误；最后点明监管机构对此类行为的关注，并呼吁法律与金融专业人士培养看透语言包装的批判性思维。作者立场批判且锐利，语气客观严谨。读者应抓住”语言如何被武器化以转移审查”这一主线。这段文字的职场逻辑在于：它提醒专业人士在商业判断中，不能仅看信息量的多少，必须识别对方是否在用信息过载来实施认知规避与责任转移。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">当前浏览器不支持逐句跟读，已为你准备标准朗读（英式）：</p> <audio controls preload="none" src="/audio/daily-english/2026-09-19.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
+<p>本段文字剖析了现代企业沟通中”伪透明”的现象。文章先指出高管常以”开放”为幌子，实则用陈词滥调推卸责任；随后揭露管理层如何利用海量但无实质的披露文件制造合规假象，掩盖决策失误；最后点明监管机构对此类行为的关注，并呼吁法律与金融专业人士培养看透语言包装的批判性思维。作者立场批判且锐利，语气客观严谨。读者应抓住”语言如何被武器化以转移审查”这一主线。这段文字的职场逻辑在于：它提醒专业人士在商业判断中，不能仅看信息量的多少，必须识别对方是否在用信息过载来实施认知规避与责任转移。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">🔊 标准朗读（英式）</p> <audio controls preload="none" src="/audio/daily-english/2026-09-19.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
 ← 返回 <span class="tabular-nums">2026年9月</span> </a> </div> </footer> <script>
     (function () {
       var prose = document.querySelector('.prose');
@@ -1226,8 +1226,12 @@ When facing securities litigation, corporate executives should not use voluminou
 
       function startTts() {
         if (!hasTts) {
-          // 无网页语音合成时点控制条：指一下播放器在哪即可（播放器本身是常驻的）
-          showNotice('当前浏览器不支持网页朗读，用下方播放器听标准朗读（英式）', 4000);
+          // 不弹任何「不支持」提示：直接把兜底播放器滚到眼前让用户按播放
+          var fb = document.getElementById('audio-fallback');
+          if (fb) {
+            if (fb.hidden) fb.hidden = false;
+            try { fb.scrollIntoView({ block: 'center' }); } catch (e) { /* 忽略 */ }
+          }
           return;
         }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略

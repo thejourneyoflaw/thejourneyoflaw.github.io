@@ -115,7 +115,7 @@ Regulators require systemically important banks to demonstrate that their intern
 <p>从历史上看，央行撤出宽松举措往往伴随着短期借贷成本的突然飙升，尤其是在资本需求激增的季末时点。因此，大型金融机构的财资部门正积极重组其应急融资计划，以缓解潜在的资金市场碎片化。监管机构也发出信号，将密切审查系统重要性银行的内部流动性风险管理框架，确保这些机构不会过度依赖央行的兜底机制。最终，向更精简资产负债表的过渡，将考验支撑全球资本市场的金融底层管道的韧性。</p>
 <p><strong>🔍 篇章导读：</strong></p>
 <p>这段文字剖析了美联储缩表（QT）进程中的流动性退潮效应及其引发的机构应对。作者采用“现象-机制-历史-应对”的递进结构：首先点明超额准备金流失的宏观背景，随后剖析逆回购工具的缓冲机制及其耗尽后的潜在风险，接着以历史季末资金紧张作为佐证，最后落脚于金融机构的预案重组与监管审查。作者立场客观审慎，语气带有前瞻性的风险预警，并未制造恐慌，而是强调机制转换期的脆弱性。读者应抓住的主线是：流动性缓冲垫的消耗速度与金融体系底层管道韧性之间的博弈。</p>
-<p>这段文字的金融逻辑：它描述了央行缩表导致体系内超额流动性干涸，迫使机构重塑 contingency funding 以应对资金面碎片化风险的市场现象。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">当前浏览器不支持逐句跟读，已为你准备标准朗读（英式）：</p> <audio controls preload="none" src="/audio/daily-english/2026-09-20.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
+<p>这段文字的金融逻辑：它描述了央行缩表导致体系内超额流动性干涸，迫使机构重塑 contingency funding 以应对资金面碎片化风险的市场现象。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">🔊 标准朗读（英式）</p> <audio controls preload="none" src="/audio/daily-english/2026-09-20.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
 ← 返回 <span class="tabular-nums">2026年9月</span> </a> </div> </footer> <script>
     (function () {
       var prose = document.querySelector('.prose');
@@ -1235,8 +1235,12 @@ Regulators require systemically important banks to demonstrate that their intern
 
       function startTts() {
         if (!hasTts) {
-          // 无网页语音合成时点控制条：指一下播放器在哪即可（播放器本身是常驻的）
-          showNotice('当前浏览器不支持网页朗读，用下方播放器听标准朗读（英式）', 4000);
+          // 不弹任何「不支持」提示：直接把兜底播放器滚到眼前让用户按播放
+          var fb = document.getElementById('audio-fallback');
+          if (fb) {
+            if (fb.hidden) fb.hidden = false;
+            try { fb.scrollIntoView({ block: 'center' }); } catch (e) { /* 忽略 */ }
+          }
           return;
         }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略

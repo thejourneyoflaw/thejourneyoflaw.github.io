@@ -109,7 +109,7 @@ The board bears the fiduciary obligation to actively solicit dissent, rather tha
 <p>为了降低这种风险，组织必须培养一种文化：不仅要容忍建设性的反对意见，更要主动征求。尤其是法务与合规团队，他们承担着提出异议的信义义务，即使这些立场不受欢迎。健全的治理框架要求，异见必须被记录并彻底评估，而非被草率驳回。这种程序上的严谨性确保了潜在责任在恶化成无法控制的危机之前就被识别出来。归根结底，衡量一个韧性组织的真正标准，是其能否将挑战主流假设的机制制度化，从而保护利益相关者的价值免受集体狂妄之害。</p>
 <p><strong>🔍 篇章导读：</strong></p>
 <p>本文探讨了公司治理中“团体迷思”的危害与“异见”的价值。文章结构清晰：首先指出高管层因排斥异见而形成回音壁的现象，并点明其在金融领域的系统性风险；随后提出解决方案——组织必须主动征求异见，特别是法务合规团队必须履行提出异议的信义义务；最后，文章从治理机制的高度总结，将“容忍异见”上升到保护利益相关者价值的制度设计层面。作者立场鲜明，语气客观且带有警示性，读者应抓住“程序严谨性（procedural rigor）对抗集体狂妄（collective hubris）”这一主线。</p>
-<p>这段文字的职场逻辑在于：在合规与治理层面，将“异见”机制化并非为了制造对立，而是通过程序上的强制纠偏，来对冲高管层的认知盲区与过度自信。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">当前浏览器不支持逐句跟读，已为你准备标准朗读（英式）：</p> <audio controls preload="none" src="/audio/daily-english/2026-09-23.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
+<p>这段文字的职场逻辑在于：在合规与治理层面，将“异见”机制化并非为了制造对立，而是通过程序上的强制纠偏，来对冲高管层的认知盲区与过度自信。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">🔊 标准朗读（英式）</p> <audio controls preload="none" src="/audio/daily-english/2026-09-23.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
 ← 返回 <span class="tabular-nums">2026年9月</span> </a> </div> </footer> <script>
     (function () {
       var prose = document.querySelector('.prose');
@@ -1229,8 +1229,12 @@ The board bears the fiduciary obligation to actively solicit dissent, rather tha
 
       function startTts() {
         if (!hasTts) {
-          // 无网页语音合成时点控制条：指一下播放器在哪即可（播放器本身是常驻的）
-          showNotice('当前浏览器不支持网页朗读，用下方播放器听标准朗读（英式）', 4000);
+          // 不弹任何「不支持」提示：直接把兜底播放器滚到眼前让用户按播放
+          var fb = document.getElementById('audio-fallback');
+          if (fb) {
+            if (fb.hidden) fb.hidden = false;
+            try { fb.scrollIntoView({ block: 'center' }); } catch (e) { /* 忽略 */ }
+          }
           return;
         }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略

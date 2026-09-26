@@ -125,7 +125,7 @@ In the current low-interest-rate environment, investors’ blind chase for yield
 <p>然而，这种动态容易受到资本流突然逆转的冲击。一旦宏观经济状况恶化，目前嵌入高收益债指数中的流动性溢价可能会急剧扩大，从而暴露出银团贷款组合的脆弱性。此外，私募信贷中模型估值的不透明性意味着，报告期的资产净值在压力时期往往滞后于实际的市场清算水平。因此，依赖历史违约相关性的投资组合经理可能会发现他们的风险模型极其不足，因为债权人权利的结构性转变从根本上改变了尾部风险分布。这种错误定价代表了一种潜在的系统性脆弱，而它目前仍被对收益的追逐所掩盖。</p>
 <p><strong>🔍 篇章导读：</strong></p>
 <p>这段文字剖析了高收益债与私募信贷市场中的”估值幻觉”。文章采用”表象-机制-风险-后果”的递进结构：首先指出利差收窄掩盖了基本面恶化；接着深挖机制——大量”轻契约”发行结构上损害了高级债权人利益，而资金涌入私募信贷人为压低了违约率；随后笔锋一转，指出在宏观恶化与流动性枯竭的情景下，模型估值的不透明将导致净值滞后，基于历史数据的风险模型将彻底失效。作者立场审慎且带有强烈的预警意味，读者应抓住”结构脆弱性被资金面暂时掩盖”这一核心主线。</p>
-<p>这段文字的金融逻辑：它描述了在资本涌入掩盖下，高收益债市场因契约条款弱化和模型估值不透明而积累的流动性溢价定价错误风险。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">当前浏览器不支持逐句跟读，已为你准备标准朗读（英式）：</p> <audio controls preload="none" src="/audio/daily-english/2026-09-24.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
+<p>这段文字的金融逻辑：它描述了在资本涌入掩盖下，高收益债市场因契约条款弱化和模型估值不透明而积累的流动性溢价定价错误风险。</p> </div> <div id="audio-fallback" class="audio-fallback" hidden> <p class="audio-fallback-hint">🔊 标准朗读（英式）</p> <audio controls preload="none" src="/audio/daily-english/2026-09-24.mp3"></audio> </div> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/daily-english/2026-09/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年9月 归档">
 ← 返回 <span class="tabular-nums">2026年9月</span> </a> </div> </footer> <script>
     (function () {
       var prose = document.querySelector('.prose');
@@ -1245,8 +1245,12 @@ In the current low-interest-rate environment, investors’ blind chase for yield
 
       function startTts() {
         if (!hasTts) {
-          // 无网页语音合成时点控制条：指一下播放器在哪即可（播放器本身是常驻的）
-          showNotice('当前浏览器不支持网页朗读，用下方播放器听标准朗读（英式）', 4000);
+          // 不弹任何「不支持」提示：直接把兜底播放器滚到眼前让用户按播放
+          var fb = document.getElementById('audio-fallback');
+          if (fb) {
+            if (fb.hidden) fb.hidden = false;
+            try { fb.scrollIntoView({ block: 'center' }); } catch (e) { /* 忽略 */ }
+          }
           return;
         }
         if (tts.state !== 'idle') return; // 幂等：播放/暂停中重复点击直接忽略
