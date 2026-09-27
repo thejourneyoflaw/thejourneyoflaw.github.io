@@ -884,6 +884,9 @@ In evaluating a business combination, directors must discharge their fiduciary d
       var wordAudio = null;
       function playWordAudioFallback(text) {
         try {
+          // 若标准朗读播放器正在播，先按停，避免两个声音叠在一起
+          var mainAudio = document.querySelector('#audio-fallback audio');
+          if (mainAudio) { try { mainAudio.pause(); } catch (e) { /* 忽略 */ } }
           if (wordAudio) { wordAudio.onended = null; wordAudio.pause(); wordAudio = null; }
           var words = String(text).trim().split(/\s+/).slice(0, 6);
           var i = 0;
@@ -1361,16 +1364,17 @@ In evaluating a business combination, directors must discharge their fiduciary d
       }
 
       /* ---------------- TTS 兜底播放器（edge-tts 预生成的标准朗读 MP3） ---------------- */
-      // 浏览器不支持 speechSynthesis 时（夸克/UC/微信内置等），显示构建期检测存在的
-      // 原生 <audio> 播放器；支持时保持隐藏，上方交互朗读照旧。
-      function revealAudioFallback() {
-        var el = document.getElementById('audio-fallback');
-        if (!el || !el.hidden) return;
-        // 移到控制条/提示条下方，与「下方播放器」的指引位置一致
-        notice.insertAdjacentElement('afterend', el);
-        el.hidden = false;
+      // 浏览器不支持 speechSynthesis 时（夸克/UC/微信内置等），「朗读本文」控制条依赖的
+      // 能力不存在，摆在那里就是个死按钮——直接把控制条藏掉，把标准朗读播放器放到
+      // 原控制条的位置；支持 TTS 的浏览器则相反：播放器隐藏，交互朗读照旧。
+      if (!hasTts) {
+        var fbEl = document.getElementById('audio-fallback');
+        if (fbEl) {
+          if (anchorH2 && fbEl.parentNode) anchorH2.insertAdjacentElement('afterend', fbEl);
+          fbEl.hidden = false;
+          bar.hidden = true;
+        }
       }
-      if (!hasTts) revealAudioFallback();
 
       /* ---------------- 第 2 节词条的可见发音按钮 ---------------- */
       // 每个 .dict-card 的词条段（首段）末尾加喇叭按钮，点击朗读该词条英文（短语整条读）
