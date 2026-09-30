@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Sep 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高管过渡期沟通：沉默比坏消息更糟</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-10-01/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-10-01/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 vacuum｜来源 Business press commentary</description>
+      <pubDate>Wed, 30 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Gemini 4 Argon 单次输出百万 tokens</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-10-01/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-10-01/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 开源模型许可证｜Google 新旗舰模型面向法律金融场景，输出上限八倍提升</description>
+      <pubDate>Wed, 30 Sep 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>AI 推理算力狂飙，缓存架构成新瓶颈</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-09-30/</link>
