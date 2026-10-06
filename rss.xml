@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Oct 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>默示条款：法院如何填补合同空白</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-10-07/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-10-07/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜合同法｜核心术语 implied term｜来源 Business press commentary</description>
+      <pubDate>Tue, 06 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI发布前沿模型数学成果，Lean形式化验证</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-10-07/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-10-07/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 RAG 检索增强生成｜未发布模型攻克数学难题，成果以Lean形式化并公开</description>
+      <pubDate>Tue, 06 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>高收益债的流动性幻觉与信用利差</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-10-06/</link>
