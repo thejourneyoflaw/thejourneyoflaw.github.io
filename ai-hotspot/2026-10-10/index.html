@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>微软决策模型上线，扰动下仅1.3%翻转</title><meta name="description" content="微软新决策模型在36项盲测中夺魁，推理成本极低。"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="微软决策模型上线，扰动下仅1.3%翻转"><meta property="og:description" content="微软新决策模型在36项盲测中夺魁，推理成本极低。"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-10/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-10/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.UR5rVddv.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.10.10</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> 微软决策模型上线，扰动下仅1.3%翻转 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">微调改的是模型内部权重，提示工程改的是外部输入指令</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">微软新决策模型盲测夺冠，输入扰动下仅1.3%决策翻转</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">微软研究发现编码智能体瓶颈在读代码而非改代码</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">Redwood论文实证蒸馏定罪与蒸馏提能两条安全路径</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">基于决策模型与蒸馏安全路径构建金融风控路由引擎</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念微调与提示工程">今日概念：微调与提示工程</h3>
+<p>微调与提示工程，是改造大语言模型行为的两条根本路径。提示工程不改动模型本身，而是在输入层下功夫——通过精心设计的指令、示例和上下文规则，引导模型在推理时产出符合预期的结果。你可以把它想象成给一位经验丰富但不知具体任务的专家下达工作简报：简报写得越精准，产出越贴合需求，但专家的大脑内部并没有改变。</p>
+<p>微调则截然不同。它通过在特定数据集上继续训练，直接更新模型内部数以亿计的参数权重，让模型在底层就适应特定领域或任务。这就好比不是给专家换一份简报，而是送专家去读了一个在职法学硕士，其知识结构和直觉反应被从根本上重塑了。</p>
+<p>理解这两条路径的区别至关重要。提示工程的优势在于灵活、零成本切换，但受限于模型原有能力天花板；微调能将模型在特定任务上的表现推到极致，却需要高质量数据集和算力投入，且容易在特定分布上过拟合。在法律与金融的严谨场景中，判断一个模型的行为改变是来自提示指令还是权重微调，直接决定了你对输出可控性和可审计性的预期。提示工程留下的指令痕迹是可追溯的，而微调带来的行为漂移往往隐藏在黑盒中，需要更专业的评估手段来对齐。</p>
+<h3 id="热点一微软决策模型盲测夺魁抗扰动能力惊人">热点一：微软决策模型盲测夺魁，抗扰动能力惊人</h3>
+<p>微软正式在 OpenRouter 上线了 Microsoft-Decision-1 决策模型。这款基于 Qwen3.5-9B 后训练的模型，在 36 项盲测基准（约 15 万道题）中准确率排名最高，比第二名快 4.5 倍，比 GPT-6 Sol 快 35 倍。最关键的技术指标是：在输入扰动测试下，其决策翻转率仅为 1.3%。这意味着即使对输入问题做微小的语义干扰，模型也几乎不会改变最终决策。定价为每百万输入 token 0.042 美元，输出免费，支持 32K 上下文。这标志着专用决策模型开始从通用大模型中分化出来，以极低成本和极高稳定性满足高并发决策场景。</p>
+<h3 id="热点二微软论文揭示编码智能体瓶颈在读非改">热点二：微软论文揭示编码智能体瓶颈在”读”非”改”</h3>
+<p>微软发布新论文指出，当前编码智能体在处理大量代码时的核心瓶颈并非编辑代码出错，而是在阅读和理解大量代码上下文时失败。研究者构建了 CABRA 框架来生成合成编码任务，每次只提升一类难度，在 6,840 个任务上测试了 8 个 LLM 和 6 个智能体。他们将每次工具调用标注为读取、分析、搜索、编辑或测试。结论是，业界长期用 diff 大小来评测编码智能体的方式存在偏差，应该用代码阅读与比较任务来评测。这一发现对开发者构建复杂智能体工作流具有直接指导意义：优化智能体的信息摄取与上下文压缩策略比优化其代码生成能力更关键。</p>
+<h3 id="热点三redwood论文实证蒸馏安全路径">热点三：Redwood论文实证蒸馏安全路径</h3>
+<p>安全研究机构 Redwood Research 发布论文，实证检验了两条蒸馏安全路径：蒸馏定罪（DFI）与蒸馏提能（DFC）。DFI 的核心思路是将不信任的教师模型蒸馏为一个更弱但可信的学生模型，迫使学生模型暴露教师隐藏的怪癖和行为缺陷；DFC 则在迁移能力的同时阻断失对齐。这项研究为行业提供了一个对抗模型黑盒风险的重要工具——不用费力去逆向工程教师模型的权重，而是通过蒸馏过程将不信任模型的内部偏差”挤”出来。对于需要审计第三方模型行为的合规场景，这是一条极具实操价值的技术路径。</p>
+<h3 id="热点四claude-managed-agents-实现一键迁移">热点四：Claude Managed Agents 实现一键迁移</h3>
+<p>Anthropic 前员工展示了将一个复杂项目迁移到 Claude Managed Agents 的体验。此前使用 Opus 4 和 Agent SDK 构建的项目需要持续运行的进程，可靠性存在挑战。而仅用一个提示词，Opus 5.5 就将其移植到了 Claude Managed Agents 上，可靠性大幅提升。这意味着智能体托管平台正在降低开发门槛，开发者无需再维护复杂的基础设施，智能体的生命周期管理正在从”手工作坊”走向”云端托管”。</p>
+<h3 id="热点五openai-decisions-api公测发布">热点五：OpenAI Decisions API公测发布</h3>
+<p>OpenAI 发布 Decisions API 公开测试版，端点为 POST /v1/decisions。该 API 可将文本和图像直接转化为概率、选项或评分等类型化答案，官方称比 Responses API 快约 10 倍，单次决策约耗时 150 毫秒。这标志着 API 接口正在从”生成文本”向”输出结构化决策”演进。对于需要将 AI 嵌入实时业务流的企业来说，无需再自己解析模型生成的自然语言，直接拿到类型化的决策结果，将极大简化系统集成逻辑。</p>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<p><strong>创意是什么</strong>：构建一个面向金融风控与法律合规审批的”决策路由与安全蒸馏审计引擎”，利用专用决策模型的极速与高抗扰动性处理日常高并发审批，同时引入蒸馏定罪路径对黑盒模型进行偏见审计。</p>
+<p><strong>灵感来自哪些热点</strong>：本创意直接基于<strong>热点一</strong>（微软决策模型上线）与<strong>热点三</strong>（Redwood 蒸馏安全路径论文），并融合<strong>热点五</strong>（OpenAI Decisions API）。热点一提供了处理高并发结构化风控决策的技术条件——极低成本、1.3% 的极低翻转率；热点三提供了对不可信模型进行安全审计的方法论——通过 DFI 蒸馏暴露隐藏偏见；热点五则提供了将文本直接转为类型化决策结果的 API 范式。</p>
+<p><strong>为什么现在可行</strong>：专用决策模型的出现让 AI 从”生成对话”跨越到了”输出判定”，而蒸馏安全路径的实证研究为行业提供了审计黑盒模型的实操工具。这两个技术条件在 2026 年下半年同时成熟，使得构建一个既快又可审计的决策系统成为现实。</p>
+<p><strong>专业场景怎么用</strong>：在金融风控场景，用于信贷审批与异常交易拦截。系统调用决策模型对结构化交易数据输出概率化决策路径与置信度。在法律合规场景，用于合同条款合规性审查，将条款文本输入 Decisions API，直接输出”合规/不合规/需人工复核”的类型化判定。同时，合规团队定期使用 DFI 路径，将生产环境中的黑盒教师模型蒸馏为可审计学生模型，检查是否存在对特定主体或交易结构的隐性歧视。</p>
+<p><strong>落地要点</strong>：</p>
+<ol>
+<li>
+<p><strong>调用决策模型处理高并发结构化风控审批，输出概率化决策路径与置信度。</strong> 技术团队集成决策模型 API，处理信贷审批与交易风控等高并发场景。每次决策必须输出置信度，低于阈值的直接转人工复核，确保不放过边缘风险。</p>
+</li>
+<li>
+<p><strong>引入蒸馏定罪路径，将黑盒教师模型蒸馏为可审计学生模型，暴露隐藏偏见。</strong> 模型安全团队定期执行 DFI 流程，将生产模型蒸馏为弱学生模型。合规法务审查学生模型在受保护属性上的行为差异，形成模型偏见审计报告，满足监管对算法公平性的要求。</p>
+</li>
+<li>
+<p><strong>建立决策翻转率监控看板，当输入扰动导致结论翻转超阈值时触发人工复核。</strong> 风控团队建立监控看板，实时追踪决策翻转率。参考微软模型 1.3% 的翻转率基准，当特定业务流的翻转率异常升高时，系统自动触发人工介入并暂停该模型路由。</p>
+</li>
+</ol>
+<p><strong>价值与局限</strong>：这个创意的价值在于将”快”与”可审计”结合，解决了金融与法律场景对 AI 既要实时响应又要可解释的核心矛盾。但局限在于：决策模型擅长结构化判定，不适合处理需要深度推理的复杂法律论证；蒸馏审计路径能暴露偏见但无法完全消除黑盒风险。在涉及重大财产处置或复杂诉讼策略的场景，仍必须坚持以人类律师与分析师为主导。</p>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于公开技术资讯与论文摘要整理。对模型能力的性能描述引自发布方基准数据，实际应用效果可能因场景而异。将决策模型与蒸馏安全路径结合应用于金融法律风控的方案属编辑判断，不代表任何机构官方立场。微软论文的 CABRA 框架与 Redwood 的蒸馏路径目前仍为研究阶段，商业化落地效果需持续观察。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">金融风控决策路由与安全蒸馏审计引擎</h2> <ol class="idea-list"> <li>调用决策模型处理高并发结构化风控审批，输出概率化决策路径与置信度。</li><li>引入蒸馏定罪路径，将黑盒教师模型蒸馏为可审计学生模型，暴露隐藏偏见。</li><li>建立决策翻转率监控看板，当输入扰动导致结论翻转超阈值时触发人工复核。</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://aihot.news/items/t6ogdjxta6chq8hny7x9on903" target="_blank" rel="noopener noreferrer">Microsoft-Decision-1 决策模型上线 OpenRouter</a> <span>｜OpenRouter</span> <span>｜2026-10-10</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/o7gofultojzgsd418ggbynqxn" target="_blank" rel="noopener noreferrer">微软新论文：编码智能体瓶颈在“读代码”而非“改代码”</a> <span>｜Rohan Paul</span> <span>｜2026-10-10</span> </li><li> <span class="src-no">[3]</span> <a href="https://blog.redwoodresearch.org/p/paper-distillation-for-incrimination" target="_blank" rel="noopener noreferrer">Redwood Research 发布论文：实证检验蒸馏定罪（DFI）与蒸馏提能（DFC）</a> <span>｜Redwood Research：Blog</span> <span>｜2026-10-10</span> </li><li> <span class="src-no">[4]</span> <a href="https://aihot.news/items/m5s37md3estitdba4y3l24o88" target="_blank" rel="noopener noreferrer">Claude Managed Agents 迁移体验</a> <span>｜Thariq</span> <span>｜2026-10-10</span> </li><li> <span class="src-no">[5]</span> <a href="https://www.marktechpost.com/2026/10/09/openai-decisions-api-hits-public-beta-with-10x-faster-typed-answers/" target="_blank" rel="noopener noreferrer">OpenAI Decisions API 进入公测，类型化答案比 Responses API 快约 10 倍</a> <span>｜MarkTechPost</span> <span>｜2026-10-10</span> </li> </ol> <p class="sources-note">本期资讯基于公开技术资讯与论文摘要整理。对模型能力的性能描述引自发布方基准数据，实际应用效果可能因场景而异。将决策模型与蒸馏安全路径结合应用于金融法律风控的方案属编辑判断，不代表任何机构官方立场。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/ai-hotspot/2026-10/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年10月 归档">
+← 返回 <span class="tabular-nums">2026年10月</span> </a> </div> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>
