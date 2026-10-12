@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 11 Oct 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>职场沟通精读：如何得体地提出异议</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-10-13/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-10-13/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 articulate｜来源 Business press commentary</description>
+      <pubDate>Mon, 12 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Perplexity智能体用Git分析金融文档</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-10-13/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-10-13/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 多模态模型｜Perplexity智能体以Git仓库驱动金融分析</description>
+      <pubDate>Mon, 12 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>模型推理的内存墙与算力博弈</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-10-12/</link>
