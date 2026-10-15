@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gemini 4 Argon 攻克 ARC-AGI，难题基准落幕</title><meta name="description" content="谷歌模型 ARC-AGI-3 得分 97.5%，难题基准时代终结"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="Gemini 4 Argon 攻克 ARC-AGI，难题基准落幕"><meta property="og:description" content="谷歌模型 ARC-AGI-3 得分 97.5%，难题基准时代终结"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-16/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-16/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.DgXP5eTS.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.10.16</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> Gemini 4 Argon 攻克 ARC-AGI，难题基准落幕 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">推理成本是模型回答一次背后的算力账单</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">Gemini 4 Argon 在 ARC-AGI-3 上得分 97.5%</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">Claude Code Review 正式开放，支持三级审查</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">蚂蚁百灵开源 Ling-3.1-flash，支持百万上下文</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">多级审查引擎驱动合规与风控双线穿透</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念推理成本">今日概念：推理成本</h3>
+<p>推理成本，是模型在回答你一次问题时背后消耗的算力账单。它不是软件拷贝的边际成本，而是每次生成 token 都要实打实烧掉的电费、GPU 折旧和带宽。</p>
+<p>打个比方：传统软件像一本印刷好的书，印完之后谁来翻页都几乎不花钱；而 AI 推理像请了一位高级顾问，每说一个字都在计费——顾问的”脑容量”越大（参数越多）、思考时间越长（推理步数越多），这账单就越贵。这就是为什么即便开源模型权重免费，调用 API 或自建集群跑起来仍然要花真金白银。</p>
+<p>推理成本由三要素决定：模型参数量、每次请求激活的参数量（MoE 架构下只激活一部分）、以及输入输出的 token 数。理解推理成本，就是理解 AI 商业模式的底层锚点：模型定价、应用层毛利、智能体调用链路设计，全都卡在这根线上。对法律与金融专业人士而言，当你用 AI 审查一份百页合同或分析招股书时，决定你用哪个模型的不仅是”谁更准”，更是”谁在单位 token 成本下给出的判断最可靠”。推理成本的走势，直接决定了 AI 能否从尝鲜玩具变成生产工具。</p>
+<h3 id="热点一gemini-4-argon-攻克-arc-agi难题基准时代落幕">热点一：Gemini 4 Argon 攻克 ARC-AGI，难题基准时代落幕</h3>
+<p>Ethan Mollick 引用 ARC Prize 数据称，Google DeepMind 的 Gemini 4 Argon 在 ARC-AGI-3（Verified）上得分 97.5%，在标准 harness 下也达到 49.8%。同时 ARC-AGI-2 得分 91.3%，ARC-AGI-1 得分 98.5%。Google DeepMind 是第二个在 ARC-AGI-3 上超过 95% 的机构，且此次评测花费了 4.8K 美元。</p>
+<p>ARC-AGI 长期被视为评估模型”抽象推理与泛化能力”的标杆，难度远超传统问答。Argon 在该基准上的突破意味着前沿模型已具备强泛化的多步逻辑推理能力。对开发者而言，这意味着依赖复杂推理链的智能体任务（如多步代码重构、跨文档因果推断）的可靠性门槛正在被踏破。对行业而言，“难题基准”作为模型能力分水岭的时代正在终结，竞争焦点将转向实际场景中的推理成本效率与智能体编排能力。</p>
+<h3 id="热点二claude-code-review-正式向团队开放支持三级审查">热点二：Claude Code Review 正式向团队开放，支持三级审查</h3>
+<p>Anthropic 宣布 Claude Code Review 正式向 Team 和 Enterprise 计划开放。审查速度比研究预览版快约 3 倍，能发现更多关键 bug。管理员可为每个仓库选择 Quick、Standard 或 Deep 三种审查级别，开启后每个新 PR 自动运行审查，开发者无需额外配置。</p>
+<p>这标志着 AI 代码审查从”可选插件”进入”默认基础设施”阶段。关键技术点在于分级审查：Quick 级别覆盖语法与明显逻辑错误，Deep 级别深入架构与安全漏洞。自动触发机制意味着审查成为 PR 流程的强制门禁。对企业而言，这直接触及软件开发的安全合规边界——当 AI 审查成为默认环节，企业需要重新定义”已审查代码”的责任归属与审计标准。代码审查从人工抽检走向 AI 全量覆盖，工程效率与安全覆盖率同时提升。</p>
+<h3 id="热点三蚂蚁百灵开源-ling-31-flash百万上下文与极低激活成本">热点三：蚂蚁百灵开源 Ling-3.1-flash，百万上下文与极低激活成本</h3>
+<p>蚂蚁百灵宣布开源 Ling-3.1-flash 模型，总参数约 560B，每个 Token 激活约 25B，最高支持 1M 上下文。在 Artificial Analysis 公开评测中智能指数为 41，输出速度约每秒 210 Token。</p>
+<p>这条热点的技术核心是 MoE（混合专家）架构的极致优化：560B 总参数保证了知识容量，但每次推理只激活 25B 参数，推理成本接近一个 25B 密集模型，而能力远超。百万上下文窗口意味着模型单次可吞入约 75 万英文单词——相当于整部《哈利·波特》全集。对开发者和企业而言，这意味着处理超长文档（法律合同附件包、IPO 招股书全套、代码库全量）不再需要复杂的分块检索，可以直接全量喂入模型。开源权重还意味着可私有化部署，解决数据出境与保密义务的合规痛点。</p>
+<h3 id="热点四openrouter-推出-ori任意模型可运行-claude-code">热点四：OpenRouter 推出 ori，任意模型可运行 Claude Code</h3>
+<p>OpenRouter 发布 ori 工具，支持在 OpenRouter 平台上的任意模型运行 Claude Code、Codex、Pi 等工具。安装命令为一行 curl 脚本，示例命令如 <code>ori claude --model google/gemini-4-argon</code>，让开发者在熟悉的 harness 中访问 500+ 模型。</p>
+<p>ori 的技术意义在于解耦了”工具框架”与”底层模型”：过去 Claude Code 只能调用 Anthropic 模型，现在开发者可以用 Gemini、GPT 或任意开源模型驱动同一套智能体工作流。对行业而言，这降低了智能体技术栈的供应商锁定风险。企业可以按任务类型灵活切换底层模型——推理任务用 Argon，代码生成用 Claude，长文档用 Ling-3.1-flash——而上层工具链保持不变。模型层成为可插拔组件，工具层成为稳定资产。</p>
+<h3 id="热点五谷歌-antigravity-加速抗菌肽发现ai-驱动科学突破">热点五：谷歌 Antigravity 加速抗菌肽发现，AI 驱动科学突破</h3>
+<p>谷歌 Antigravity 智能开发平台借助 ProtNLM 模型，从氨基酸序列直接预测生物功能，为大量 UniProt 未表征蛋白质添加高置信度功能标注。研究人员已通过该平台发现一种新型抗菌肽候选分子，预测其对呼吸道感染病原体具有活性，目前正进行湿实验室验证。平台内置 Biomolecular Structure Viewer，可将原本需数天的跨数据库筛选压缩为单次协作会话。</p>
+<p>这标志着 AI 从”文本生成工具”进入”科学发现引擎”阶段。ProtNLM 模型将蛋白质序列视为一种”语言”，用大语言模型的架构来预测其生物功能——这是 AI 技术栈向自然科学领域迁移的典型案例。对行业而言，AI 驱动的科学发现意味着研发周期压缩与候选分子筛选成本骤降。从跨数据库筛选到单次协作会话的效率跃升，为受严格监管的医药行业提供了新的研发范式。</p>
+<hr/>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<h3 id="多级审查引擎驱动合规风控穿透">多级审查引擎驱动合规风控穿透</h3>
+<p><strong>创意是什么</strong>：基于 Claude Code Review 的三级审查架构（热点二）与 Ling-3.1-flash 的百万上下文能力（热点三），结合 Gemini 4 Argon 的多步推理突破（热点一）与 OpenRouter ori 的模型解耦能力（热点四），搭建一台”合规与风控双线穿透引擎”——它能像 Claude Code 审查代码一样，对金融交易结构与法律合同执行自动化、分级、全量的风险审查。</p>
+<p><strong>灵感来自哪些热点</strong>：热点二（Claude Code Review 三级审查）贡献了分级审查的架构蓝本——Quick/Standard/Deep 对应合规审查的”条款扫描/交叉引用/深层利益冲突分析”；热点三（Ling-3.1-flash 百万上下文）贡献了超长文档全量吞入的技术条件，让引擎不再依赖脆弱的分块检索；热点一（Gemini 4 Argon 攻克 ARC-AGI）证明前沿模型已具备多步逻辑链推演能力，可以处理复杂交易结构中的因果推断；热点四（OpenRouter ori）让引擎底层模型可按任务类型灵活切换，避免供应商锁定。</p>
+<p><strong>为什么现在可行</strong>：三个技术条件在 2026 年下半年同时成熟。第一，百万上下文窗口消除了”文档太长模型记不住”的硬约束——一份 200 页的并购协议加上全部附件，可以一次性喂入 Ling-3.1-flash。第二，分级审查架构已在代码领域验证了可行性与效率——Claude Code Review 的 Deep 级别已能发现深层 bug，同样的架构迁移到合同审查只需重构 prompt 与审查规则。第三，推理成本持续下降使得”逐条款全量审查”的经济性成立——过去请律师逐条审阅一份复杂协议需要数十小时人力，现在模型可以在分钟级完成首轮全量扫描。</p>
+<p><strong>专业场景怎么用</strong>：</p>
+<p>在法律工作中，引擎可执行三层穿透。Quick 级别扫描合同基本条款完整性：是否缺失不可抗力条款、争议解决条款是否与模板一致、管辖法院是否合规。Standard 级别执行交叉引用分析：合同第 12 条引用的附件 B 是否存在、定义术语在全文中是否一致、付款条件与违约条款是否逻辑自洽。Deep 级别执行利益冲突与隐蔽风险推演：模拟极端场景下各方权利义务变化，识别”温水煮青蛙”式的不对称条款——比如控制权变更触发条款在三层嵌套的股权结构下会产生什么连锁反应。</p>
+<p>在金融工作中，引擎可直接嵌入投研与风控流水线。在尽调阶段，将目标公司的全套法律文件、财务报表与业务合同喂入引擎，Deep 级别审查自动生成”风险热力图”，标注高、中、低风险条款并给出修改建议。在交易结构设计阶段，引擎基于 Argon 的多步推理能力，模拟不同交易结构下的税务影响、控制权流转路径与退出机制触发条件，输出可追溯的决策路径。在投后管理阶段，引擎持续监控被投企业的合同变更，任何新签合同自动触发 Standard 级别审查，异常条款实时告警。</p>
+<p><strong>落地要点</strong>：</p>
+<p>第一，以 Claude Code Review 三级审查为架构蓝本，搭建合规风控双线穿透引擎。法务团队与风控团队联合定义每个级别的审查规则集，按业务单元（信贷、投资、供应链）配置审查深度。关键在于将法律合规规则（如数据出境、关联交易披露）与金融风控规则（如集中度限制、敞口计算）编码为可执行的审查策略，由系统自动匹配执行。谁来做法务与风控负责人联合制定规则，IT 负责引擎集成。风险在于规则集的覆盖度——遗漏的规则等于审查盲区。</p>
+<p>第二，将 Ling-3.1-flash 百万上下文能力嵌入尽调流水线，实现超长招股书与合同附件全量吞入。技术团队将 Ling-3.1-flash 私有化部署在内部基础设施上，解决数据保密义务。尽调团队将目标公司全量文件一次性上传，引擎自动识别文档类型并分配审查规则。关键突破在于消除分块检索带来的上下文割裂——过去分块审查时，第 3 块里的定义条款与第 47 块里的引用条款无法关联，全量上下文让交叉引用在单次推理内完成。</p>
+<p>第三，引入 ARC-AGI 推理范式，让引擎对复杂交易结构执行多步逻辑链推演，输出可追溯决策路径。当 Argon 在 ARC-AGI-3 上达到 97.5% 得分时，它证明模型可以处理”给定规则集，推演多步后果”的任务。将这一能力迁移到交易结构分析：给定合同条款与交易框架，引擎推演”在控制权变更触发时，对赌条款、反稀释条款与优先清算权的叠加效应”，输出每一步推理依据。这解决了 AI 决策的”黑箱”痛点——金融与法律专业人士需要可审计的决策路径，而非一个黑盒答案。风险在于推理链越长，累积误差越大，因此 Deep 级别审查结果必须由人工复核确认。</p>
+<p><strong>价值与局限</strong>：这个创意的真实价值在于将”全量审查”从理想变为现实——传统模式下受人力限制只能抽检的合同库，现在可以 100% 覆盖。对法律专业人士，它压缩了机械性条款扫描的时间，让律师聚焦于 Deep 级别的策略性判断。对金融专业人士，它提供了可量化、可追溯的风控证据链。但局限同样明确：引擎无法替代专业判断，尤其在”商业合理性”评估上——模型可以发现条款不一致，但判断一份对赌协议在特定行业周期下是否”公平”，仍需要人的商业直觉与经验。此外，私有化部署成本与模型推理延迟是中小机构的现实门槛。引擎最适合的场景是高频、标准化、文档密集型业务——信贷合同审查、IPO 尽调、供应链合同批量审查；不适合个性化极强的诉讼策略制定。</p>
+<hr/>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于公开热点素材整理，素材编号对应 frontmatter 的 sources 字段。五条热点分别对应素材编号 [1]、[2]、[4]、[17]、[15]，标题照抄原文。编辑判断体现在两部分：一是对技术事实的解析与行业影响推演，二是第二部分创意的跨领域落地设计——将代码审查架构迁移至法律合规与金融风控场景属于编辑的专业推断，尚无成熟产品验证。Gemini 4 Argon 的具体得分与花费引用自原推文数据，模型在生产环境中的实际表现可能因部署方式差异而不同。Ling-3.1-flash 的参数与速度数据来自蚂蚁百灵官方披露，实际私有化部署性能取决于硬件配置。创意中涉及的合规规则编码与风控策略执行属于方案设想，落地时需与法务合规团队及监管要求对齐。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">多级审查引擎驱动合规风控穿透</h2> <ol class="idea-list"> <li>以 Claude Code Review 三级审查为架构蓝本，搭建合规风控双线穿透引擎，按业务单元配置审查深度。</li><li>将 Ling-3.1-flash 百万上下文能力嵌入尽调流水线，实现超长招股书与合同附件全量吞入。</li><li>引入 ARC-AGI 推理范式，让引擎对复杂交易结构执行多步逻辑链推演，输出可追溯决策路径。</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://aihot.news/items/e8xvz5p1l47zzcyc295k0v8uz" target="_blank" rel="noopener noreferrer">Ethan Mollick 评 Gemini 4 Argon 攻克 ARC-AGI：知名难题基准时代落幕</a> <span>｜Ethan Mollick</span> <span>｜2026-10-16</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/zx4yy1exmkh3g0epr5ax79ky6" target="_blank" rel="noopener noreferrer">Claude Code Review 正式向 Team 和 Enterprise 计划开放</a> <span>｜Ado Kukic</span> <span>｜2026-10-16</span> </li><li> <span class="src-no">[3]</span> <a href="https://www.ithome.com/1/013/700.htm" target="_blank" rel="noopener noreferrer">蚂蚁百灵开源 Ling-3.1-flash 模型，约 560B 总参数、最高支持 1M 上下文</a> <span>｜IT之家·人工智能</span> <span>｜2026-10-16</span> </li><li> <span class="src-no">[4]</span> <a href="https://aihot.news/items/wof226xvs9u3rhsgml7o81n5m" target="_blank" rel="noopener noreferrer">OpenRouter 推出 ori，可在其平台任意模型上运行 Claude Code 等工具</a> <span>｜OpenRouter</span> <span>｜2026-10-16</span> </li><li> <span class="src-no">[5]</span> <a href="https://www.ithome.com/1/013/684.htm" target="_blank" rel="noopener noreferrer">谷歌 Antigravity 用 AI 加速抗菌肽发现，已找到新型候选分子</a> <span>｜IT之家·人工智能</span> <span>｜2026-10-16</span> </li> </ol> <p class="sources-note">本期资讯基于公开热点素材整理，素材编号对应 sources 字段。编辑判断体现在热点技术解析与创意落地的跨领域推演中。Gemini 4 Argon 的具体花费与得分引用自原推文数据，模型在生产环境中的实际表现可能因部署方式差异而不同。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/ai-hotspot/2026-10/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年10月 归档">
+← 返回 <span class="tabular-nums">2026年10月</span> </a> </div> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>

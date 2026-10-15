@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 14 Oct 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 伦理与对齐：开源模型的治理难题</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-10-16/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-10-16/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜AI 与计算机技术｜核心术语 alignment｜来源 AI industry technical blog</description>
+      <pubDate>Thu, 15 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Gemini 4 Argon 攻克 ARC-AGI，难题基准落幕</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-10-16/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-10-16/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 推理成本｜谷歌模型 ARC-AGI-3 得分 97.5%，难题基准时代终结</description>
+      <pubDate>Thu, 15 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>FTC拆解科技并购：实质性反竞争效应的认定</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-10-15/</link>
