@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Claude Duet 转主动式智能体，沃尔玛网关接入代下单</title><meta name="description" content="Claude Duet 发布，沃尔玛开放智能体购物网关"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="Claude Duet 转主动式智能体，沃尔玛网关接入代下单"><meta property="og:description" content="Claude Duet 发布，沃尔玛开放智能体购物网关"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-22/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-22/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.DgXP5eTS.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.10.22</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> Claude Duet 转主动式智能体，沃尔玛网关接入代下单 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">联邦学习让数据不出门也能联合训练，破解隐私与协作难题</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">Claude Duet 转型主动式智能体，云端持续执行任务</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">沃尔玛推出智能体网关，AI 可经 MCP 接入代用户下单</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">Vercel 开源 durable-harness，编码智能体可崩溃恢复</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">智能体网关叠加个人代理，构建合规风控与交易签名中枢</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念联邦学习">今日概念：联邦学习</h3>
+<p>联邦学习是一种分布式机器学习范式，核心思想是”数据不动模型动”。传统训练要把所有数据汇到中央服务器，而联邦学习让每个参与方在本地用自己的数据训练模型，只把训练后的参数梯度上传到中心做聚合，原始数据始终留在本地。</p>
+<p>打个法律人熟悉的比方：这就像多家律所想联合训练一个合同风险识别模型，但谁都不愿把客户合同交给第三方。联邦学习让每家律所在本地用自有合同库训练，只上传”模型参数的更新方向”——这些梯度值本身不含原始合同内容，中心聚合后下发新参数，大家各自更新，循环往复。最终所有参与方共享一个比任何一家单独训练都更强的模型，但没有任何合同离开过各自的服务器。</p>
+<p>这个概念之所以值得懂，是因为它直接回应了数据合规的核心焦虑。《个人信息保护法》和《数据安全法》框架下，跨机构数据共享的合规成本极高，而联邦学习在技术层面提供了”可用不可见”的解法。金融行业同理：银行间联合反欺诈建模，无需交换客户交易流水，只交换梯度即可捕捉跨机构的欺诈模式。对法律与金融从业者而言，联邦学习不是技术细节，而是一种合规架构设计工具——它把”数据共享”这个法律难题转化为”参数共享”这个工程问题。</p>
+<h3 id="热点一claude-duet-发布claude-转型主动式智能体">热点一：Claude Duet 发布，Claude 转型主动式智能体</h3>
+<p>Anthropic 开放 Claude Duet 研究预览版，标志着 Claude 从被动问答助手正式转向主动式智能体。Duet 基于 Claude Opus 5.5 构建，提供独立的 iOS、Android 应用及网页版，核心变化在于 Claude 不再等待用户提问，而是主动推送每日简报、在云端虚拟机中持续执行长周期任务。关键设计在于权限分层：发消息、付款、签字、删除等高风险操作需用户批准后才执行，低风险任务则可自主完成。首批面向美国 Pro 和 Max 订阅用户开放候补名单。</p>
+<p>从技术角度看，主动式智能体与被动式聊天的本质区别在于”任务发起权”的归属——Duet 拥有了主动触发执行的权限。云端虚拟机持续运行意味着智能体有了持久化的执行环境，不再受限于单次会话。这对开发者和企业意味着智能体的应用范式从”工具调用”升级为”委托执行”，但权限分层的实现方式也直接决定了安全边界，Duet 的批准机制设计值得关注。</p>
+<h3 id="热点二沃尔玛推出智能体网关mcp-协议打通交易闭环">热点二：沃尔玛推出智能体网关，MCP 协议打通交易闭环</h3>
+<p>沃尔玛正式推出自有智能体网关，即全新 MCP 服务器，让经过审核的 AI 智能体通过模型上下文协议接入平台，可检索线上库存并替用户下单，同时支持沃尔玛和山姆会员店。这是 MCP 协议在零售交易场景的首次大规模商业化落地，意味着 AI 智能体不再只是信息检索工具，而是获得了直接触发交易的权限。</p>
+<p>技术上值得关注的是”审核准入”机制——并非任意智能体都能接入，沃尔玛设置了准入门槛。这实际上构建了一个智能体身份认证与授权框架。对行业而言，当电商平台从”服务人类用户”扩展到”服务智能体用户”，传统的用户认证、支付授权、风控模型都需要适配机器主体的行为特征。MCP 协议作为标准化接口，正在成为智能体互联网的 HTTP 层。</p>
+<h3 id="热点三八款个人智能体对比入口与模型解耦">热点三：八款个人智能体对比，入口与模型解耦</h3>
+<p>indigo 发布的八款个人智能体对比显示，大厂把模型、云和订阅打包，开源方案则软件免费、只需付模型和主机费用。核心判断是：入口与模型正在解耦，竞争焦点转向入口、记忆和信任。Personal Agent 提供商被视为智能时代的 Agent OS，应用将以 Agent 形式接入，组成 Agent Internet。</p>
+<p>这条洞察的技术含义在于，智能体生态正在复现智能手机时代的”操作系统之争”。当模型能力趋同，差异化来自谁能管理好用户的长期记忆、谁能建立可信的执行环境。对开发者和企业来说，选择哪个智能体平台等同于选择哪个生态绑定的关系。记忆管理和信任机制将成为技术壁垒，这也意味着数据主权问题——智能体掌握的用户记忆数据归属权、可迁移性，将决定用户是否被锁定。</p>
+<h3 id="热点四vercel-开源-durable-harness编码智能体崩溃可恢复">热点四：Vercel 开源 durable-harness，编码智能体崩溃可恢复</h3>
+<p>Vercel 开源 durable-harness，通过持久日志记录每次模型和工具调用，使编码智能体会话在崩溃或超时后可从新函数恢复。已完成调用从日志读取，不会重复计费。这个项目解决的是智能体执行长任务时的状态持久化问题。</p>
+<p>技术关键点在于”持久日志”设计——每次模型调用和工具调用都被序列化记录，恢复时从日志重放，跳过已完成步骤。这本质上是把数据库的 write-ahead log 理念搬到了智能体编排层。对开发者而言，这意味着长周期智能体任务不再因基础设施不稳定而前功尽弃。更深层的意义在于：持久日志天然构成了审计轨迹，每一次模型决策、工具调用都可回溯，这对需要合规审计的场景至关重要。</p>
+<h3 id="热点五howie-谈-claude-duet-与国内用户无缘">热点五：howie 谈 Claude Duet 与国内用户无缘</h3>
+<p>howie.serious 转发 Claude Duet 消息时评论称，这款 personal agent 彻底与国内用户无缘，并调侃它可能口头通知封号。这条看似轻松的评论背后，折射出主动式智能体在跨境数据流动和合规层面的结构性矛盾。</p>
+<p>Duet 的核心能力是在云端虚拟机持续执行任务，涉及发消息、付款等操作——这意味着用户数据持续驻留海外服务器，且智能体代理用户执行的操作涉及跨境数据传输。技术上看，主动式智能体比被动式聊天更难合规，因为它不是一次性问答，而是持续性的数据交互流和代理操作流。对国内开发者而言，这提示主动式智能体的合规设计必须前置，而非上线后再补。</p>
+<hr/>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<p><strong>创意名称：智能体交易签名网关与合规风控中枢</strong></p>
+<p><strong>一句话定义：</strong> 一套部署在用户与智能体之间的中间层系统，基于 MCP 协议构建交易网关，通过持久日志实现全链路审计，结合联邦学习做跨机构风控，为智能体代理用户的金融与法律操作提供合规护栏与风险兜底。</p>
+<p><strong>灵感来源：</strong> 本创意直接基于热点一（Claude Duet 主动式智能体）、热点二（沃尔玛 MCP 智能体网关）、热点四（Vercel durable-harness 持久日志）与热点三（八款个人智能体入口与信任之争）组合推演。Claude Duet 证明了智能体可以代理用户执行付款、签字等高风险操作；沃尔玛网关证明了 MCP 协议可以承载真实交易闭环；durable-harness 证明了持久日志可以让智能体操作可回溯、可恢复；而 indigo 的对比则点明信任和记忆是智能体竞争的核心——这四条热点共同构成了”智能体代理交易”的技术可行性边界，也暴露了合规与风控的空白。</p>
+<p><strong>为什么现在可行：</strong> Claude Duet 的权限分层设计（高风险操作需用户批准）已经提供了”人工确认”的原型；沃尔玛的”审核准入”机制提供了智能体身份认证的实践范例；Vercel durable-harness 的持久日志提供了操作可回溯的技术基础。这三个条件在 2026 年第四季度同时成熟，使得构建一个通用的智能体交易签名网关不再是纸面构想。现实动因是：随着主动式智能体开始代理用户执行金融操作，监管机构和金融机构自身都需要一个可控的中间层。</p>
+<p><strong>专业场景怎么用：</strong></p>
+<p><strong>法律场景：</strong> 律师事务所部署智能体代理处理批量合同签署、文件提交、案件进度跟踪。签名网关拦截所有”签字&quot;&quot;提交&quot;&quot;删除”类操作，强制弹出人工确认，并自动生成操作审计日志。合规团队可以设定规则：涉及保密协议签署、诉讼文件提交的操作必须经由合伙人二次确认。知识产权场景中，智能体代理监控专利到期日并自动触发续展申请，网关记录每一步决策链路，满足专利代理机构的合规留痕要求。</p>
+<p><strong>金融场景：</strong> 投研团队让智能体持续监控持仓公司财报异动并自动生成研报更新。风控团队部署网关拦截智能体发起的高风险交易指令——当智能体试图代理用户执行大额赎回、跨账户转账时，网关触发风控规则引擎，强制要求持有人生物识别确认。尽调场景中，智能体代理分析标的公司供应链数据，网关确保所有数据访问行为留痕，满足尽调工作的审计要求。</p>
+<p><strong>落地要点展开：</strong></p>
+<p>第一，基于 MCP 协议构建智能体交易网关，拦截高风险操作并强制人工确认。技术实现参照沃尔玛网关的准入审核机制，对所有接入的智能体做身份注册与能力声明。网关内设操作分级：只读类操作自动放行，写入类操作记录日志，签名/付款/删除类操作强制人工确认。谁来做法务团队定义操作分级标准，IT 团队实现拦截逻辑。风险在于分级标准过严则智能体失去效率优势，过松则形同虚设，需根据业务场景动态调参。</p>
+<p>第二，引入持久日志与崩溃恢复机制，确保智能体操作全链路可审计可回溯。直接采用 Vercel durable-harness 的设计理念，每次模型调用和工具调用写入持久日志，崩溃后可恢复。法律价值在于这份日志天然满足合规审计要求——当监管机构要求说明某笔交易为何发生，日志可完整回溯智能体的决策链路。由基础设施团队负责部署，合规团队负责定义日志保留期限和访问权限。风险在于日志本身包含敏感操作记录，需加密存储并严格管控访问。</p>
+<p>第三，部署联邦学习联合风控模型，跨机构共享欺诈特征而不泄露用户数据。多家金融机构通过联邦学习联合训练智能体行为异常检测模型，每家在本地用自有智能体操作数据训练，只上传梯度参数。中心聚合后下发的模型可识别跨机构的智能体欺诈模式——比如同一智能体在 A 机构试探风控规则后在 B 机构执行类似操作。由各机构风控团队联合推进，技术团队负责联邦学习基础设施。风险在于参与方模型质量不均可能影响整体效果，且联邦学习本身不能完全排除梯度反演攻击。</p>
+<p>第四，建立智能体操作保险池，为越权操作与资产损失提供风险兜底机制。参照金融行业的保险逻辑，机构按智能体交易量缴纳保费入池，当智能体越权操作导致用户资产损失时，从保险池中赔付。法律团队设计保险条款与免责边界，精算团队建模风险概率。风险在于智能体行为的不确定性远高于人类操作，精算难度大，初期需设较高免赔额。</p>
+<p><strong>价值与局限：</strong> 这个创意对法律与金融从业者的真实价值在于：当主动式智能体不可避免地开始代理用户执行金融和法律操作时，行业需要一个标准化的合规中间层。签名网关让机构”敢用”智能体，持久日志让监管”敢批”，联邦风控让同行”敢共享”。局限在于：这套体系本身增加了智能体执行的延迟和成本，对高频低额场景可能得不偿失；联邦学习的反演攻击风险虽低但不可忽视；保险池的精算模型在智能体行为数据积累不足的早期阶段，定价可能严重偏离实际风险。在智能体操作模式尚未稳定的过渡期，不应将网关作为唯一风控手段，必须保留人工复核通道。</p>
+<hr/>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于公开技术媒体与社交平台发布的信息整理。Claude Duet 的功能描述来自 Anthropic 官方发布及科技博主的公开评论，实际产品能力与可用范围未经独立验证。沃尔玛智能体网关的信息来自 IT 之家报道，MCP 协议接入的具体技术实现细节可能随版本迭代变化。Vercel durable-harness 的机制描述基于 MarkTechPost 的公开报道，代码已开源可查。八款个人智能体对比图来自 indigo 的公开分析。第二部分的创意构想属于编辑基于上述技术热点做出的推演判断，不构成投资建议、法律意见或产品承诺。联邦学习的安全特性描述基于该领域的公开学术文献，实际部署中的安全边界需根据具体场景评估。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">智能体交易签名网关与合规风控中枢</h2> <ol class="idea-list"> <li>基于 MCP 协议构建智能体交易网关，拦截高风险操作并强制人工确认</li><li>引入持久日志与崩溃恢复机制，确保智能体操作全链路可审计可回溯</li><li>部署联邦学习联合风控模型，跨机构共享欺诈特征而不泄露用户数据</li><li>建立智能体操作保险池，为越权操作与资产损失提供风险兜底机制</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://aihot.news/items/hdb8avvdnwe0e91o7196cr3lh" target="_blank" rel="noopener noreferrer">Anthropic 开放 Claude Duet 研究预览，Claude 转型主动式智能体</a> <span>｜邵猛</span> <span>｜2026-10-22</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/v3ila3aeou4c1i6tojdpoqohe" target="_blank" rel="noopener noreferrer">howie 谈 Claude Duet personal agent 与国内用户无缘</a> <span>｜howie.serious</span> <span>｜2026-10-22</span> </li><li> <span class="src-no">[3]</span> <a href="https://aihot.news/items/hbyzzbd2br4d946xpxydt2srj" target="_blank" rel="noopener noreferrer">八款个人智能体对比：入口、记忆与信任之争</a> <span>｜indigo</span> <span>｜2026-10-22</span> </li><li> <span class="src-no">[4]</span> <a href="https://www.ithome.com/1/016/172.htm" target="_blank" rel="noopener noreferrer">沃尔玛推出智能体网关，AI 可经 MCP 接入代用户下单购物</a> <span>｜IT之家·人工智能</span> <span>｜2026-10-22</span> </li><li> <span class="src-no">[5]</span> <a href="https://www.marktechpost.com/2026/10/21/vercel-durable-harness-crash-proof-coding-agents/" target="_blank" rel="noopener noreferrer">Vercel 开源 durable-harness，为编码智能体提供崩溃恢复能力</a> <span>｜MarkTechPost</span> <span>｜2026-10-22</span> </li> </ol> <p class="sources-note">本期资讯基于公开技术媒体与社交平台信息整理。Claude Duet 与沃尔玛智能体网关的相关功能描述基于各发布方公开声明，实际产品能力与可用性未经独立验证。对技术趋势的判断与第二部分创意构想属于编辑视角，不构成投资建议或法律意见。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/ai-hotspot/2026-10/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年10月 归档">
+← 返回 <span class="tabular-nums">2026年10月</span> </a> </div> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>
