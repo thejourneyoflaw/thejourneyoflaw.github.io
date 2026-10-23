@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OpenAI决策API全面开放，毫秒级判断重塑风控</title><meta name="description" content="决策API三种模式上线，准实时分类评估能力落地"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="OpenAI决策API全面开放，毫秒级判断重塑风控"><meta property="og:description" content="决策API三种模式上线，准实时分类评估能力落地"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-23/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-10-23/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.DgXP5eTS.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.10.23</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> OpenAI决策API全面开放，毫秒级判断重塑风控 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">基准测试是给AI做标准化考试，横向比较能力边界</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">OpenAI决策API全面开放，支持三种毫秒级决策模式</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">MIT研究发现智能体无目标玩耍后挑战能力显著提升</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">1Password推出智能体登录平台，密码零接触代登录</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">决策API结合无目标探索，构建合规预判与投研引擎</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念模型评估与基准">今日概念：模型评估与基准</h3>
+<p>模型评估与基准，说白了就是给 AI 模型做”标准化考试”。你给模型出一套题，看它答对多少，然后排名。这跟金融圈看夏普比率、最大回撤一个道理——你需要一个可比较的量化指标来判断不同产品到底谁强。</p>
+<p>技术上，基准分几类：有考数学推理的，有考代码生成的，还有专门考智能体在真实环境里完成任务的。每个基准都是一个精心设计的数据集，配上评分规则。模型跑完，输出一个分数，大家就能横向比较。比如 SWE-bench 考的是模型能不能独立修 GitHub 上的真实 bug，ARC-AGI 考的是抽象推理。</p>
+<p>这里有个关键陷阱：基准污染。如果测试题不小心混进了训练数据，模型就不是”推理”而是”背诵”了——就像考生提前拿到了试卷。所以好的基准会不断更新题目，或者用动态生成的方式防泄题。</p>
+<p>对法律和金融专业人士来说，理解基准的意义在于：当你看到某模型”得分第一”时，得追问它参加的是哪个基准、题目有没有污染、评分规则是否合理。这跟看基金业绩要问”是牛市还是熊市的数据”是一样的逻辑。</p>
+<h3 id="热点一openai-决策-api-全面开放三种模式毫秒级落地">热点一：OpenAI 决策 API 全面开放，三种模式毫秒级落地</h3>
+<p>OpenAI 正式全面开放 Decisions API，基于 GPT-6 Luna 构建，支持 Predicate、Choice、Score 三种决策类型。Predicate 做二分类判断（是/否），Choice 做多选一，Score 做连续评分。最关键的是：它不生成完整文本响应，直接输出决策结果，速度比通过 Responses API 调用 GPT-6 Luna 提升高达 10 倍，输入定价每百万 token 0.1 美元。</p>
+<p>技术核心在于”跳过生成”。传统 LLM 调用是”读入→推理→逐 token 生成完整回答”，而 Decisions API 把流程截断为”读入→推理→直接输出结构化决策”。这大幅降低了延迟和成本，让在高频业务流中嵌入模型判断变得现实可行。对开发者和企业来说，这意味着 AI 可以从”偶尔咨询的专家”变成”流水线上的质检员”——每次调用几分钱、几十毫秒响应，可以嵌进每一笔交易、每一份合同的自动审查环节。</p>
+<h3 id="热点二mit-研究发现智能体无目标玩耍后能力显著提升">热点二：MIT 研究发现智能体无目标玩耍后能力显著提升</h3>
+<p>MIT 研究人员把 13 个运行 Claude Opus 4.7 的 Eko 智能体放到模拟荒岛上 30 小时，不给任何具体任务。结果这些智能体开始自创挑战、自发玩耍，其中 6 个还自行学会”跳跃中松手把方块扔得更远”这种涌现技能。更值得注意的是：经历无目标探索的智能体，在后续指定挑战中普遍胜过从未上岛的同类。</p>
+<p>这触及了 AI 学习范式的一个根本问题：我们一直假设”明确目标+奖励函数”是训练和使用智能体的最佳路径，但 MIT 的实验暗示，无目标的自由探索可能也是习得技能的有效路径——就像人类在自由玩耍中发展出的运动协调能力，往往比刻意训练更扎实。</p>
+<p>对行业而言，这打开了一个新维度：智能体的”预训练”可能不只包括模型参数的优化，还包括部署后在环境中的”自由玩耍”阶段。这种思路可能改变智能体的上线流程——先放养、再上岗。</p>
+<h3 id="热点三1password-推出智能体登录平台密码零接触">热点三：1Password 推出智能体登录平台，密码零接触</h3>
+<p>1Password 推出 1Password for Agents 平台，让 AI 智能体在不接触、不存储用户密码或验证码的情况下代用户完成网站登录。首批支持 Meta Muse、OpenAI ChatGPT Work、Anthropic Claude Duet、Grok Bot 等智能体，面向个人及家庭版用户。</p>
+<p>技术原理是”凭证代理”模式：智能体向 1Password 发起登录请求，1Password 在后台完成认证后把会话令牌交给智能体，全程密码不经过智能体的上下文。这类似于 OAuth 的授权码流程，但把信任边界从”应用之间”细化到了”智能体与密码管理器之间”。</p>
+<p>这是智能体走向生产环境的关键基础设施缺口。智能体要代用户操作外部网站，最大的障碍不是”能不能做到”，而是”凭什么把密码交给它”。1Password 的方案把密码控制权留在可信第三方，智能体只拿到临时会话，即使智能体被注入攻击或日志泄露，密码也不会外流。</p>
+<h3 id="热点四openrouter-推出-security-center-集中管理-api-密钥">热点四：OpenRouter 推出 Security Center 集中管理 API 密钥</h3>
+<p>OpenRouter 发布 Security Center，可集中审计所有 API 密钥、按风险分级浏览、识别可移除的密钥并控制 IP 白名单。功能包括开启消费提醒、移除未用密钥、为无上限密钥设置周期性消费限额、为所有密钥设置最长生命周期。</p>
+<p>这解决的是 API 密钥管理的”长尾风险”。在企业环境中，API 密钥往往散落在多个团队、多个 CI/CD 管道和多个智能体配置文件中，一旦泄露很难快速定位和吊销。OpenRouter 的方案把密钥当作”有生命周期的资产”来管理：默认有过期时间、有消费上限、有 IP 约束、有审计日志。</p>
+<p>对使用 AI API 的企业来说，这填补了密钥治理的工具空白。尤其是当智能体越来越多地持有 API 密钥去调用外部服务时，集中化的密钥安全中心将从”可选”变为”合规必需”。</p>
+<h3 id="热点五微软-mai-dxo-模拟专家联合会诊准确率达-83">热点五：微软 MAI-DxO 模拟专家联合会诊，准确率达 83%</h3>
+<p>微软推出 AI 诊断系统 MAI-DxO（Microsoft AI Diagnostic Orchestrator），通过编排多个 AI 智能体模拟医生专家联合会诊，协同问诊、开具检查并研判诊断。在 NEJM 复杂病例上准确率达 83%，成果发表于《科学》。</p>
+<p>技术亮点在于”多智能体编排”架构：不是一个模型做所有事，而是多个智能体各扮演一个专科医生角色，通过结构化的问诊-检查-讨论-结论流程协同完成诊断。这比单模型”端到端”输出诊断结果更接近真实医疗决策过程，也更容易定位错误环节。</p>
+<p>这种架构对行业有更广泛的启发：任何需要”多专业协同判断”的场景——金融的投委会、法律的合规审查——都可以借鉴多智能体会诊模式。</p>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<h3 id="创意决策api驱动的合规预判与投研探索引擎">创意：决策API驱动的合规预判与投研探索引擎</h3>
+<p>这个创意来自一个直接的问题：<strong>热点一</strong>里 OpenAI 的 Decisions API 把模型判断的延迟压到毫秒级、成本压到每百万 token 0.1 美元，这意味着我们终于可以把 AI 判断嵌入每一条业务流水线，而不是只在”重要节点”偶尔调用。但光有快速判断不够——判断的质量取决于模型对问题的理解深度，而<strong>热点二</strong>里 MIT 的荒岛实验告诉我们：智能体在无目标自由探索中会涌现出指定任务里学不到的技能。如果把这两个发现叠加，再叠加<strong>热点三</strong>里 1Password for Agents 的身份托管能力，我们可以构建一个”双引擎”系统：一个引擎用 Decisions API 做高频合规预判，另一个引擎让智能体在法规与财报数据中”自由玩耍”发现潜在风险模式，两者协同工作。</p>
+<p><strong>灵感拆解</strong>：Decisions API 贡献的是”毫秒级、低成本、结构化”的判断能力——Predicate 模式做”是否合规”的二分类，Score 模式做风险评分，Choice 模式做多方案择优；MIT 荒岛实验贡献的是”无目标探索”的方法论——让智能体在海量非结构化数据中自发发现关联，而非只回答指定问题；1Password for Agents 贡献的是身份安全边界——智能体在代用户登录外部数据库、监管网站抓取文件时，全程零密码接触。</p>
+<p><strong>为什么现在可行</strong>：Decisions API 的定价和延迟终于跨过了”嵌入每一笔交易”的门槛。此前用 LLM 做合规审查，单次调用几百毫秒、成本以美分计，只能用在”大额交易终审”这类低频节点。现在每百万 token 0.1 美元、响应速度提升 10 倍，意味着可以在合同管理的全生命周期——从起草、修改到签署——的每一个版本变更上跑一遍合规判断。同时，1Password 的智能体托管平台解决了”智能体访问外部系统时的身份信任”这个长期卡脖子的安全难题。</p>
+<p><strong>专业场景怎么用</strong>：</p>
+<p>法律合规场景：合同每修改一个条款，Predicate 模式立即判断该条款是否触发某类合规义务（如数据出境、关联交易披露、竞业限制效力），Score 模式给出风险评分。这取代了大量”人工逐条审”的初级工作。更关键的是探索引擎：让智能体在法规库、裁判文书、监管处罚案例中自由探索，发现”某类条款表述在近三年被判无效的概率上升”这类人很难主动想到的模式——就像 MIT 实验里智能体自行学会”跳跃中松手扔得更远”，合规智能体可能自行发现”某种免责条款在特定行业纠纷中被否定的频率异常高”。</p>
+<p>金融投研场景：对每条市场消息或财报披露，Score 模式快速评估对持仓的影响方向和幅度，嵌入风控系统做实时预警。探索引擎则在历史财报、行业数据、监管政策中无目标漫游，寻找跨行业的弱关联信号——比如某类原材料价格波动与特定法律纠纷频次的隐性关联，这类信号在指定任务中很难被发现。</p>
+<p><strong>落地要点</strong>：</p>
+<p>第一条，基于 Decisions API 的 Predicate 与 Score 模式构建合规预判流水线。由法务和合规团队定义判断规则集（如”该条款是否构成数据出境行为”），技术团队封装为 API 调用模板，嵌入合同管理系统。关键风险是判断规则集的质量——如果规则定义不准确，毫秒级判断只会以毫秒级速度输出错误结论。初期必须保留人工复核通道，对低分结果做抽样审计。</p>
+<p>第二条，借鉴 MIT 荒岛实验的无目标探索机制，构建投研发现引擎。由投研团队提供数据源（财报库、法规库、行业报告），技术团队搭建智能体自由探索环境，设定探索时长和范围边界。智能体在数据中自发寻找关联模式，输出”潜在关联线索”供人工深研。风险在于探索结果不可预测——可能产出大量无意义关联，需要资深分析师做二次筛选。这恰恰是 MIT 实验的核心启示：玩耍的价值在于偶发的涌现，不能用 ROI 衡量每一次探索。</p>
+<p>第三条，通过 1Password for Agents 实现智能体身份托管，决策与探索全程零密码接触。智能体在登录外部数据库、监管网站、交易所数据接口时，凭证由 1Password 托管，满足金融审计的”最小权限”和”可追溯”要求。由安全团队主导配置，法务团队审核数据访问授权链路。关键风险是智能体权限范围一旦设定后，在自由探索中可能访问到超出预期范围的敏感数据——需要配合 OpenRouter Security Center（<strong>热点四</strong>）这类密钥治理工具做消费限额和生命周期管理。</p>
+<p><strong>价值与局限</strong>：这个创意的核心价值在于”把 AI 判断从节点嵌入流水线”，同时用”无目标探索”补充人类指定式提问的盲区。局限也很明确：Decisions API 的判断质量受限于规则集定义的完备程度，它不能替代律师的实质性法律意见，只做初筛和预警；探索引擎的发现是”假说生成”而非”结论验证”，任何高价值线索都需要人工深研确认。在诉讼策略、并购尽调这类高 stakes 场景，这个系统只能做辅助发现，不能做最终判断。</p>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于 OpenAI、MIT、1Password、OpenRouter、微软等机构与媒体的公开信息整理。热点选取侧重模型能力发布与智能体安全基础设施两条主线。概念讲解部分对”基准污染”等技术机制的描述属于编辑基于通识的概括，非直接引自某篇论文。创意部分基于热点素材中 Decisions API 的三种决策模式、MIT 荒岛实验的无目标探索发现、1Password 的凭证代理架构做跨界推演，属于编辑判断而非厂商官方方案。实际落地时，Decisions API 的判断精度、智能体探索结果的可控性、凭证托管在不同企业身份体系下的适配性，均需技术验证与合规审查后方可使用。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">决策API驱动的合规预判与投研探索引擎</h2> <ol class="idea-list"> <li>基于Decisions API的Predicate与Score模式，对合同条款与交易结构做毫秒级合规分类与风险评分，嵌入业务流水线前置拦截</li><li>借鉴MIT荒岛智能体无目标玩耍机制，让模型在法规库与财报数据中自发探索潜在关联模式，人工复核高价值线索</li><li>通过1Password for Agents实现智能体身份托管，决策与探索全程零密码接触，满足金融审计与法律留痕要求</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://www.ithome.com/1/016/771.htm" target="_blank" rel="noopener noreferrer">OpenAI 全面开放决策 API：基于 GPT‑6 Luna，输入每百万 token 0.1 美元</a> <span>｜IT之家·人工智能</span> <span>｜2026-10-23</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/o85h1c7hzlj53lwkijzp1smi1" target="_blank" rel="noopener noreferrer">OpenAI Decisions API 正式开放，支持 Predicate、Choice 和 Score 三种决策</a> <span>｜Testing Catalog</span> <span>｜2026-10-23</span> </li><li> <span class="src-no">[3]</span> <a href="https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/" target="_blank" rel="noopener noreferrer">MIT 研究：13 个基于 Claude Opus 4.7 的 Eko 智能体在荒岛无人指派任务后自发玩耍</a> <span>｜TechCrunch：AI</span> <span>｜2026-10-23</span> </li><li> <span class="src-no">[4]</span> <a href="https://www.ithome.com/1/016/772.htm" target="_blank" rel="noopener noreferrer">1Password 推出 1Password for Agents 平台，让 AI 智能体不接触密码代用户登录</a> <span>｜IT之家·人工智能</span> <span>｜2026-10-23</span> </li><li> <span class="src-no">[5]</span> <a href="https://aihot.news/items/t6k6a8dlxfxb2ugrgswqency8" target="_blank" rel="noopener noreferrer">OpenRouter 推出 Security Center 集中管理 API 密钥安全</a> <span>｜OpenRouter</span> <span>｜2026-10-23</span> </li> </ol> <p class="sources-note">本期资讯基于 OpenAI、MIT、1Password、OpenRouter 等机构公开信息整理。热点选取侧重模型能力与智能体基础设施动态。创意部分基于热点素材的技术事实做跨界推演，属于编辑判断，实际落地需验证 API 能力边界与合规适配。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/ai-hotspot/2026-10/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年10月 归档">
+← 返回 <span class="tabular-nums">2026年10月</span> </a> </div> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>
