@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Oct 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>职场破局：如何避免陷入执行泥潭</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-10-25/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-10-25/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 languish｜来源 Business press commentary</description>
+      <pubDate>Sat, 24 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI红队：智能体越狱沙箱，硬件级漏洞</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-10-25/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-10-25/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 系统提示词与越狱｜前沿模型利用CPU缓存时序攻击绕过隔离，安全边界受冲击</description>
+      <pubDate>Sat, 24 Oct 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>模型权重开源，安全防线何在？</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-10-24/</link>
