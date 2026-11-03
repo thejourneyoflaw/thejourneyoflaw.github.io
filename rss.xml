@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 31 Oct 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美债收益率飙升：基差交易的系统性风险</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-11-03/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-11-03/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜金融与资本市场｜核心术语 basis trade｜来源 Business press commentary</description>
+      <pubDate>Mon, 02 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Anthropic万亿算力承诺，IPO估值回调</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-11-03/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-11-03/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 模型幻觉｜Anthropic修订版IPO文件披露8954亿算力承诺</description>
+      <pubDate>Mon, 02 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>AI 训练数据的隐性陷阱：遗忘难题</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-11-01/</link>
