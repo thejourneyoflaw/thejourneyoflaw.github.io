@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OpenAI前沿模型修补948个内核漏洞</title><meta name="description" content="单次运行修复近千漏洞，成本120万美元"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="alternate" type="application/rss+xml" title="法途前行 · 订阅" href="/rss.xml"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)"><meta property="og:type" content="website"><meta property="og:site_name" content="法途前行 · The Journey of Law"><meta property="og:title" content="OpenAI前沿模型修补948个内核漏洞"><meta property="og:description" content="单次运行修复近千漏洞，成本120万美元"><meta property="og:image" content="https://thejourneyoflaw.github.io/og.png"><meta property="og:url" content="https://thejourneyoflaw.github.io/ai-hotspot/2026-11-05/"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://thejourneyoflaw.github.io/ai-hotspot/2026-11-05/"><script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* 忽略存储不可用的情况 */
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.B9OtC4eO.css"></head> <body class="min-h-screen flex flex-col"> <a href="#main" class="skip-link">跳到正文</a> <header class="site-header"> <div class="mx-auto max-w-3xl px-4 sm:px-5"> <div class="flex h-14 items-center justify-between gap-3 whitespace-nowrap"> <a href="/" class="brand shrink-0" aria-label="法途前行 The Journey of Law · 首页"> <img src="/logo.png" alt="" width="28" height="28" class="brand-mark"> <span class="brand-text"> <span class="brand-name">法途前行</span> <span class="brand-sub">The Journey of Law</span> </span> </a> <nav aria-label="主导航" class="flex items-center gap-2.5 sm:gap-6 text-[13px] sm:text-sm min-w-0"> <a href="/daily-english/" class="nav-link"> 英语日报 </a><a href="/ai-hotspot/" class="nav-link" aria-current="page"> AI 观察 </a> <button id="donate-toggle" type="button" class="donate-btn" aria-haspopup="dialog" aria-controls="donate-modal">
+打赏
+</button>   <button id="theme-toggle" type="button" class="theme-toggle" aria-label="切换深色模式" title="切换深色模式"> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> </div> </div> </header> <main id="main" class="mx-auto w-full flex-1 px-5 py-10 sm:py-14 max-w-2xl">  <article class="ai-article"> <header> <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] c-muted"> <time class="tabular-nums">2026.11.05</time> </div> <h1 class="mt-5 text-3xl sm:text-4xl font-bold leading-tight tracking-tight"> OpenAI前沿模型修补948个内核漏洞 </h1> <nav class="digest-card" aria-label="本期导读"> <div class="digest-head"> <span class="digest-title">本期导读</span> <button type="button" class="digest-toggle" aria-expanded="true" aria-controls="digest-list">收起</button> </div> <ol class="digest-list" id="digest-list"> <li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">01</span> <span class="min-w-0">推理成本：模型回答一次背后的算力账</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">02</span> <span class="min-w-0">OpenAI安全模型单次运行修补948个内核漏洞</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">03</span> <span class="min-w-0">MIT研究揭示大公司对AI风险普遍沉默</span> </a></li><li><a class="digest-item" href="#part-1"> <span class="digest-num" aria-hidden="true">04</span> <span class="min-w-0">面壁智能推出可靠文档AI及置信度评分</span> </a></li><li><a class="digest-item" href="#part-2"> <span class="digest-num" aria-hidden="true">05</span> <span class="min-w-0">漏洞修复管线驱动代码资产风险量化引擎</span> </a></li> </ol> </nav> </header> <hr class="soft-hr my-8 sm:my-10"> <div class="prose"> <h2 id="第一部分今日-ai-观察">第一部分｜今日 AI 观察</h2>
+<h3 id="今日概念推理成本">今日概念：推理成本</h3>
+<p>在法律和金融的语境里，我们知道每一项尽职调查、每一次合同审查都有实实在在的人力成本。在 AI 的世界里，模型每回答你一次问题，同样有一笔隐藏的账单，这就是「推理成本」。</p>
+<p>推理成本不是指训练模型花掉的上百亿算力投资，而是模型训练完成后，在日常使用中处理你的输入并生成输出时，每一秒钟消耗的 GPU 算力费用。你可以把它想象成一辆 F1 赛车：花几个亿造车（训练成本）是一回事，但每次上场跑一圈烧掉的顶级燃油和轮胎磨损（推理成本）是另一回事。云服务商最终按 Token 数量向你收费，本质上收的就是这笔燃油费。</p>
+<p>理解推理成本，对专业人士至关重要。OpenAI 修复 948 个 Linux 内核漏洞，API 成本约 120 万美元——这笔钱就是纯推理成本。它告诉我们，用 AI 做大规模、高深度的复杂任务，算力账单是线性增长的。当企业考虑用 AI 智能体批量审查上万份合同或实时监控交易合规性时，推理成本就是决定项目 ROI（投资回报率）的底线。</p>
+<h3 id="热点一openai单次运行修补948个内核漏洞">热点一：OpenAI单次运行修补948个内核漏洞</h3>
+<p>OpenAI 安全研究团队构建了一条自主化的网络漏洞发现、利用与修补流水线。在单次运行中，即将推出的前沿网络安全模型验证并为 Linux 内核 948 个本地提权漏洞生成了补丁。流程从 2308 个候选发现开始，1724 个通过验证，最终得到 948 个可用的漏洞利用和 291 个 PoC。总 API 成本约 120 万美元，平均每个漏洞修复成本约 1000 美元。</p>
+<p>这项突破的关键不在于模型”懂”代码，而在于它实现了从发现、验证到生成补丁的端到端自动化。以前安全研究者通常每年在 Linux 中发现约 20 个此类漏洞，现在 AI 一次运行就抵得上人类数年的工作量。这意味着大模型已经具备了在复杂代码库中进行深度逻辑推理和修复的能力，对开发者和企业而言，AI 驱动的安全审计正在从辅助工具变成主力生产力。</p>
+<h3 id="热点二mit研究揭示大公司对ai风险普遍沉默">热点二：MIT研究揭示大公司对AI风险普遍沉默</h3>
+<p>MIT 与昆士兰大学的最新研究分析了企业对 AI 风险的披露情况。结果令人警醒：前 100 大公司中 32% 未提及任何 AI 风险，前 1000 大公司中估计有 62% 如此。最严重的风险反而最少被提及，前 100 大公司无一提到权力集中或 AI 竞赛，仅 4 家提到危险 AI 能力。</p>
+<p>研究还指出，AI 开发者提及失准的比例仅为 15%，而提及歧视的比例达 85%。这说明企业在 AI 风险披露上存在明显的”报喜不报忧”倾向，倾向于披露社会舆论压力大的风险，回避核心技术与商业层面的深层隐患。对于投资者和监管机构而言，这意味着当前的企业 AI 风险披露缺乏实质性参考价值，合规审查需要穿透表面声明，直击底层的代码与模型审计。</p>
+<h3 id="热点三面壁智能推出可靠文档ai及置信度评分">热点三：面壁智能推出可靠文档AI及置信度评分</h3>
+<p>面壁智能 OpenBMB 转发并感谢了一篇关于 MiniCPM-OCR 的拆解。该项目用 1.3B 参数解析中英文扫描件、手机照片、弯曲和倾斜页面，配合 MiniCPM-OCR Jev 为抽取文本、公式和表格的可靠性评分。低置信结果可转人工复核，Jev 只标记不可靠输出而不自动修正。</p>
+<p>这项技术的核心突破在于”知道自己不知道什么”。在复杂的文档解析中，盲目输出往往比不输出更危险。Jev 机制引入了置信度评分，相当于给 AI 的每一次抽取打上”可信度标签”。对于法律合同、财务报表这类容错率极低的场景，这种只标记不修正、将低置信结果转交人工的机制，是 AI 从”玩具”走向专业级工具的关键一步。</p>
+<h3 id="热点四apple削减内部ai使用预算">热点四：Apple削减内部AI使用预算</h3>
+<p>据 Bloomberg 报道，Apple 于 10 月将工程团队的每日 AI 支出上限从 300 美元降至 200 美元，部分额度将降至每天 100 美元，工程外部门甚至可能低至每天 25 美元。报道指出，AI 成本与生产率收益之间的落差仍是普遍顾虑。</p>
+<p>Apple 的预算削减是一个强烈的行业信号。即使是全球现金流最充裕的科技巨头，在内部推广 AI 工具时也撞上了推理成本的硬墙。鼓励员工大量使用 AI 后随之而来的天价账单，迫使企业从”全面拥抱”转向”限量使用”。这表明，当前 AI 模型的单次推理成本仍然过高，在未能证明 ROI 之前，企业内部的大规模 AI 部署必须设置明确的财务护栏。</p>
+<h3 id="热点五月之暗面开放28万亿参数kimi-k31-pro权重">热点五：月之暗面开放2.8万亿参数Kimi K3.1 Pro权重</h3>
+<p>月之暗面按此前承诺，在 Hugging Face 开放 Kimi K3.1 Pro 权重，该模型拥有 2.8 万亿参数，并登顶 Agent Arena 开源模型榜。华为昇腾也宣布对其实现 0 Day 推理适配，支持基于 vLLM Ascend 与 SGLang 的部署。</p>
+<p>这是开源生态的重要里程碑。2.8 万亿参数的全开放权重意味着开源社区首次在智能体能力上比肩甚至超越了闭源模型。对于金融和法律机构而言，开源意味着可以在私有云环境中部署顶级模型，彻底消除数据外泄的合规顾虑。配合国产昇腾算力的即时适配，这为对数据主权要求极高的行业提供了一条完全自主可控的 AI 基础设施路径。</p>
+<hr/>
+<h2 id="第二部分每日一个创意-ai-应用深度解析">第二部分｜每日一个创意 AI 应用深度解析</h2>
+<h3 id="创意代码资产风险量化与漏洞定价引擎">创意：代码资产风险量化与漏洞定价引擎</h3>
+<p>这个创意是一个面向法律与金融交叉场景的 AI 应用方案：利用前沿网络安全模型的漏洞发现管线，对企业的代码资产进行自动化风险扫描，生成带有置信度评分的漏洞清单，并将其转化为金融级的量化风险定价报告，直接服务于软件并购尽调、代码资产保险定价与供应链合规审计。</p>
+<p><strong>灵感来自哪些热点</strong></p>
+<p>本创意基于<strong>热点一（OpenAI 漏洞修复管线）</strong>、<strong>热点二（MIT 企业 AI 风险沉默）<strong>和</strong>热点三（面壁智能置信度评分）</strong>。热点一提供了核心的技术条件——AI 已经能以可量化的成本（约 1000 美元/漏洞）自主发现并修复复杂代码库中的安全漏洞，这构成了代码资产扫描的算力与模型基础。热点二揭示了痛点：大公司在 AI 风险披露上普遍沉默，前 100 大公司无一提及核心风险，这意味着外部投资者和监管方无法依赖传统披露文件，必须引入独立的技术审计工具。热点三贡献了关键的工程机制——置信度评分与”只标记不修正”原则，为自动化扫描结果提供了分级处理框架，确保低置信度的漏洞发现不会被盲目采信，而是转入人工法律复核。</p>
+<p><strong>为什么现在可行</strong></p>
+<p>过去，代码安全审计是高度依赖人工的黑盒过程，在并购或投资尽调中，代码资产的潜在安全风险极难量化。现在，热点一证明了 AI 可以在 120 万美元的 API 成本内完成过去安全专家数年的工作量，这让大规模代码扫描在经济上变得可行。同时，热点四（Apple 削减预算）揭示了推理成本的刚性约束，促使我们必须在扫描时引入分级机制——先用低成本模型粗筛，再对关键模块调用高成本模型深度验证。热点三的置信度评分恰好提供了这种分级的逻辑依据。</p>
+<p><strong>专业场景怎么用</strong></p>
+<p>在金融投研与并购尽调场景中，投资方在评估一家科技公司时，可以将目标公司的核心代码库接入该引擎。引擎运行漏洞发现管线，输出一份”代码资产风险报告”。这份报告不仅列出漏洞数量，更关键的是计算出修复这些漏洞的预期成本（基于热点一的 1000 美元/漏洞基准推算），并将其直接从估值中扣除。</p>
+<p>在法律合规场景中，对于供应链安全协议，法务团队可以依据引擎输出的高置信度漏洞清单，在合同中设置具体的代码缺陷赔偿触发条款。对于热点二揭示的”企业沉默”问题，这份独立的风险报告可以作为尽调底稿，弥补目标公司自查披露的不足。</p>
+<p><strong>落地要点</strong></p>
+<p>第一，<strong>以漏洞发现管线扫描开源依赖，生成代码资产风险清单与补丁验证报告</strong>。由技术团队执行，将目标代码库输入 AI 安全模型，运行自动化漏洞发现流程。关键风险在于扫描过程可能触发目标公司的安全防御机制，必须在隔离的沙箱环境中运行，并确保不遗留任何攻击性 PoC。</p>
+<p>第二，<strong>将漏洞修复成本与历史 CVE 赔付数据映射，为软件供应链提供量化风险定价</strong>。由量化分析师与精算师主导，建立漏洞严重程度与历史经济损失的映射数据库，将 AI 发现的漏洞转化为具体的金额风险敞口。难点在于缺乏公开的代码漏洞赔付数据，需要联合保险机构构建私有数据池。</p>
+<p>第三，<strong>将风险报告与保费定价嵌入法务尽调与交易协议，设置代码缺陷赔偿触发条款</strong>。由法务团队落地，在股权收购协议或供应链采购合同中，将引擎输出的高置信度漏洞清单作为交割前提条件，若交割后发现同类漏洞，直接触发赔偿或估值调整。</p>
+<p><strong>价值与局限</strong></p>
+<p>这个创意的真实价值在于，它将代码安全从”IT 部门的技术问题”变成了”董事会桌上的财务数字”。对于投资人和法务主管，终于有了可量化、可写入合同的代码风险指标。但局限同样明显：AI 发现的漏洞中存在误报，即便有置信度评分，低置信度结果的处理仍需极高的人工成本；同时，修复成本的平均值（如 1000 美元/漏洞）在不同代码库中差异巨大，直接套用可能导致定价失真。在涉及核心基础设施的并购中，此引擎只能作为参考工具，不能替代深度的人工安全审计。</p>
+<hr/>
+<h2 id="来源与说明">来源与说明</h2>
+<p>本期资讯基于公开技术发布与学术研究材料整理。OpenAI 漏洞修复成本与数量数据来源于其官方及研究人员披露，MIT 关于企业 AI 风险沉默的比例来自论文统计。对于 Apple 内部预算调整与月之暗面模型参数，均采用媒体报道与官方公告数据。编辑判断部分主要集中在将上述独立热点串联为代码资产定价逻辑的创意推演中，实际落地效果受限于各机构代码库的开放程度与算力隔离条件，相关商业模型尚未经大规模验证。</p> </div> <section class="idea-block" aria-label="每日一个创意"> <p class="idea-kicker">每日一个创意</p> <h2 class="idea-title">代码资产风险量化与漏洞定价引擎</h2> <ol class="idea-list"> <li>以漏洞发现管线扫描开源依赖，生成代码资产风险清单与补丁验证报告</li><li>将漏洞修复成本与历史CVE赔付数据映射，为软件供应链提供量化风险定价</li><li>将风险报告与保费定价嵌入法务尽调与交易协议，设置代码缺陷赔偿触发条款</li> </ol> </section> <section class="sources-block" aria-label="来源与说明"> <ol class="sources-list"> <li> <span class="src-no">[1]</span> <a href="https://aihot.news/items/vepefw88ym7jdtjr7l9pp8mit" target="_blank" rel="noopener noreferrer">OpenAI 团队用网络模型单次运行验证并修补 Linux 内核 948 个本地提权漏洞</a> <span>｜Tibo</span> <span>｜2026-11-05</span> </li><li> <span class="src-no">[2]</span> <a href="https://aihot.news/items/jcg59d4o4xdw1tip7g0fqpruz" target="_blank" rel="noopener noreferrer">MIT 与昆士兰大学研究：大公司对 AI 风险普遍沉默</a> <span>｜Rohan Paul</span> <span>｜2026-11-05</span> </li><li> <span class="src-no">[3]</span> <a href="https://aihot.news/items/jl3qj6bzz9u5hu6tdw5fq07kj" target="_blank" rel="noopener noreferrer">面壁智能回应 MiniCPM-OCR 与 Jev 可靠文档 AI 拆解</a> <span>｜面壁智能 OpenBMB</span> <span>｜2026-11-05</span> </li><li> <span class="src-no">[4]</span> <a href="https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/" target="_blank" rel="noopener noreferrer">据报道 Apple 削减内部 AI 使用预算</a> <span>｜TechCrunch：AI</span> <span>｜2026-11-05</span> </li><li> <span class="src-no">[5]</span> <a href="https://www.ithome.com/1/022/490.htm" target="_blank" rel="noopener noreferrer">月之暗面开放 2.8 万亿参数 Kimi K3.1 Pro 权重，登顶 Agent Arena 开源模型榜</a> <span>｜IT之家·人工智能</span> <span>｜2026-11-05</span> </li> </ol> <p class="sources-note">本期资讯基于公开技术发布与学术研究材料整理。OpenAI 漏洞修复成本数据来源于其官方披露，MIT 关于企业 AI 风险沉默的比例来自论文统计。对于尚未完全披露技术细节的模型能力，编辑采取保守描述，未对未公开参数进行推测。</p> </section> </article> <footer class="mt-14 pt-6 border-t text-sm" style="border-color: var(--color-border);"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2"> <a href="/" class="c-muted hover:text-current transition-colors">← 返回首页</a> <a href="/ai-hotspot/2026-11/" class="c-muted hover:text-current transition-colors opacity-80" aria-label="返回 2026年11月 归档">
+← 返回 <span class="tabular-nums">2026年11月</span> </a> </div> </footer> <script>
+    (function () {
+      var prose = document.querySelector('.ai-article .prose');
+      if (!prose) return;
+
+      // 标记「第一部分 / 第二部分 / 来源与说明」h2
+      // 注意：MDX 渲染的 h2 已带自动 slug id，这里强制覆盖为稳定锚点
+      var h2s = prose.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        var h = h2s[i];
+        var t = (h.textContent || '').trim();
+        if (t.indexOf('第一部分') !== -1) {
+          h.setAttribute('data-part', '1');
+          h.setAttribute('data-part-label', 'PART 01');
+          h.id = 'part-1';
+        } else if (t.indexOf('第二部分') !== -1) {
+          h.setAttribute('data-part', '2');
+          h.setAttribute('data-part-label', 'PART 02');
+          h.id = 'part-2';
+        } else if (t.indexOf('来源与说明') !== -1) {
+          h.classList.add('h2-sources');
+          h.id = 'ai-sources';
+        }
+      }
+
+      // 把创意卡挪到「第二部分」标题之后；来源区块挪到「来源与说明」标题之后
+      function relocate(anchorId, el) {
+        if (!el) return;
+        var anchor = document.getElementById(anchorId);
+        if (anchor && anchor.parentNode) {
+          anchor.parentNode.insertBefore(el, anchor.nextSibling);
+        }
+      }
+      relocate('part-2', document.querySelector('.idea-block'));
+      relocate('ai-sources', document.querySelector('.sources-block'));
+
+      // 本期导读折叠
+      var card = document.querySelector('.digest-card');
+      if (card) {
+        var btn = card.querySelector('.digest-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var collapsed = card.classList.toggle('collapsed');
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            btn.textContent = collapsed ? '展开' : '收起';
+          });
+        }
+      }
+    })();
+  </script>  </main> <footer class="site-footer" style="border-top: 1px solid var(--color-border);"> <div class="mx-auto max-w-3xl px-5 py-10 flex flex-col gap-6 text-[13px] c-muted"> <div class="flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© 2026 法途前行 · The Journey of Law</p> <p class="text-xs tracking-widest">读英语，懂 AI，看热点</p> </div> <div class="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-2" style="border-color: var(--color-border);"> <p class="text-xs">友情链接</p> <div class="flex items-center gap-4 text-xs"> <a href="/subscribe/" class="hover:underline underline-offset-2">RSS 订阅</a> <a href="https://aihot.virxact.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">AIHOT</a> <a href="https://www.routerbloom.com/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">RouterBloom</a> </div> </div> </div> </footer>  <div id="donate-modal" class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-title" hidden> <div class="donate-backdrop" data-donate-close></div> <div class="donate-dialog"> <button type="button" class="donate-close" data-donate-close aria-label="关闭打赏弹窗">&times;</button> <p id="donate-title" class="donate-title">感谢支持，您的支持是我前行最大的动力！</p> <div class="donate-qr-row"> <figure class="donate-qr"> <img src="/donate-wechat.jpg" alt="微信支付收款码" width="200" height="273" loading="lazy"> <figcaption>微信支付</figcaption> </figure> <figure class="donate-qr"> <img src="/donate-alipay.jpg" alt="支付宝收款码" width="200" height="300" loading="lazy"> <figcaption>支付宝</figcaption> </figure> </div> </div> </div> <script type="module">const l=document.getElementById("theme-toggle");l&&l.addEventListener("click",()=>{const o=document.documentElement.classList.toggle("dark");try{localStorage.setItem("theme",o?"dark":"light")}catch{}});const n=document.getElementById("donate-toggle"),e=document.getElementById("donate-modal");if(n&&e){const o=t=>{document.body.style.overflow=t?"hidden":""},d=()=>{e.hidden=!1,o(!0),e.querySelector(".donate-close")?.focus()},c=()=>{e.hidden=!0,o(!1),n.focus()};n.addEventListener("click",d),e.querySelectorAll("[data-donate-close]").forEach(t=>{t.addEventListener("click",c)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&!e.hidden&&c()})}</script> </body> </html>

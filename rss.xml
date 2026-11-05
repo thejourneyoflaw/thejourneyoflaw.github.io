@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算力瓶颈转移：AI工厂的工程权衡</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-11-05/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-11-05/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜AI 与计算机技术｜核心术语 throughput｜来源 Engineering blog commentary</description>
+      <pubDate>Wed, 04 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI前沿模型修补948个内核漏洞</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-11-05/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-11-05/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 推理成本｜单次运行修复近千漏洞，成本120万美元</description>
+      <pubDate>Wed, 04 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>美债收益率飙升：基差交易的系统性风险</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-11-03/</link>
