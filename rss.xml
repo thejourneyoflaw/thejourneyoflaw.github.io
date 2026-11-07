@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美联储缩表：隔夜逆回购的干涸警报</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-11-07/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-11-07/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜金融与资本市场｜核心术语 stanch｜来源 Federal Reserve Financial Stability Report (文体模拟)</description>
+      <pubDate>Fri, 06 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Claude 做梦整理记忆，智能体跨会话学习</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-11-07/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-11-07/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 知识蒸馏｜Anthropic 拆解智能体记忆机制，空闲时段做梦纠错</description>
+      <pubDate>Fri, 06 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>高管沟通的软着陆：如何优雅降级预期</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-11-06/</link>
