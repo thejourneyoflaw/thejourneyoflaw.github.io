@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 08 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高管为何总是沟通失败</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-11-10/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-11-10/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜商务与职场沟通｜核心术语 cascade｜来源 Business press commentary</description>
+      <pubDate>Mon, 09 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OpenAI建控制室，35秒叫停失控智能体</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-11-10/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-11-10/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 开源模型许可证｜OpenAI部署控制室系统，智能体安全刹车落地</description>
+      <pubDate>Mon, 09 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>AI幻觉背后的训练数据与检索瓶颈</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-11-09/</link>
