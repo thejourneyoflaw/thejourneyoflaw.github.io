@@ -6,8 +6,24 @@
     <link>https://thejourneyoflaw.github.io/</link>
     <description>读英语，懂 AI，看热点 —— 每天一篇英语精读与一篇 AI 技术观察</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 23:30:00 GMT</lastBuildDate>
     <atom:link href="https://thejourneyoflaw.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FCPA执法新风向：高管个人责任</title>
+      <link>https://thejourneyoflaw.github.io/daily-english/2026-11-16/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/daily-english/2026-11-16/</guid>
+      <category>英语精读</category>
+      <description>英语精读｜合规与反腐败｜核心术语 culpability｜来源 Law firm client alert commentary</description>
+      <pubDate>Sun, 15 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Qwen4-Max旗舰上线，单任务成本降超60%</title>
+      <link>https://thejourneyoflaw.github.io/ai-hotspot/2026-11-16/</link>
+      <guid isPermaLink="true">https://thejourneyoflaw.github.io/ai-hotspot/2026-11-16/</guid>
+      <category>AI 观察</category>
+      <description>AI 观察｜今日概念 RAG 检索增强生成｜2.4万亿参数MoE架构，百万上下文，token效率大幅提升</description>
+      <pubDate>Sun, 15 Nov 2026 23:30:00 GMT</pubDate>
+    </item>
     <item>
       <title>杠杆贷款违约潮：高收益债市场的清算时刻</title>
       <link>https://thejourneyoflaw.github.io/daily-english/2026-11-15/</link>
